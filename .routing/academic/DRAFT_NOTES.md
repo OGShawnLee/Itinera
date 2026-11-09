@@ -54,6 +54,16 @@
      4. *"¿Hay más interesados que puedan beneficiarse y quieran participar?"* (Aseguradoras, refaccionarias, clubes de motos).
      5. *"¿Qué segmentos de la población se consideran (personas mayores, mujeres, personas muy ocupadas)?"* (Inclusión, accesibilidad y combate a la asimetría en talleres).
      6. *"¿Conviene considerar la gestión del mantenimiento de vehículos empresariales? ¿Necesitan funcionalidades que no puedan ser abarcadas en nuestra primera solución y sería viable incluirles más adelante?"* (Delimitación: B2C individual en MVP vs. B2B / microflotillas en fases posteriores).
+8. **Sobre Segmentación de Consumidores, Clientes y Usuarios (CCU) y Perfiles de Cliente:**
+   - *Comentario sobre Conductores de Reparto:*
+     - *"Conductores de reparto pueden ser tanto individuales como trabajar para empresas. Quizás no conviene incluirlos."*
+     - *"Se sustituiría este segmento por compañías que deseen que sus transportistas tengan sus vehículos en condiciones y mantener un registro de lo que está pasando."*
+   - *Comentarios sobre el Perfil de Cliente (Anotaciones en azul en la imagen):*
+     - *"El rango de edad se puede expandir. Pero hay que segmentarlo en la concentración de personas que entran en cada uno."*
+     - *"Puede que haya segmentos menores pero que puedan ayudarnos a expandir el uso."*
+     - *"Se debe ser cuidadoso en los segmentos que se incluyen."*
+     - *"Las encuestas y la investigación de mercado se usan para determinar segmentos."*
+   - *Impacto:* Reestructurar la segmentación para eliminar el perfil confuso de "conductor de reparto como consumidor final genérico", reenfocar el B2C en propietarios reales (con clusters de concentración de edad), identificar segmentos nicho de expansión inicial y modelar a las compañías/empresas de transporte/reparto como un segmento B2B diferenciado.
 
 ---
 

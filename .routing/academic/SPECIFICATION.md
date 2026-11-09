@@ -71,22 +71,33 @@ Para evitar dispersión de esfuerzo y garantizar un impacto real medible, el alc
 
 ## 3. Segmentación de Usuarios (Consumidores, Clientes y Usuarios - CCU)
 
-| Segmento | Rango de Edad | Perfil y Contexto de Uso | Puntos de Dolor Principales | Respuesta de Valor de Itinera |
-| :--- | :--- | :--- | :--- | :--- |
-| **Propietarios de motocicletas particulares** *(Foco prioritario de entrada)* | 18 – 35 años | Jóvenes, estudiantes y trabajadores de nivel socioeconómico medio y medio-bajo que usan la moto como medio principal de transporte. | Alto desgaste de piezas mecánicas (cadena, aceite, balatas); las fallas representan riesgos directos de accidentes graves. | Alertas oportunas por km estimado, recordatorios de lubricación y chequeos rápidos desde el smartphone. |
-| **Conductores y repartidores de plataformas** | 18 – 45 años | Repartidores de DiDi, Rappi, Uber Eats y mensajería urbana cuyo ingreso depende al 100% de la disponibilidad de su vehículo. | Uso intensivo (alto kilometraje diario), presupuestos justos y nula tolerancia a quedarse varados en jornada laboral. | Proyección de desgaste por uso intensivo, planificación de cambios preventivos y bitácora confiable. |
-| **Propietarios de vehículos particulares generales** | 18 – 65 años | Dueños de autos familiares o de uso cotidiano. | Olvido de servicios regulares, pérdida de pólizas físicas de garantía o bitácoras y dificultad para acreditar el cuidado de la unidad. | Expediente digital transferible, historial consolidado de reparaciones y cálculo de salud mecánica general. |
+A partir de la retroalimentación docente, la segmentación se depura para evitar mezclar al conductor de reparto como usuario individual con las dinámicas corporativas. Se establecen los **conjuntos reales del mercado**, sus **concentraciones de edad** y sus **segmentos catalizadores de adopción**:
 
-### 3.1 Análisis de Segmentos Demográficos e Inclusión
-Para que la solución sea verdaderamente accesible y descubra las necesidades reales de la población, se integran tres perfiles sensibles:
+### 3.1 Segmentación Canónica de Clientes y Usuarios
 
-1. **Mujeres conductoras:** Frecuentemente expuestas a una mayor asimetría de información y tratos opacos o condescendientes en talleres mecánicos tradicionales. Itinera actúa como un ecualizador de información, brindando diagnósticos claros y respaldo documental verificable para evitar sobreprecios y abusos.
-2. **Adultos mayores:** Requieren diseños con alto contraste, tipografía legible y navegación simplificada sin menús anidados ni tecnicismos crípticos.
-3. **Personas con restricciones severas de tiempo (Trabajadores de jornadas continuas y repartidores):** No disponen de tiempo libre para interactuar con la app. Los flujos deben resolverse en menos de 15 segundos mediante botones de acción inmediata (*Presets* de mantenimiento y *One-Tap Check-in*).
+| Segmento | Clasificación | Rango Ampliado (Concentración Clave) | Perfil y Contexto Operativo | Puntos de Dolor Críticos | Propuesta de Valor de Itinera |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **Propietarios de motocicletas particulares** *(Núcleo del MVP)* | B2C (Usuario y Consumidor) | 18 a 60 años<br>*(Concentración: 20 – 35 años)* | Jóvenes estudiantes, profesionistas y trabajadores urbanos que utilizan motocicletas (125cc–250cc) como transporte personal primario. Nivel socioeconómico medio y medio-bajo. | Desgaste veloz de consumibles (aceite, cadena, frenos). El fallo de una pieza arriesga la integridad física. Olvido de servicios e ingresos variables que dificultan pagos imprevistos. | Estimación automatizada de kilometraje, semáforo visual de vida útil de piezas y recordatorios con margen para planificar gastos. |
+| **Propietarios de automóviles particulares** | B2C (Usuario y Consumidor) | 18 a 75 años<br>*(Concentración: 28 – 50 años)* | Dueños de autos particulares compactos o familiares para traslados diarios o laborales. | Desconocimiento del plan de servicio, extravío de pólizas/bitácoras en papel y desconfianza en talleres mecánicos. | Expediente digital consolidado, auditoría de piezas sustituidas e historial transferible para conservar el valor de reventa. |
+| **Empresas con personal de transporte y reparto (Micro-flotillas)** *(Segmento Sustituto / Fase B2B)* | B2B (Cliente comprador; repartidores como usuarios) | N/A (Organizaciones / PYMEs / Farmacias / Mensajería) | Compañías y negocios que cuentan con flotillas propias o esquemas donde exigen a sus transportistas mantener sus unidades en condiciones operativas óptimas. | Falta de visibilidad sobre el estado real de los vehículos, costos elevados por reparaciones imprevistas y riesgo de paralización de entregas. | Panel administrativo centralizado, registro auditable del estado mecánico y supervisión del cumplimiento preventivo por unidad. |
 
-### 3.2 Delimitación: Vehículos Particulares (B2C) vs. Flotillas Comerciales (B2B)
-- **Alcance Inicial (MVP):** Centrado exclusivamente en el conductor individual y repartidor independiente (modelo B2C).
-- **Proyección Futura (Fase de Expansión):** Se identifica un alto potencial en micronegocios con flotillas de reparto (farmacias, pizzerías, mensajería urbana). Estas operaciones demandan funcionalidades más complejas (asignación de choferes, control centralizado de gastos y reportes contables). Dichas capacidades se contemplan explícitamente en el mapa de ruta para no sobrecargar el alcance del MVP.
+### 3.2 Segmentos Menores y Nichos Estratégicos para Expandir el Uso
+Como señala la observación docente (*"puede que haya segmentos menores pero que puedan ayudarnos a expandir el uso"*), existen grupos específicos con alta disposición a adoptar la solución desde el inicio:
+
+1. **Conductores novatos y recién compradores (Primer vehículo / Primera moto):**
+   - Altamente receptivos a herramientas que los orienten desde cero. Al carecer de experiencia previa, valoran el catálogo precargado y las explicaciones sin tecnicismos.
+2. **Entusiastas y practicantes del auto-mantenimiento (Comunidad DIY):**
+   - Propietarios que prefieren realizar sus propios cambios de aceite, lubricación de cadena o ajustes de frenos. Buscan una bitácora digital para registrar sus propios procedimientos sin depender de firmas de talleres.
+3. **Mujeres conductoras (Romper la asimetría en talleres):**
+   - Segmento históricamente desatendido por la cultura automotriz tradicional, frecuentemente expuesto a tratos condescendientes o sobreprecios. Itinera les proporciona diagnósticos objetivos y argumentos técnicos respaldados para acudir al taller con seguridad.
+4. **Adultos mayores:**
+   - Concentración en rangos superiores (55+ años). Requieren interfaces de alta legibilidad, cero sobrecarga cognitiva y claridad en próximas intervenciones sin menús rebuscados.
+
+### 3.3 Delimitación de Roadmap: Desacoplamiento del Repartidor Individual
+- **Corrección de enfoque:** Anteriormente se trataba al "conductor de reparto" como un perfil homogéneo. En la realidad:
+  - Si el repartidor usa su propia unidad sin vinculación laboral estricta, encaja naturalmente en el perfil **B2C de Propietario de Motocicleta** (uso intensivo).
+  - Si el repartidor trabaja bajo contrato o supervisión de una empresa, el cliente que toma la decisión y paga por el servicio es la **Compañía**, no el chofer.
+- **Estrategia:** El MVP se concentra en el usuario B2C (dueño de su vehículo). Las funcionalidades multi-vehículo y de supervisión corporativa se derivan a la fase B2B para mantener ágil el lanzamiento inicial.
 
 ---
 

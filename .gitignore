@@ -1,0 +1,15 @@
+# Dependencies and build outputs
+node_modules/
+dist/
+build/
+.cache/
+
+# Raw attachments and binary source documents
+*.pdf
+
+# IDE and OS metadata
+.DS_Store
+Thumbs.db
+*.swp
+.idea/
+.vscode/

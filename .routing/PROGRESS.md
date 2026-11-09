@@ -5,7 +5,7 @@ Seguimiento de avance del proyecto Itinera. Registra las tareas completadas, tic
 ## Completado (Done)
 - [x] Inicialización del repositorio y archivo `README.md` del proyecto.
 - [x] Estructuración base del directorio `.routing/` y sus roles de orquestación.
-- [x] Procesamiento y destilación inicial en `.routing/academic/SPECIFICATION.md` (Estado: **DRAFT** — sujeto a revisiones y correcciones a corto y largo plazo).
+- [x] Separación de flujo académico: [DRAFT_NOTES.md](academic/DRAFT_NOTES.md) (borrador y bitácora de retroalimentación) y [SPECIFICATION.md](academic/SPECIFICATION.md) (documento purgado y refinado con el nuevo enfoque sistémico del problema y factores socioculturales).
 
 ## Tickets en borrador (Draft tickets)
 - [ ] *Espacio para registrar los primeros tickets conforme se defina la arquitectura y requerimientos iniciales.*

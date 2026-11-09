@@ -1,9 +1,9 @@
-# Especificación Académica Inicial — Proyecto Itinera
+# Especificación Académica y de Dominio — Proyecto Itinera
 
-> **Documento destilado a partir de la actividad de ideación y formulación de proyecto.**  
-> **Estado del documento:** `[DRAFT]` — Borrador base en evolución iterativa (sujeto a correcciones y refinamiento a corto y largo plazo).  
+> **Documento Purgado y Refinado**  
+> **Estado:** `[REFINED / EN EVOLUCIÓN PROGRESIVA]`  
 > **Asignatura:** Economía para Toma de Decisiones — Licenciatura en Ingeniería de Software.  
-> **Ubicación y fecha original:** Xalapa, Veracruz — Octubre 2026.  
+> **Ubicación y fecha:** Xalapa, Veracruz — Octubre/Noviembre 2026.  
 > **Equipo de trabajo:**
 > - Gerardo Abraham Barrón Gómez
 > - Edgar Vázquez García
@@ -15,84 +15,90 @@
 
 - **Nombre del proyecto:** Itinera
 - **Lema:** *"Donde cada kilómetro cuenta"*
-- **Propósito central:** Proporcionar a los propietarios de vehículos particulares (con énfasis prioritario en motocicletas y vehículos de dos ruedas) un expediente digital y bitácora interactiva accesible desde dispositivos móviles, que permita dar seguimiento a los mantenimientos preventivos y correctivos mediante recordatorios oportunos, estimaciones de desgaste por uso y un lenguaje comprensible sin tecnicismos mecánicos abrumadores.
+- **Propósito central:** Optimizar y hacer eficiente la gestión del ciclo de mantenimiento preventivo y correctivo de vehículos particulares (con énfasis prioritario en motocicletas), proveyendo una bitácora digital ágil y de baja fricción que conecte el uso cotidiano de la unidad con alertas oportunas, estimación visual de desgaste de consumibles y fomento del auto-mantenimiento seguro.
 
 ---
 
 ## 2. Planteamiento del Problema (TPNSc)
 
-### 2.1 Definición Canónica
-> *"Las personas propietarias de autos y motocicletas particulares en México necesitan un expediente digital simple, confiable y accesible desde el teléfono celular para registrar, comprender y dar seguimiento al mantenimiento de sus vehículos, debido a que la información técnica y de servicios se encuentra dispersa, se olvida o no se documenta adecuadamente; esto dificulta prevenir fallas costosas, planificar gastos, certificar el cuidado del vehículo ante terceros y tomar decisiones seguras en el camino."*
+### 2.1 Definición Canónica del Problema
+> *"El proceso actual de gestión y seguimiento del mantenimiento de vehículos particulares en México opera bajo un esquema ineficiente, reactivo y desarticulado. A pesar de existir métodos convencionales de registro (notas físicas, stickers, hojas de cálculo o bitácoras en papel), estos demandan una alta carga de captura manual y carecen de dinamismo, lo que provoca el abandono del seguimiento preventivo. Como consecuencia, los propietarios enfrentan asimetría de información técnica, toman decisiones a destiempo y dependen de mantenimientos correctivos imprevistos, los cuales elevan los costos operativos, reducen la vida útil del vehículo y comprometen la seguridad vial de los conductores."*
 
-### 2.2 Diagnóstico del Entorno Actual
-1. **Cultura reactiva vs. preventiva:** La mayoría de los usuarios no realiza revisiones periódicas programadas; esperan a que el vehículo presente una falla o avería crítica para acudir al taller.
-2. **Brecha de conocimiento técnico:** Gran parte de los conductores desconoce la periodicidad adecuada para cambios de consumibles críticos (aceite de motor, kit de arrastre/cadena, balatas/frenos, bujías, neumáticos, suspensión). Los manuales de fabricante suelen ser voluminosos, poco consultados o se extravían.
-3. **Desconfianza y opacidad en talleres:** Existe un recelo generalizado hacia talleres mecánicos informales respecto a diagnósticos dudosos, cobros injustificados o piezas no reemplazadas. La falta de un historial estructurado deja al usuario sin respaldo.
-4. **Herramientas actuales inadecuadas:**
-   - **Agencias automotrices:** Utilizan sistemas internos y hojas de cálculo (Excel) enfocadas en su facturación interna, no en empoderar al conductor con acceso en tiempo real.
-   - **Talleres locales:** Carecen de digitalización o trazabilidad para sus clientes.
-   - **Aplicaciones de mercado (ej. Drivvo):** Enfocadas prioritariamente en administración de combustible, registros de viajes y control financiero detallado, lo que genera sobrecarga cognitiva e interfaces saturadas para el usuario común que únicamente busca mantener su vehículo en óptimas condiciones operativas.
+### 2.2 Ineficiencias Críticas del Sistema Actual
+1. **Fricción y discontinuidad en el registro:** Los métodos existentes no se integran de forma natural al día a día del conductor. El registro manual disperso no aporta valor inmediato ni proyecciones útiles, lo que conduce a su abandono.
+2. **Incapacidad de anticipación (Reactividad sistémica):** No existe un vínculo directo y comprensible entre el uso del vehículo (kilometraje/tiempo) y el desgaste de consumibles críticos, llevando al usuario a actuar únicamente tras la falla evidente.
+3. **Opacidad y desinformación:** La dispersión histórica de servicios dificulta evaluar la salud mecánica de la unidad, auditar intervenciones mecánicas y respaldar el valor del vehículo en el mercado.
+
+### 2.3 Factores Socioculturales, Conductuales y Económicos
+El problema se sostiene sobre cinco factores humanos y de comportamiento que deben ser abordados por la solución:
+
+1. **Ausencia de hábitos de registro (Fricción cultural):** El usuario promedio no tiene la costumbre ni la disciplina de anotar fechas, kilometrajes o piezas sustituidas.  
+   *Respuesta en diseño:* Registro ágil en un toque, recordatorios proactivos y estimación automatizada de odómetro.
+2. **Restricción de liquidez y falta de previsibilidad (Factor económico):** Ante presupuestos limitados o ingresos fluctuantes, el mantenimiento programado se posterga si el gasto llega por sorpresa y sin tiempo para presupuestar.  
+   *Respuesta en diseño:* Proyecciones anticipadas de servicios futuros para permitir planeación de gastos y priorización de consumibles esenciales.
+3. **Sesgo de optimismo y falsa seguridad (Factor psicológico):** Existe la creencia arraigada de que "todo está bajo control" mientras el vehículo arranque y ruede, obviando el deterioro paulatino e invisible de piezas mecánicas.  
+   *Respuesta en diseño:* Indicadores visuales directos (semáforo de desgaste / salud de componentes) que visibilicen el estado real del vehículo.
+4. **Resistencia al costo de oportunidad en talleres (Factor operativo):** Llevar la unidad a un taller implica perder horas productivas, quedarse sin medio de transporte y pagar costos de mano de obra.  
+   *Respuesta en diseño:* Integración de guías de inspección preventiva y auto-mantenimiento básico (DIY: Do It Yourself) para tareas que el usuario puede realizar por cuenta propia.
+5. **Desconfianza hacia los talleres mecánicos (Factor social/institucional):** La asimetría técnica entre el mecánico y el cliente genera temor a sobreprecios, diagnósticos dudosos o refacciones no cambiadas.  
+   *Respuesta en diseño:* Expediente digital transparente y trazable con registro de notas, piezas y evidencias fotográficas de servicios realizados.
 
 ---
 
 ## 3. Segmentación de Usuarios (Consumidores, Clientes y Usuarios - CCU)
 
-| Segmento | Rango de Edad | Perfil y Contexto de Uso | Puntos de Dolor Principales | Valor Esperado de Itinera |
+| Segmento | Rango de Edad | Perfil y Contexto de Uso | Puntos de Dolor Principales | Respuesta de Valor de Itinera |
 | :--- | :--- | :--- | :--- | :--- |
-| **Propietarios de motocicletas particulares** *(Foco principal de entrada)* | 18 – 35 años | Estudiantes y profesionistas de nivel socioeconómico medio y medio-bajo que usan la moto como transporte diario o trabajo secundario. | El desgaste de componentes en moto es acelerado; ignorar un servicio impacta directamente en su seguridad física. Horarios ajustados para acudir a talleres. | Avisos de mantenimiento según kilometraje, registro rápido en pocos pasos y recomendaciones claras de inspección. |
-| **Conductores y repartidores de plataformas** | 18 – 45 años | Repartidores de DiDi, Rappi, Uber Eats y mensajería urbana que dependen de su vehículo para generar sus ingresos diarios. | Uso intensivo (alto kilometraje diario), presupuestos ajustados y riesgo de perder días de trabajo por averías mecánicas imprevistas. | Notificaciones preventivas oportunas, cálculo estimado de desgaste diario y control del historial de reparaciones. |
-| **Propietarios de vehículos particulares generales** | 18 – 65 años | Dueños de automóviles familiares o utilitarios con diferentes grados de experiencia técnica (desde novatos hasta aficionados). | Pérdida de bitácoras físicas de agencia, desinformación sobre intervalos de servicio y dificultad para justificar el valor de reventa. | Historial centralizado transferible, alertas de servicio y resumen comprensible de gastos por mantenimiento. |
+| **Propietarios de motocicletas particulares** *(Foco prioritario de entrada)* | 18 – 35 años | Jóvenes, estudiantes y trabajadores de nivel socioeconómico medio y medio-bajo que usan la moto como medio principal de transporte. | Alto desgaste de piezas mecánicas (cadena, aceite, balatas); las fallas representan riesgos directos de accidentes graves. | Alertas oportunas por km estimado, recordatorios de lubricación y chequeos rápidos desde el smartphone. |
+| **Conductores y repartidores de plataformas** | 18 – 45 años | Repartidores de DiDi, Rappi, Uber Eats y mensajería urbana cuyo ingreso depende al 100% de la disponibilidad de su vehículo. | Uso intensivo (alto kilometraje diario), presupuestos justos y nula tolerancia a quedarse varados en jornada laboral. | Proyección de desgaste por uso intensivo, planificación de cambios preventivos y bitácora confiable. |
+| **Propietarios de vehículos particulares generales** | 18 – 65 años | Dueños de autos familiares o de uso cotidiano. | Olvido de servicios regulares, pérdida de pólizas físicas de garantía o bitácoras y dificultad para acreditar el cuidado de la unidad. | Expediente digital transferible, historial consolidado de reparaciones y cálculo de salud mecánica general. |
 
 ---
 
-## 4. Filosofía y Diferenciadores de Itinera
+## 4. Filosofía y Principios Diferenciadores
 
-1. **Salud mecánica sobre finanzas complejas:** Mientras que la competencia se concentra en balances de gasolina y presupuestos, Itinera prioriza el **estado de salud de los componentes** y la **prevención de averías**.
-2. **Diseñado para el teléfono móvil (Mobile-First):** Interfaz optimizada para registrar datos en segundos desde la gasolinera, taller o estacionamiento, accesible para usuarios de todos los niveles de alfabetización digital.
-3. **Cero tecnicismos innecesarios:** Explicación amigable del "por qué" y "cuándo" de cada servicio (ej. por qué revisar el nivel y estado del aceite, qué revisar en la tensión de cadena).
-4. **Enfoque inicial en motocicletas:** Mercado con alto crecimiento en México y Latinoamérica, con mayor frecuencia de mantenimiento preventivo y menor oferta de software especializado accesible.
+1. **Eficiencia y salud vehicular antes que contabilidad exhaustiva:** A diferencia de plataformas financieras que saturan al usuario con registros de combustible y balances contables (ej. Drivvo), Itinera se enfoca en la **operatividad y prevención mecánica** de la unidad.
+2. **Diseño Mobile-First sin fricción:** Interfaces optimizadas para captura rápida y comprensión intuitiva sin requerir alfabetización mecánica avanzada.
+3. **Cero tecnicismos innecesarios:** Comunicación en lenguaje cotidiano, explicando el "por qué" y "cuándo" de cada servicio.
+4. **Fomento del auto-mantenimiento informado (DIY):** Reconocimiento de que muchos usuarios realizan o desean realizar sus propios ajustes menores para ahorrar costos y tiempo.
 
 ---
 
 ## 5. Objetivos del Proyecto
 
 ### 5.1 Objetivo General
-Desarrollar una aplicación móvil multiplataforma que funcione como bitácora y asistente de mantenimiento vehicular, facilitando a los conductores el registro, seguimiento y planificación preventiva del estado mecánico de sus unidades para prolongar su vida útil y elevar la seguridad vial.
+Desarrollar un sistema móvil de bitácora y monitoreo preventivo que optimice el seguimiento del mantenimiento vehicular, reduciendo la fricción de captura, visibilizando el desgaste de componentes clave y proporcionando alertas tempranas para extender la vida útil de las unidades y mejorar la seguridad de los conductores.
 
 ### 5.2 Objetivos Específicos
-1. **Gestión de unidades:** Permitir el registro de uno o múltiples vehículos con sus datos base (marca, modelo, año, kilometraje inicial).
-2. **Bitácora digital de servicios:** Registrar mantenimientos preventivos y correctivos (fecha, odómetro, componentes atendidos, notas, costos y taller/auto-servicio).
-3. **Sistema de alertas inteligentes:** Notificar al usuario sobre servicios próximos con base en umbrales de kilometraje y/o tiempo transcurrido.
-4. **Monitoreo de desgaste:** Proveer un tablero visual que indique el estado estimado de salud de consumibles críticos (aceite, frenos, neumáticos, bujías, cadena/transmisión).
-5. **Generación de historial transferible:** Permitir la consulta organizada del historial de mantenimiento como respaldo técnico y valor agregado para una eventual venta.
+1. **Gestión ágil de vehículos:** Registrar unidades con datos esenciales (marca, modelo, año, kilometraje base).
+2. **Expediente digital de servicios:** Registrar intervenciones preventivas y correctivas en pocos pasos, con soporte para talleres o auto-mantenimiento.
+3. **Alertas de mantenimiento:** Notificar proactivamente sobre servicios programados en función de umbrales de kilometraje estimado y tiempo transcurrido.
+4. **Visualización de desgaste:** Presentar un tablero intuitivo de salud mecánica que contrarreste el sesgo de falsa seguridad del conductor.
+5. **Historial exportable y transferible:** Disponer de un resumen auditable del historial de la unidad para fines de consulta o acreditación de cuidado ante terceros.
 
 ---
 
-## 6. Boceto del Modelo de Negocio (Canvas Preliminar)
+## 6. Modelo de Negocio Canvas (Boceto Preliminar)
 
 ```mermaid
 flowchart TD
-    subgraph Negocio["Modelo de Negocio Canvas (Preliminar)"]
+    subgraph Negocio["Modelo de Negocio Canvas (Itinera)"]
         direction LR
-        Socios["<b>Socios Clave</b><br/>• Talleres mecánicos locales<br/>• Refaccionarias<br/>• Clubes/comunidades de motociclistas"]
-        Actividades["<b>Actividades Clave</b><br/>• Desarrollo y soporte móvil<br/>• Curación de intervalos de servicio<br/>• Algoritmos de estimación de desgaste"]
-        Recursos["<b>Recursos Clave</b><br/>• Base de datos de modelos y servicios<br/>• Infraestructura cloud/local<br/>• Equipo de desarrollo de software"]
-        Propuesta["<b>Propuesta de Valor</b><br/>• Expediente digital accesible y confiable<br/>• Prevención proactiva de fallas costosas<br/>• Enfoque en salud mecánica sin fricción técnica"]
-        Relacion["<b>Relación con Clientes</b><br/>• Autoservicio móvil automatizado<br/>• Alertas oportunas no invasivas<br/>• Soporte comunitario"]
-        Canales["<b>Canales</b><br/>• Tiendas de apps (Google Play / App Store)<br/>• Recomendación comunitaria / talleres"]
-        Segmentos["<b>Segmentos de Clientes</b><br/>• Motociclistas particulares<br/>• Repartidores de última milla<br/>• Conductores particulares en general"]
-        Costos["<b>Estructura de Costes</b><br/>• Licencias de publicación de apps<br/>• Hosting / backend<br/>• Mantenimiento y pruebas de software"]
-        Ingresos["<b>Fuentes de Ingresos (Potenciales)</b><br/>• Modelo Freemium (funciones avanzadas)<br/>• Historiales exportables certificados<br/>• Alianzas de servicios/promociones con talleres"]
+        Socios["<b>Socios Clave</b><br/>• Talleres mecánicos locales de confianza<br/>• Refaccionarias y distribuidores de consumibles<br/>• Comunidades y clubes de motociclistas"]
+        Actividades["<b>Actividades Clave</b><br/>• Desarrollo móvil multiplataforma<br/>• Curación de tablas de servicio preventivo<br/>• Modelado de desgaste por kilometraje estimado"]
+        Recursos["<b>Recursos Clave</b><br/>• Base de conocimientos de consumibles e intervalos<br/>• Infraestructura tecnológica (local-first/cloud)<br/>• Equipo de desarrollo de software"]
+        Propuesta["<b>Propuesta de Valor</b><br/>• Sistema eficiente y sin fricción de mantenimiento<br/>• Visibilidad clara de desgaste mecánico<br/>• Anticipación de gastos para mejor planificación<br/>• Soporte para talleres y auto-mantenimiento"]
+        Relacion["<b>Relación con Clientes</b><br/>• Autoservicio móvil guiado<br/>• Alertas oportunas no invasivas<br/>• Soporte y transparencia"]
+        Canales["<b>Canales</b><br/>• Tiendas de aplicaciones (Google Play / App Store)<br/>• Recomendación comunitaria y talleres aliados"]
+        Segmentos["<b>Segmentos de Clientes</b><br/>• Motociclistas particulares (foco inicial)<br/>• Repartidores de plataformas de última milla<br/>• Propietarios de autos particulares"]
+        Costos["<b>Estructura de Costes</b><br/>• Cuentas de desarrollador en tiendas de apps<br/>• Servicios de sincronización y hosting<br/>• Soporte, testing y mantenimiento continuo"]
+        Ingresos["<b>Fuentes de Ingresos (Potenciales)</b><br/>• Modelo Freemium (registro de múltiples unidades o funciones avanzadas)<br/>• Exportación de expedientes certificados<br/>• Afiliación con proveedores de refacciones/talleres"]
     end
 ```
 
 ---
 
-## 7. Brechas Técnicas y Aspectos por Definir
-
-A partir del análisis crítico del documento original, se identifican las siguientes decisiones de ingeniería que deben resolverse en el proceso de arquitectura y modelado de dominio:
-
-1. **Estimación de kilometraje sin hardware telemático:** Al no contar inicialmente con dispositivos OBD-II o GPS continuo por consumo de batería, el sistema requiere un modelo matemático de estimación basado en hábitos (ej. promedio de km recorridos por día/semana ingresado por el usuario o inferido por actualizaciones periódicas).
-2. **Catálogo de vehículos:** Determinar si se implementará un catálogo precargado cerrado o un esquema mixto (marcas/modelos comunes precargados con opción de entrada libre para modelos atípicos o modificaciones).
-3. **Persistencia y modo Offline:** Vital para repartidores y zonas de baja conectividad; la base de datos debe operar en local (Local-First) con capacidades de sincronización posterior.
-4. **Definición del Stack Tecnológico:** Selección fundamentada de framework móvil (ej. Flutter, React Native / Expo) y backend/persistencia (ej. SQLite / Supabase / Firebase / Postgres).
+## 7. Próximas Secciones por Purgar y Refinar
+- [ ] Detalle de módulos del Canvas con la retroalimentación de la profesora.
+- [ ] Validación de la solución y propuesta de valor técnica.
+- [ ] Definición del modelo de datos inicial en `DOMAIN.md`.

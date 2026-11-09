@@ -6,6 +6,7 @@ Seguimiento de avance del proyecto Itinera. Registra las tareas completadas, tic
 - [x] Inicialización del repositorio y archivo `README.md` del proyecto.
 - [x] Estructuración base del directorio `.routing/` y sus roles de orquestación.
 - [x] Separación de flujo académico: [DRAFT_NOTES.md](academic/DRAFT_NOTES.md) (borrador y bitácora de retroalimentación) y [SPECIFICATION.md](academic/SPECIFICATION.md) (documento purgado y refinado con el nuevo enfoque sistémico del problema y factores socioculturales).
+- [x] Refinamiento de especificación académica: integración de preguntas de descubrimiento de Design Thinking, delimitación de alcance MVP (motos 125-250cc), justificación de impacto con externalidades secundarias, métricas duales de desgaste (km/tiempo) e inclusión demográfica sensible.
 
 ## Tickets en borrador (Draft tickets)
 - [ ] *Espacio para registrar los primeros tickets conforme se defina la arquitectura y requerimientos iniciales.*

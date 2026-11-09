@@ -23,6 +23,37 @@
      - "El usuario no desea estar obligado a ir a un taller y gastar tiempo/dinero." (Resistencia/Costo de oportunidad)
      - "Desconfianza del taller." (Factor social/Opacidad)
    - *Impacto:* Incorporar estos factores humanos como las causas fundamentales que explican el abandono del mantenimiento preventivo.
+3. **Sobre ¿Qué sabemos sobre el TPNSc?:**
+   - *Comentario:* *"Muchos usuarios desconocen qué componentes se desgastan, el ratio en el que lo hacen y cada cuánto deben sustituirse o darles mantenimiento."*
+   - *Impacto:* Reconocer la asimetría y el analfabetismo mecánico del usuario. La solución no puede ser una bitácora en blanco; debe ser un sistema experto guiado con catálogo predefinido de piezas, ratios de desgaste e intervalos estándar.
+4. **Sobre ¿Qué NO sabemos sobre el TPNSc?:**
+   - *Comentario:*
+     1. *"El alcance mínimo más viable y que genere beneficio de modo que tengamos la posibilidad de expandir alcance."*
+     2. *"¿Cómo funcionan agencias de motos? ¿Qué vehículos contemplar? ¿Hasta dónde abarcamos?"*
+     3. *"No centrarse en la solución sino en el problema en sí. Se debe entender lo que los usuarios necesitan y el dominio del problema. ¿Las agencias realizan recordatorios? ¿Se involucran en el mantenimiento de los vehículos de sus clientes?"*
+   - *Impacto:* Delimitar estrictamente el MVP a motocicletas utilitarias/urbanas de 125cc-250cc (Italika, Bajaj, Honda, etc.). Modelar la desconexión real de las agencias (que abandonan el seguimiento post-garantía y no realizan recordatorios proactivos) y centrarse en la raíz del problema antes de idear interfaces.
+5. **Sobre Disposición a Capturar Datos y Tolerancia a Notificaciones:**
+   - *Comentario / Preguntas:*
+     - *"¿Los usuarios están dispuestos a introducir los datos relevantes y tener un seguimiento?"*
+     - *"¿Están dispuestos a recibir muchas notificaciones?"*
+   - *Impacto:* Asumir el principio de fatiga de usuario: los conductores **no** toleran capturas manuales diarias ni bombardeo de notificaciones invasivas. Requiere:
+     1. Modelo de proyección de odómetro por hábitos de uso semanal y confirmaciones rápidas en un toque (*One-tap Check-in*).
+     2. Política de notificaciones de alto valor por umbral (anticipación para planificar gastos y alerta crítica por seguridad), eliminando recordatorios triviales o spam.
+6. **Sobre ¿Por qué vale la pena solucionar este TPNSc?:**
+   - *Comentario / Preguntas:*
+     - *"Agencia tiene más trabajo, clientes seguros. Se evitan accidentes y seguros no tienen que pagar. ¿Es relevante contemplar estos afectados secundarios?"*
+     - *"Saber cuándo reservar tiempo, ahorrar dinero para cuando se necesite mantenimiento y evitar el problema secundario de coche descompuesto, llegar tarde o faltar a actividades como escuela o trabajo."*
+   - *Impacto:* Separar la justificación en dos niveles claros:
+     1. **Impacto Primario (Conductor):** Previsibilidad de tiempo y dinero; eliminación del efecto dominó de la avería (pérdida de jornadas escolares/laborales, sanciones o merma de ingresos de reparto).
+     2. **Impacto Secundario / Externalidades Positivas:** Menor siniestralidad vial e indemnizaciones para aseguradoras, mayor demanda programada y recurrente para talleres mecánicos, y mayor disponibilidad operativa para plataformas y empleadores.
+7. **Sobre Preguntas Guía para Descubrir Soluciones (Empatía 2):**
+   - *Corrección de la profesora:* Reemplazar las preguntas autorreferenciales del equipo por auténticas preguntas de descubrimiento del ecosistema:
+     1. *"¿Cómo ayudar a las personas a llevar el seguimiento de tiempos?"* (Métricas duales: km y tiempo calendario).
+     2. *"¿Cómo gestionan las agencias los recordatorios del mantenimiento?"* (Investigar el abandono post-garantía y la falta de CRM activo).
+     3. *"¿Cómo ayudar a los talleres y facilitar agendar mantenimientos?"* (Generación de órdenes y facilitación de citas).
+     4. *"¿Hay más interesados que puedan beneficiarse y quieran participar?"* (Aseguradoras, refaccionarias, clubes de motos).
+     5. *"¿Qué segmentos de la población se consideran (personas mayores, mujeres, personas muy ocupadas)?"* (Inclusión, accesibilidad y combate a la asimetría en talleres).
+     6. *"¿Conviene considerar la gestión del mantenimiento de vehículos empresariales? ¿Necesitan funcionalidades que no puedan ser abarcadas en nuestra primera solución y sería viable incluirles más adelante?"* (Delimitación: B2C individual en MVP vs. B2B / microflotillas en fases posteriores).
 
 ---
 

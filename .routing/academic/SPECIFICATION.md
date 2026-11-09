@@ -28,6 +28,7 @@
 1. **Fricción y discontinuidad en el registro:** Los métodos existentes no se integran de forma natural al día a día del conductor. El registro manual disperso no aporta valor inmediato ni proyecciones útiles, lo que conduce a su abandono.
 2. **Incapacidad de anticipación (Reactividad sistémica):** No existe un vínculo directo y comprensible entre el uso del vehículo (kilometraje/tiempo) y el desgaste de consumibles críticos, llevando al usuario a actuar únicamente tras la falla evidente.
 3. **Opacidad y desinformación:** La dispersión histórica de servicios dificulta evaluar la salud mecánica de la unidad, auditar intervenciones mecánicas y respaldar el valor del vehículo en el mercado.
+4. **Desconocimiento técnico de componentes, ratios e intervalos:** El usuario común desconoce qué piezas específicas sufren desgaste por el uso diario, el ratio o tasa a la que se degradan según el kilometraje/tiempo acumulado, y la frecuencia oportuna para inspeccionar, lubricar, ajustar o sustituir cada consumible.
 
 ### 2.3 Factores Socioculturales, Conductuales y Económicos
 El problema se sostiene sobre cinco factores humanos y de comportamiento que deben ser abordados por la solución:
@@ -43,6 +44,29 @@ El problema se sostiene sobre cinco factores humanos y de comportamiento que deb
 5. **Desconfianza hacia los talleres mecánicos (Factor social/institucional):** La asimetría técnica entre el mecánico y el cliente genera temor a sobreprecios, diagnósticos dudosos o refacciones no cambiadas.  
    *Respuesta en diseño:* Expediente digital transparente y trazable con registro de notas, piezas y evidencias fotográficas de servicios realizados.
 
+### 2.4 Delimitación de Alcance y Diagnóstico del Ecosistema de Agencias
+Para evitar dispersión de esfuerzo y garantizar un impacto real medible, el alcance del proyecto se delimita a partir de las realidades observadas en el entorno:
+
+1. **Delimitación del Alcance Mínimo Viable (MVP):**
+   - **Segmento vehicular inicial:** Motocicletas urbanas y utilitarias de baja y media cilindrada (125cc a 250cc) en México (marcas de volumen: Italika, Bajaj, Honda, Vento, Yamaha).
+   - **Justificación de alcance:** Cuentan con consumibles estándar homogéneos (motores monocilíndricos de ~1L de aceite, cadenas de transmisión que demandan lubricación frecuente, bujías y frenos expuestos), intervalos de servicio cortos (cada 2,500 – 3,000 km) y representan a la población más vulnerable ante costos imprevistos y riesgos de seguridad vial. Una vez consolidado y validado este núcleo, el alcance podrá expandirse hacia automóviles particulares.
+2. **Realidad de las Agencias de Motocicletas:**
+   - **Desconexión post-garantía:** Las agencias oficiales de motocicletas en México se limitan a sellar pólizas de servicio obligatorio durante el periodo de garantía inicial (generalmente los primeros 2 o 3 servicios). Una vez concluido este periodo, los usuarios abandonan las agencias debido a altos costos de mano de obra y trámites engorrosos.
+   - **Ausencia de recordatorios y acompañamiento activo:** Las agencias no dan seguimiento proactivo al kilometraje ni al desgaste de las unidades de sus clientes; su enfoque es puramente transaccional de mostrador y venta de unidades nuevas o refacciones.
+   - **Desatención en talleres locales:** Los talleres mecánicos de barrio o independientes no cuentan con infraestructura ni incentivos para emitir recordatorios o bitácoras a los propietarios.
+   - **Conclusión del ecosistema:** El conductor queda en una situación de total abandono y desatención técnica tras la compra o fin de garantía, dependiendo enteramente de su memoria y criterio empírico.
+
+### 2.5 Justificación de Impacto: Efectos Primarios y Externalidades del Ecosistema
+¿Por qué vale la pena resolver el problema y qué actores se benefician?
+
+1. **Impactos Primarios (Nivel Conductor / Usuario Final):**
+   - **Previsibilidad de agenda y flujo de efectivo:** Facilita reservar tiempo con anticipación y planificar el ahorro de dinero específico para el mantenimiento antes del vencimiento del umbral, suprimiendo la excusa de falta de liquidez inmediata.
+   - **Eliminación del efecto dominó cotidiano:** La rotura o avería intempestiva del vehículo acarrea consecuencias secundarias severas: quedarse varado en zonas de riesgo, llegar tarde o faltar a la escuela/trabajo, pérdidas económicas directas por jornadas no trabajadas (en repartidores y mensajeros) y sanciones laborales.
+2. **Impactos Secundarios y Externalidades Positivas (Ecosistema Ampliado):**
+   - **Talleres mecánicos y centros de servicio:** Se benefician de una clientela con demanda preventiva programada y predecible, con menor rotación caótica de emergencias y mayor lealtad.
+   - **Seguridad vial y aseguradoras:** La disminución de averías mecánicas críticas en circulación (frenos desgastados, reventón de neumáticos, rotura de cadena de transmisión) previene siniestros viales graves, reduciendo gastos médicos, pérdidas materiales y costos de indemnización para aseguradoras.
+   - **Delimitación estratégica:** Aunque estos actores secundarios reciben externalidades favorables, Itinera diseña su arquitectura y experiencia enfocada 100% en empoderar al conductor.
+
 ---
 
 ## 3. Segmentación de Usuarios (Consumidores, Clientes y Usuarios - CCU)
@@ -53,6 +77,17 @@ El problema se sostiene sobre cinco factores humanos y de comportamiento que deb
 | **Conductores y repartidores de plataformas** | 18 – 45 años | Repartidores de DiDi, Rappi, Uber Eats y mensajería urbana cuyo ingreso depende al 100% de la disponibilidad de su vehículo. | Uso intensivo (alto kilometraje diario), presupuestos justos y nula tolerancia a quedarse varados en jornada laboral. | Proyección de desgaste por uso intensivo, planificación de cambios preventivos y bitácora confiable. |
 | **Propietarios de vehículos particulares generales** | 18 – 65 años | Dueños de autos familiares o de uso cotidiano. | Olvido de servicios regulares, pérdida de pólizas físicas de garantía o bitácoras y dificultad para acreditar el cuidado de la unidad. | Expediente digital transferible, historial consolidado de reparaciones y cálculo de salud mecánica general. |
 
+### 3.1 Análisis de Segmentos Demográficos e Inclusión
+Para que la solución sea verdaderamente accesible y descubra las necesidades reales de la población, se integran tres perfiles sensibles:
+
+1. **Mujeres conductoras:** Frecuentemente expuestas a una mayor asimetría de información y tratos opacos o condescendientes en talleres mecánicos tradicionales. Itinera actúa como un ecualizador de información, brindando diagnósticos claros y respaldo documental verificable para evitar sobreprecios y abusos.
+2. **Adultos mayores:** Requieren diseños con alto contraste, tipografía legible y navegación simplificada sin menús anidados ni tecnicismos crípticos.
+3. **Personas con restricciones severas de tiempo (Trabajadores de jornadas continuas y repartidores):** No disponen de tiempo libre para interactuar con la app. Los flujos deben resolverse en menos de 15 segundos mediante botones de acción inmediata (*Presets* de mantenimiento y *One-Tap Check-in*).
+
+### 3.2 Delimitación: Vehículos Particulares (B2C) vs. Flotillas Comerciales (B2B)
+- **Alcance Inicial (MVP):** Centrado exclusivamente en el conductor individual y repartidor independiente (modelo B2C).
+- **Proyección Futura (Fase de Expansión):** Se identifica un alto potencial en micronegocios con flotillas de reparto (farmacias, pizzerías, mensajería urbana). Estas operaciones demandan funcionalidades más complejas (asignación de choferes, control centralizado de gastos y reportes contables). Dichas capacidades se contemplan explícitamente en el mapa de ruta para no sobrecargar el alcance del MVP.
+
 ---
 
 ## 4. Filosofía y Principios Diferenciadores
@@ -61,6 +96,11 @@ El problema se sostiene sobre cinco factores humanos y de comportamiento que deb
 2. **Diseño Mobile-First sin fricción:** Interfaces optimizadas para captura rápida y comprensión intuitiva sin requerir alfabetización mecánica avanzada.
 3. **Cero tecnicismos innecesarios:** Comunicación en lenguaje cotidiano, explicando el "por qué" y "cuándo" de cada servicio.
 4. **Fomento del auto-mantenimiento informado (DIY):** Reconocimiento de que muchos usuarios realizan o desean realizar sus propios ajustes menores para ahorrar costos y tiempo.
+5. **Mitigación de la fatiga de captura (Low-Touch Logging):** El sistema parte de la premisa de que los conductores **no están dispuestos** a introducir datos diarios ni llenar formularios tediosos. Por ello, Itinera opera mediante proyección algorítmica de odómetro basada en hábitos declarados y confirmaciones de kilometraje en un solo toque (*One-Tap Check-in*), reduciendo drásticamente la carga de interacción.
+6. **Política de notificaciones quirúrgicas de alto valor (Anti-spam de alertas):** Los usuarios rechazan y silencian las apps invasivas. Itinera descarta recordatorios triviales y concentra sus avisos en dos momentos estratégicos indispensables:
+   - *Ventana de previsibilidad económica:* Alerta anticipada (ej. faltan ~300 km o 2 semanas) para planificar el presupuesto o adquisición del consumible.
+   - *Alerta de umbral crítico:* Notificación de vencimiento inminente de un servicio que compromete la seguridad física del conductor o la integridad del motor (aceite, frenos, kit de arrastre).
+7. **Métricas duales de seguimiento (Kilometraje y Tiempo Calendario):** Para dar respuesta al seguimiento efectivo de tiempos, el desgaste se evalúa en dos dimensiones: uso dinámico (odómetro acumulado) y degradación temporal (meses transcurridos). Ciertos componentes sufren descomposición química o resequedad aunque la unidad ruede poco (ej. oxidación de aceite de motor, humedad hidroscópica en líquido de frenos, resequedad de llantas y retenes). El sistema monitorea ambas variables y alerta por *lo que ocurra primero* (ej. 3,000 km o 3 meses).
 
 ---
 

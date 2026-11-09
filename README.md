@@ -12,3 +12,12 @@ El objetivo principal de la aplicación es optimizar el cuidado vehicular median
 ## Estado del Proyecto
 
 Actualmente, el repositorio se encuentra en etapa de inicialización y estructuración. La documentación detallada, especificaciones funcionales y arquitectura técnica se incorporarán progresivamente.
+
+## Documentación y Enlaces Clave
+
+Para facilitar la navegación y colaboración del equipo, el estado y las especificaciones del proyecto se organizan en los siguientes documentos:
+
+- **[CONTEXT.md](.routing/CONTEXT.md):** Directorio central de contexto y enrutamiento. Contiene las reglas generales de trabajo (ground rules), estándares de colaboración y roles del equipo.
+- **[PROGRESS.md](.routing/PROGRESS.md):** Bitácora y seguimiento de avance. Registra los hitos completados, decisiones en curso y próximos pasos del desarrollo.
+- **[academic/SPECIFICATION.md](.routing/academic/SPECIFICATION.md):** Especificación formal y refinada del proyecto. Detalla el planteamiento sistémico del problema, factores humanos y socioculturales, delimitación del MVP (motos 125–250cc), principios anti-fatiga de captura y modelo Canvas.
+- **[academic/DRAFT_NOTES.md](.routing/academic/DRAFT_NOTES.md):** Registro histórico del borrador inicial y bitácora de retroalimentación docente, preservando la justificación de la evolución del proyecto.

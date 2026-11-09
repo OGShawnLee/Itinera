@@ -8,6 +8,7 @@ Directorio central de enrutamiento y contexto para los agentes y colaboradores. 
 - [DOMAIN.md](DOMAIN.md): Reglas de negocio del dominio vehicular, modelos de datos y servicios.
 - [INFRASTRUCTURE.md](INFRASTRUCTURE.md): Configuración del entorno de desarrollo, servicios, base de datos y despliegue.
 - [ROUTES.md](ROUTES.md): Mapa de navegación, pantallas de la aplicación móvil y reglas de acceso.
+- [academic/SPECIFICATION.md](academic/SPECIFICATION.md): Especificación destilada de la actividad académica inicial y fundamentos del problema.
 
 ## Proyecto
 - **Itinera:** Plataforma móvil orientada a la gestión y seguimiento del mantenimiento preventivo y correctivo de vehículos (motocicletas inicialmente) mediante recordatorios y estimaciones de desgaste por uso.

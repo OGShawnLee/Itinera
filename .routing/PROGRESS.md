@@ -5,12 +5,13 @@ Seguimiento de avance del proyecto Itinera. Registra las tareas completadas, tic
 ## Completado (Done)
 - [x] Inicialización del repositorio y archivo `README.md` del proyecto.
 - [x] Estructuración base del directorio `.routing/` y sus roles de orquestación.
+- [x] Procesamiento y destilación inicial en `.routing/academic/SPECIFICATION.md` (Estado: **DRAFT** — sujeto a revisiones y correcciones a corto y largo plazo).
 
 ## Tickets en borrador (Draft tickets)
 - [ ] *Espacio para registrar los primeros tickets conforme se defina la arquitectura y requerimientos iniciales.*
 
 ## Próximos pasos (Next steps)
-- [ ] Incorporar la documentación en bruto del proyecto para alimentar los archivos de dominio, diseño e infraestructura.
+- [ ] Incorporar la documentación restante para alimentar los archivos de dominio, diseño e infraestructura.
 - [ ] Definir el stack tecnológico oficial para la aplicación móvil y persistencia.
 - [ ] Contextualizar las skills de router y ticket en `.claude/skills/`.
 

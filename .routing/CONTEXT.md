@@ -10,6 +10,7 @@ Directorio central de enrutamiento y contexto para los agentes y colaboradores. 
 - [ROUTES.md](ROUTES.md): Mapa de navegación, pantallas de la aplicación móvil y reglas de acceso.
 - [academic/SPECIFICATION.md](academic/SPECIFICATION.md): Especificación académica refinada y formal del problema y la solución.
 - [academic/DRAFT_NOTES.md](academic/DRAFT_NOTES.md): Borrador histórico de la actividad inicial y bitácora de retroalimentación recibida.
+- [reference/DESIGN_THINKING.md](reference/DESIGN_THINKING.md): Monografía teórico-práctica sobre Design Thinking y su aplicación crítica en Itinera.
 
 ## Proyecto
 - **Itinera:** Plataforma móvil orientada a la gestión y seguimiento del mantenimiento preventivo y correctivo de vehículos (motocicletas inicialmente) mediante recordatorios y estimaciones de desgaste por uso.

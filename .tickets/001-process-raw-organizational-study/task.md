@@ -29,16 +29,18 @@
 
 ## Inputs
 
-- The user-provided raw document content (PDF text extract / attachment).
+- `Planteamiento_Idea_Negocio_Itinera-REVISADO.pdf` (source PDF in project root).
+- `.routing/academic/DRAFT_NOTES.md#31-mapas-de-empatía-detallados` (transcribed visual empathy maps for Carlos, Bryan, and Miguel, including teacher annotations).
 - `.routing/academic/SPECIFICATION.md` (for domain reference and terminology consistency).
 
 ---
 
 ## Task
 
-1. Receive the extracted/raw text of the organizational study document from the user.
-2. Create the target file `.routing/academic/DRAFT_ORGANIZATIONAL_STUDY.md`.
-3. Format and organize the content cleanly in Markdown, preserving every section from the original document:
+1. Extract the native text from `Planteamiento_Idea_Negocio_Itinera-REVISADO.pdf` (pages 1 to 9 and 13 to 17).
+2. For pages 10 to 12 (visual empathy maps), consume the faithful transcription provided in `DRAFT_NOTES.md#31-mapas-de-empatía-detallados`.
+3. Create the target file `.routing/academic/DRAFT_ORGANIZATIONAL_STUDY.md`.
+4. Format and organize the content cleanly in Markdown, preserving every section from the original document:
    - *La Empresa* (Base del Negocio, Oferta de Valor Inicial, Ubicación, Misión, Visión, Filosofía y Valores).
    - *Políticas Organizacionales*.
    - *Estructura Organizacional y Organigrama* (Perfiles y Descripción de Puestos Principales).

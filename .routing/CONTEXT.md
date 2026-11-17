@@ -5,21 +5,22 @@ Directorio central de enrutamiento y contexto para los agentes y colaboradores. 
 ## Archivos de referencia
 - [DESIGN.md](DESIGN.md): Directrices de diseño de interfaz (colores, tipografía, componentes y espaciados).
 - [PROGRESS.md](PROGRESS.md): Estado actual del proyecto, tareas pendientes, próximos pasos y tickets en curso.
-- [DOMAIN.md](DOMAIN.md): Reglas de negocio del dominio vehicular, modelos de datos y servicios.
+- [DOMAIN.md](DOMAIN.md): Diccionario canónico del dominio: qué es cada entidad/regla, en qué fase entra (MVP/Fase 1/Fase 2/Excluido), por qué se contempla y qué valor aporta.
 - [INFRASTRUCTURE.md](INFRASTRUCTURE.md): Configuración del entorno de desarrollo, servicios, base de datos y despliegue.
 - [ROUTES.md](ROUTES.md): Mapa de navegación, pantallas de la aplicación móvil y reglas de acceso.
-- [academic/SPECIFICATION.md](academic/SPECIFICATION.md): Especificación académica refinada y formal del problema y la solución.
-- [academic/DRAFT_NOTES.md](academic/DRAFT_NOTES.md): Borrador histórico de la actividad inicial y bitácora de retroalimentación recibida.
+- [academic/SPECIFICATION.md](academic/SPECIFICATION.md): Especificación académica refinada, reconciliada y auditada del problema, alcance MVP y modelo monetario.
+- [academic/DRAFT_NOTES.md](academic/DRAFT_NOTES.md): Borrador histórico de la actividad inicial y bitácora de retroalimentación docente y del equipo.
 - [reference/DESIGN_THINKING.md](reference/DESIGN_THINKING.md): Monografía teórico-práctica sobre Design Thinking y su aplicación crítica en Itinera.
+- [reference/BUSINESS_MODEL_CANVAS.md](reference/BUSINESS_MODEL_CANVAS.md): Monografía del Business Model Canvas en 3 horizontes alineada a `SPECIFICATION.md` y `DOMAIN.md`.
 
 ## Proyecto
-- **Itinera:** Plataforma móvil orientada a la gestión y seguimiento del mantenimiento preventivo y correctivo de vehículos (motocicletas inicialmente) mediante recordatorios y estimaciones de desgaste por uso.
-- **Enfoque actual:** Definición de arquitectura, requerimientos del sistema y estructuración inicial del proyecto.
-- **Alcance posterior:** Funcionalidades avanzadas, telemetría y sincronización en la nube.
+- **Itinera:** Plataforma móvil orientada a la gestión y seguimiento del mantenimiento preventivo y correctivo de vehículos. **MVP acotado a motocicletas de 125–250cc** (uso intensivo y urbano) mediante bitácora de baja fricción, proyección algorítmica y semáforo de 5 consumibles.
+- **Enfoque actual:** Consolidación de dominio, reconciliación documental tras auditoría *Venture-Killer* y definición de arquitectura inicial.
+- **Alcance posterior:** Escalamiento local con promociones trazables (Fase 1), expansión a automóviles, sincronización cloud y micro-flotillas B2B (Fase 2).
 
 ## Stack tecnológico
-- **Plataforma móvil:** *Por definir* (tecnologías y frameworks para el cliente móvil).
-- **Backend y persistencia:** *Por definir* (servicios, base de datos local y/o remota).
+- **Plataforma móvil:** *Por definir* (decisión estratégica de MVP: **Android-First**).
+- **Backend y persistencia:** *Por definir* (decisión estratégica de MVP: **Local-First / SQLite** en dispositivo, sin costes cloud iniciales).
 - **Herramientas de diseño y UI:** *Por definir* (fuentes, iconos y sistema de diseño).
 
 ## Reglas generales (Ground Rules)

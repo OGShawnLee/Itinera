@@ -9,16 +9,17 @@ Seguimiento de avance del proyecto Itinera. Registra las tareas completadas, tic
 - [x] Refinamiento de especificación académica: integración de preguntas de descubrimiento de Design Thinking, delimitación de alcance MVP (motos 125-250cc), justificación de impacto con externalidades secundarias, métricas duales de desgaste (km/tiempo) e inclusión demográfica sensible.
 - [x] Depuración de segmentación CCU y perfiles de cliente: separación de dinámicas B2C particulares vs. B2B corporativo de transporte, delimitación de clusters de edad y nichos catalizadores.
 - [x] Creación de monografía teórico-práctica sobre Design Thinking en `.routing/reference/DESIGN_THINKING.md`, vinculando el modelo d.school Stanford / Doble Diamante con el caso de estudio y decisiones de producto en Itinera.
+- [x] Auditoría fría con `venture-killer` y reconciliación integral de [SPECIFICATION.md](academic/SPECIFICATION.md): tabla de fronteras MVP vs. fases posteriores, cohorte de validación semestral (`50–100+ km/día`), check-in semanal en 1 toque, modelo monetario en 3 fases y bitácora de recortes de alcance para el equipo.
+- [x] Creación del diccionario canónico de dominio en [DOMAIN.md](DOMAIN.md) (entidades MVP, Fase 1–2, exclusiones e invariantes matemáticas).
+- [x] Inspección de `Planteamiento_Idea_Negocio_Itinera-REVISADO.pdf`: confirmado que corresponde a la práctica anotada de Empatía 1–3 + guía en blanco de Empatía 4/Define/Idea/Canvas; eliminados los tickets obsoletos de estudio organizacional (`001` y `002`) y renumerado el ticket de monografía Canvas como `001-create-canvas-monograph`.
+- [x] Completado [001-create-canvas-monograph](../.tickets/001-create-canvas-monograph/task.md): creación de la monografía reconciliada del Business Model Canvas en [BUSINESS_MODEL_CANVAS.md](reference/BUSINESS_MODEL_CANVAS.md) (3 horizontes, trazabilidad completa a `DOMAIN.md` y compuertas de monetización).
 
 ## Tickets en borrador (Draft tickets)
-- [ ] [001-process-raw-organizational-study](../.tickets/001-process-raw-organizational-study/task.md): Procesamiento y estructuración en Markdown del estudio organizacional en `.routing/academic/DRAFT_ORGANIZATIONAL_STUDY.md`.
-- [ ] [002-contrast-organizational-study-vs-specification](../.tickets/002-contrast-organizational-study-vs-specification/task.md): Auditoría de contraste, detección de alucinaciones y análisis de brechas del estudio organizacional frente a `SPECIFICATION.md`, `DESIGN_THINKING.md` y `BUSINESS_MODEL_CANVAS.md`.
-- [ ] [003-create-canvas-monograph](../.tickets/003-create-canvas-monograph/task.md): Creación de monografía de referencia exhaustiva sobre el Business Model Canvas aterrizado al dominio de Itinera en `.routing/reference/BUSINESS_MODEL_CANVAS.md`.
-- [ ] [draft-plan-technical-routing-tickets](../.tickets/draft-plan-technical-routing-tickets/task.md): Planificación abstracta de futuros tickets técnicos de enrutamiento (dominio, flujos, diseño e infraestructura) sin asunciones prematuras ni numeración rígida.
+- [ ] [draft-plan-technical-routing-tickets](../.tickets/draft-plan-technical-routing-tickets/task.md): Planificación abstracta de futuros tickets técnicos de enrutamiento (`ROUTES.md`, `DESIGN.md`, `INFRASTRUCTURE.md` y refinamiento de `DOMAIN.md`).
 
 ## Próximos pasos (Next steps)
-- [ ] Incorporar la documentación restante para alimentar los archivos de dominio, diseño e infraestructura.
-- [ ] Definir el stack tecnológico oficial para la aplicación móvil y persistencia.
+- [ ] Definir el stack tecnológico oficial en `INFRASTRUCTURE.md` (bajo la directriz MVP Android-First + SQLite Local-First).
+- [ ] Definir mapa de pantallas (`ROUTES.md`) y sistema visual (`DESIGN.md`).
 - [ ] Contextualizar las skills de router y ticket en `.claude/skills/`.
 
 ## Flujo de trabajo con agentes
@@ -29,6 +30,6 @@ Seguimiento de avance del proyecto Itinera. Registra las tareas completadas, tic
 - **Ejecución:** Atómica y secuencial, garantizando validación antes de avanzar al siguiente módulo.
 
 ## Brechas de diseño y dominio pendientes
-- [ ] Definir el sistema de diseño base (paleta de colores, tipografía, componentes visuales móviles).
-- [ ] Definir modelos de datos iniciales (vehículos, bitácora de mantenimiento, estimaciones de desgaste).
-- [ ] Diseñar el flujo de recordatorios y notificaciones de servicio.
+- [ ] Definir el sistema de diseño base en `DESIGN.md` (paleta de colores, tipografía, componentes visuales móviles).
+- [ ] Definir el mapa de navegación y pantallas MVP en `ROUTES.md`.
+- [ ] Diseñar el flujo exacto del check-in semanal en notificación y las 3 plantillas base de consumibles.

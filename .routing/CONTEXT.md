@@ -10,8 +10,11 @@ Directorio central de enrutamiento y contexto para los agentes y colaboradores. 
 - [ROUTES.md](ROUTES.md): Mapa de navegación, pantallas de la aplicación móvil y reglas de acceso.
 - [academic/SPECIFICATION.md](academic/SPECIFICATION.md): Especificación académica refinada, reconciliada y auditada del problema, alcance MVP y modelo monetario.
 - [academic/DRAFT_NOTES.md](academic/DRAFT_NOTES.md): Borrador histórico de la actividad inicial y bitácora de retroalimentación docente y del equipo.
+- [academic/MARKET_STUDY.md](academic/MARKET_STUDY.md): Estudio de Mercado operativo de Itinera (`TASK 1–5` incorporados en el ticket `003`, fuentes secundarias verificadas, dos instrumentos de campo B2C/B2B, cálculo muestral y bibliografía).
+- [academic/TECHNICAL_STUDY.md](academic/TECHNICAL_STUDY.md): Estudio Técnico de Itinera (macro/microlocalización en Xalapa, procesos SDLC/ASME, cursograma analítico, marco legal y reconciliación con el Estudio Organizacional).
 - [reference/DESIGN_THINKING.md](reference/DESIGN_THINKING.md): Monografía teórico-práctica sobre Design Thinking y su aplicación crítica en Itinera.
 - [reference/BUSINESS_MODEL_CANVAS.md](reference/BUSINESS_MODEL_CANVAS.md): Monografía del Business Model Canvas en 3 horizontes alineada a `SPECIFICATION.md` y `DOMAIN.md`.
+- [reference/MARKET_STUDY.md](reference/MARKET_STUDY.md): Monografía teórico-práctica sobre Estudio de Mercado, muestreo estadístico y aplicación al dominio de Itinera.
 
 ## Proyecto
 - **Itinera:** Plataforma móvil orientada a la gestión y seguimiento del mantenimiento preventivo y correctivo de vehículos. **MVP acotado a motocicletas de 125–250cc** (uso intensivo y urbano) mediante bitácora de baja fricción, proyección algorítmica y semáforo de 5 consumibles.

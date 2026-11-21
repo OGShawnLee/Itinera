@@ -17,14 +17,15 @@ Seguimiento de avance del proyecto Itinera. Registra las tareas completadas, tic
 - [x] Completado [003-design-itinera-market-study](../.tickets/003-design-itinera-market-study/task.md): diseño del entregable académico [MARKET_STUDY.md](academic/MARKET_STUDY.md) (`TASK 1–5` + consigna incorporada en `spec.md`, fuentes INEGI VMRC/DENUE, StatCounter, Drivvo/Fuelio, 2 instrumentos listos para campo y cálculo finito `N=40,000 -> n=381`).
 - [x] Completado [004-create-itinera-technical-study](../.tickets/004-create-itinera-technical-study/task.md): elaboración del Estudio Técnico en [TECHNICAL_STUDY.md](academic/TECHNICAL_STUDY.md) (consigna incorporada en `spec.md`, Macrolocalización por puntos Xalapa `9.05`, Cursograma analítico, marco legal `S.A.S.`/`IMPI`/`LFPDPPP`, organigrama dual y tabla de reconciliación con `Estudio Organizacional`).
 - [x] Creación de la skill editorial `human-prose` en [SKILL.md](../.claude/skills/human-prose/SKILL.md) y generación de entregables externos limpios para Word/Google Docs/PDF en [ESTUDIO_DE_MERCADO.md](../deliverables/ESTUDIO_DE_MERCADO.md) y [ESTUDIO_TECNICO.md](../deliverables/ESTUDIO_TECNICO.md), retirando el archivo temporal `STUDY.md`.
+- [x] Definición del mapa de navegación, flujo de pantallas, widgets funcionales, entradas por notificación y exclusiones MVP en [ROUTES.md](ROUTES.md).
 
 ## Tickets en borrador (Draft tickets)
 - [ ] [draft-plan-technical-routing-tickets](../.tickets/draft-plan-technical-routing-tickets/task.md): Planificación abstracta de futuros tickets técnicos de enrutamiento (`ROUTES.md`, `DESIGN.md`, `INFRASTRUCTURE.md` y refinamiento de `DOMAIN.md`).
 
 ## Próximos pasos (Next steps)
+- [ ] Definir el sistema visual y componentes base en `DESIGN.md` (paleta semáforo, tipografía legible en exteriores/taller y estados visuales).
 - [ ] Definir el stack tecnológico oficial en `INFRASTRUCTURE.md` (bajo la directriz MVP Android-First + SQLite Local-First).
-- [ ] Definir mapa de pantallas (`ROUTES.md`) y sistema visual (`DESIGN.md`).
-- [ ] Contextualizar las skills de router y ticket en `.claude/skills/`.
+- [ ] Contextualizar las skills de `.agents/` (incluyendo `figma-prompt-craft`) y `.claude/skills/` al dominio de Itinera.
 
 ## Flujo de trabajo con agentes
 - **Estructura de tickets:** Cada tarea o funcionalidad se define en una carpeta bajo `.tickets/<id>-<slug>/`, conteniendo:
@@ -35,5 +36,5 @@ Seguimiento de avance del proyecto Itinera. Registra las tareas completadas, tic
 
 ## Brechas de diseño y dominio pendientes
 - [ ] Definir el sistema de diseño base en `DESIGN.md` (paleta de colores, tipografía, componentes visuales móviles).
-- [ ] Definir el mapa de navegación y pantallas MVP en `ROUTES.md`.
-- [ ] Diseñar el flujo exacto del check-in semanal en notificación y las 3 plantillas base de consumibles.
+- [x] Definir el mapa de navegación y pantallas MVP en [ROUTES.md](ROUTES.md).
+- [ ] Detallar los 3 `ServiceTemplate` base con sus valores por defecto y las viñetas de inspección de los 5 consumibles para implementación/prototipo.

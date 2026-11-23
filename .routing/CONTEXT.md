@@ -17,7 +17,7 @@ Directorio central de enrutamiento y contexto para los agentes y colaboradores. 
 - [reference/MARKET_STUDY.md](reference/MARKET_STUDY.md): Monografía teórico-práctica sobre Estudio de Mercado, muestreo estadístico y aplicación al dominio de Itinera.
 
 ## Proyecto
-- **Itinera:** Plataforma móvil orientada a la gestión y seguimiento del mantenimiento preventivo y correctivo de vehículos. **MVP acotado a motocicletas de 125–250cc** (uso intensivo y urbano) mediante bitácora de baja fricción, proyección algorítmica y semáforo de 5 consumibles.
+- **Itinera:** Plataforma móvil orientada a la gestión y seguimiento del mantenimiento preventivo y correctivo de vehículos. **MVP acotado a motocicletas ligeras urbanas, de trabajo y motonetas (`110–250cc`, extensible vía plantilla personalizada)** mediante bitácora de baja fricción, proyección algorítmica y semáforo de 5 consumibles.
 - **Enfoque actual:** Consolidación de dominio, reconciliación documental tras auditoría *Venture-Killer* y definición de arquitectura inicial.
 - **Alcance posterior:** Escalamiento local con promociones trazables (Fase 1), expansión a automóviles, sincronización cloud y micro-flotillas B2B (Fase 2).
 

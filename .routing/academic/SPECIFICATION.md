@@ -1,7 +1,7 @@
 # Especificación Académica y de Dominio — Proyecto Itinera
 
 > **Documento Purgado, Refinado y Reconciliado**  
-> **Estado:** `[RECONCILIADO / LÍNEA BASE MVP — AUDITADO CON VENTURE-KILLER]`  
+> **Estado:** `[RECONCILIADO / LÍNEA BASE MVP — AUDITADO CON VENTURE-KILLER Y POST-RETROALIMENTACIÓN DOCENTE (C1–C8)]`  
 > **Asignatura:** Economía para Toma de Decisiones — Licenciatura en Ingeniería de Software.  
 > **Ubicación y fecha:** Xalapa, Veracruz — Octubre/Noviembre 2026.  
 > **Equipo de trabajo:**
@@ -15,7 +15,7 @@
 
 - **Nombre del proyecto:** Itinera
 - **Lema:** *"Donde cada kilómetro cuenta"*
-- **Propósito central:** Optimizar y hacer eficiente la gestión del ciclo de mantenimiento preventivo y correctivo de vehículos particulares (arquitectura preparada para automóviles y motocicletas, con **MVP desplegado exclusivamente en Android y Local-First para motocicletas de 125–250cc**), proveyendo una bitácora digital de baja fricción que conecte el uso cotidiano de la unidad con alertas oportunas, estimación visual de desgaste de consumibles y apoyo al auto-mantenimiento.
+- **Propósito central:** Optimizar y hacer eficiente la gestión del ciclo de mantenimiento preventivo y correctivo de vehículos particulares (arquitectura preparada para automóviles y motocicletas, con **MVP desplegado exclusivamente en Android y Local-First para motocicletas ligeras urbanas, de trabajo y motonetas `110–250cc`, extensible vía plantilla personalizada**), proveyendo una bitácora digital de baja fricción que conecte el uso cotidiano de la unidad con alertas oportunas, estimación visual de desgaste de consumibles y apoyo al auto-mantenimiento.
 
 ---
 
@@ -45,7 +45,7 @@ El problema se sostiene sobre factores humanos, temporales y de entorno que debe
 5. **Resistencia al costo de oportunidad en talleres (Factor operativo):** Llevar la unidad a un taller implica perder horas productivas, quedarse sin medio de transporte y pagar costos de mano de obra.  
    *Respuesta en diseño:* Integración de listas de verificación simples para inspección preventiva y registro de auto-mantenimiento básico (DIY: *Do It Yourself*).
 6. **Desierto de opciones y desorientación de proveeduría (Factor de entorno):** El conductor común desconoce qué talleres mecánicos confiables existen en su zona o qué intervalos corresponden a su unidad.  
-   *Respuesta en diseño:* En el MVP se proveen **3 plantillas estándar editables por cilindrada/uso** (evitando catálogos universales inexactos) y **registro libre del taller o refaccionaria habitual** del propio usuario (sin prometer auditorías ni certificaciones de talleres en campo).
+   *Respuesta en diseño:* En el MVP se proveen **3 plantillas estándar editables por uso, con variante de transmisión cadena o CVT** (evitando catálogos universales inexactos) y **registro libre del taller o refaccionaria habitual** del propio usuario, por texto o QR estático, (sin prometer auditorías ni certificaciones de talleres en campo).
 7. **Desconfianza hacia los talleres mecánicos (Factor social/institucional):** La asimetría técnica entre el mecánico y el cliente genera temor a sobreprecios, diagnósticos dudosos o refacciones no cambiadas.  
    *Respuesta en diseño:* Bitácora digital personal trazable con notas de piezas, costos y respaldo fotográfico local de servicios realizados.
 8. **Asimetría de género, condescendencia técnica y vulnerabilidad de seguridad personal (Factor social/seguridad):** Las mujeres conductoras enfrentan con frecuencia en talleres mecánicos tradicionales prácticas de condescendencia técnica (*mansplaining*) o presupuestos inflados bajo la presunción de desconocimiento mecánico. Asimismo, sufrir una avería mecánica intempestiva de noche o en avenidas solitarias representa un riesgo crítico de seguridad personal desproporcionadamente mayor.  
@@ -56,13 +56,13 @@ Para evitar dispersión de ingeniería y falsas promesas operativas, se separan 
 
 | Capacidad / Elemento | Estado actual | Justificación técnica y económica |
 | :--- | :--- | :--- |
-| **Motocicletas 125–250cc (uso propio)** | **En MVP** | Intervalos cortos (`2,500–3,000 km`), consumibles homogéneos (motor monocilíndrico ~1L, cadena, frenos, bujía) que permiten validar el bucle completo en semanas. |
-| **App Android (`$25 USD` pago único)** | **En MVP** | El segmento objetivo en México utiliza abrumadoramente Android (`>85%`); evita duplicar QA y quemar presupuesto en hardware/licencia Apple durante la validación. |
+| **Motocicletas ligeras (`110–250cc`, urbanas/motonetas/trabajo)** | **En MVP** | Se espera que concentren la mayor parte del parque circulante en Xalapa (evitando encasillar el mercado solo en `126–250cc`; la proporción real se medirá con el reactivo `A7`), mantienen intervalos cortos (`2,000–3,000 km`) y comparten los mismos 5 consumibles base (aceite, transmisión por cadena o banda CVT, frenos, bujía, llantas). |
+| **App Android (`$25 USD` pago único)** | **En MVP** | Android concentra `74.11%–89.13%` del mercado móvil nacional según StatCounter. La proporción en el segmento utilitario de motocicletas (`>85%`) es un **supuesto estimado sujeto a medición** con los reactivos `A35`–`A36` del Instrumento A, que además detectan teléfonos sin Google Play (ej. Huawei). Evita duplicar QA y quemar presupuesto en hardware/licencia Apple durante la validación. |
 | **Persistencia Local-First (SQLite)** | **En MVP** | Operación offline sin costes variables de servidores cloud, S3 ni pasarelas de pago mientras se valida la retención. |
-| **3 plantillas editables + bitácora libre** | **En MVP** | Cubre el 80% de motos económicas (Italika, Bajaj, Honda, Vento) sin deuda editorial de mantener compatibilidades por año/lote. |
+| **3 plantillas editables + bitácora libre** | **En MVP** | Cubre motos urbanas/motonetas (`110–250cc`), uso rudo/trabajo y plantilla personalizada (abierta incluso a `>250cc`) sin deuda editorial de compatibilidades por año/lote. |
 | **Automóviles, taxis y pick-ups** | **Pospuesto (Fase 2)** | La entidad `Vehicle` soporta polimorfismo conceptual, pero no se construye UI ni plantillas de autos hasta estabilizar el núcleo en motos. |
 | **App iOS (`$99 USD/año`) y Cloud Sync** | **Pospuesto (Fase 2)** | Se habilita únicamente si existe demanda pagada o necesidad multi-dispositivo demostrada. |
-| **Cupones/promos locales con atribución** | **Pospuesto (Fase 1)** | Requiere densidad activa mínima (`>1,000–2,000` MAU en una ciudad) para que una refaccionaria o taller vea retorno real en mostrador. |
+| **Cupones/promos locales con atribución** | **Pospuesto (Fase 1)** | Compuerta única: `>1,000–2,000` MAU en una ciudad, para que una refaccionaria o taller vea retorno real en mostrador. La prueba gratuita del comercio es **por volumen** (primeros `N` clientes comprobados) y solo arranca tras cruzar la compuerta. |
 | **Directorio de talleres "certificados"** | **Eliminado** | Auditar calidad mecánica en campo convierte una app en agencia de servicios; si un taller "certificado" estafa, destruye la reputación de Itinera. |
 | **Tráilers y autobuses (*Heavy-Duty*)** | **Eliminado** | Sujeto a normas SCT, telemetría J1939/OBD-II satelital y frenos de aire; segmento atendido por software enterprise (Samsara, Geotab). |
 | **Auditoría de choferes B2B sin hardware** | **Eliminado** | Sin telemetría física (GPS/OBD-II), el chofer no tiene incentivos para reportar su propio maltrato o exceso de uso. |
@@ -79,7 +79,7 @@ Para evitar dispersión de ingeniería y falsas promesas operativas, se separan 
    - **Diagnóstico económico docente:** El conductor particular de clase media/baja experimenta una fuerte resistencia psicológica y económica a pagar por una app de bitácora (*"persona no paga, taller/agencia sí"*). Quienes poseen margen comercial son las **entidades del ecosistema que se benefician de la demanda preventiva**.
    - **Plataforma de Dos Lados Asimétrica:**
      - *Lado A (Conductor — B2C / Gratuito en núcleo):* Recibe la bitácora, semáforo de desgaste, alertas y exportación gratuita, maximizando adopción y retención semanal.
-     - *Lado B (Refaccionarias y Talleres Locales — B2B / Activado tras densidad):* Una vez demostrada densidad local activa, la app canaliza demanda preventiva mediante **promociones contextuales con código trazable en mostrador**, sin prometer certificaciones presenciales de calidad.
+     - *Lado B (Refaccionarias y Talleres Locales — B2B / Activado tras densidad):* Una vez demostrada densidad local activa (`>1,000–2,000` MAU), la app canaliza demanda preventiva mediante **promociones pagadas y etiquetadas con código comprobable en mostrador** (`MerchantPartner`, `ContextualPromotion`, `CouponRedemption` en `DOMAIN.md §3`), sin calificaciones ni certificaciones presenciales de calidad.
 
 ---
 
@@ -91,10 +91,10 @@ Se distinguen dos niveles para evitar errores de diseño y tiempos de validació
 
 | Segmento | Clasificación | Rango Ampliado (Concentración Clave) | Perfil y Contexto Operativo | Puntos de Dolor Críticos | Propuesta de Valor de Itinera |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| **Propietarios-operadores de moto 125–250cc de uso intensivo** *(Cohorte de Validación MVP)* | B2C (Usuario y Consumidor) | 18 a 45 años<br>*(Concentración: 20 – 35 años)* | Estudiantes, trabajadores y repartidores independientes **dueños de su propia moto** que recorren `50–100+ km/día` en ciudad. | Desgaste acelerado de aceite, cadena y frenos; cada día parado cuesta dinero o ausencias; olvido de intervalos cortos (`2,500 km`). | Semáforo de 5 consumibles críticos, confirmación semanal en 1 toque y alertas para planear gastos quincenales. |
-| **Propietarios de moto 125–250cc de traslado moderado** *(Cohorte B2C secundaria)* | B2C (Usuario y Consumidor) | 18 a 60 años<br>*(Concentración: 22 – 40 años)* | Conductores particulares de trayectos cortos (`15–30 km/día`). | Degradación temporal de fluidos y hules aunque rueden poco; desconocimiento de intervalos básicos. | Seguimiento dual por kilometraje y **tiempo calendario** (*lo que ocurra primero*). |
+| **Motociclistas urbanos y de trabajo intensivo (`110–250cc`)** *(Cohorte de Validación MVP)* | B2C (Usuario y Consumidor) | 18 a 45 años<br>*(Concentración: 20 – 35 años)* | Estudiantes, trabajadores y repartidores independientes **dueños o responsables de su unidad** con rutina de varios viajes al día o reparto continuo (rutinas R3–R4 de `DOMAIN.md §5.1`; `≈50–90 km/día` estimados internamente). | Desgaste acelerado de aceite, cadena/banda y frenos; cada día parado cuesta dinero o ausencias; olvido de intervalos cortos (`2,000–2,500 km`). | Semáforo de 5 consumibles críticos, confirmación semanal en 1 toque y alertas para planear gastos quincenales. |
+| **Propietarios de moto/motoneta de traslado moderado (`110–250cc`)** *(Cohorte B2C secundaria)* | B2C (Usuario y Consumidor) | 18 a 60 años<br>*(Concentración: 22 – 40 años)* | Conductores particulares de trayectos cortos o que cruzan la ciudad para escuela/trabajo (rutinas R1–R2; `≈15–30 km/día` estimados internamente). | Degradación temporal de fluidos y hules aunque rueden poco; desconocimiento de intervalos básicos y temor a sobreprecios en taller. | Seguimiento dual por kilometraje y **tiempo calendario** (*lo que ocurra primero*) y resumen claro del historial. |
 | **Propietarios de automóviles particulares** *(Fase 2)* | B2C (Usuario y Consumidor) | 18 a 75 años<br>*(Concentración: 28 – 50 años)* | Dueños de autos compactos o familiares usados/seminuevos para traslados diarios. | Extravío de pólizas físicas y desconfianza ante cotizaciones opacas en talleres. | Bitácora digital unificada, registro de piezas/costos y resumen exportable para consultas o venta. |
-| **Micro-flotillas comerciales locales** *(Fase 2 — B2B)* | B2B (Cliente comprador; choferes como usuarios) | N/A (PYMEs locales / Taxis bajo contrato / Reparto propio) | Dueños de 3–15 unidades ligeras (taxis, ferreterías, panaderías, eventos) donde el dueño absorbe el costo patrimonial del mantenimiento. | Desorganización de vencimientos entre varias unidades y paros operativos evitables. | Panel centralizado de recordatorios e historial de comprobantes/gastos por unidad *(sin prometer auditoría de choferes sin hardware)*. |
+| **Micro-flotillas comerciales locales** *(Fase 2 — B2B)* | B2B (Cliente comprador; choferes como usuarios) | N/A (PYMEs locales / Taxis bajo contrato / Reparto propio) | Dueños o encargados de 2–15 unidades ligeras comerciales (reparto, mensajería, ferreterías, panaderías, eventos) donde el negocio absorbe el costo patrimonial del mantenimiento. | Desorganización de vencimientos entre varias unidades y paros operativos evitables. | Panel centralizado de recordatorios e historial de comprobantes/gastos por unidad *(sin prometer auditoría de choferes sin hardware)*. |
 
 ### 3.2 Segmentos Menores y Nichos Transversales de Adopción
 Estos perfiles no rompen la ortogonalidad de la tabla `3.1` (no son categorías separadas por vehículo), sino **nichos transversales B2C** con necesidades específicas de comunicación y experiencia de usuario:
@@ -106,10 +106,11 @@ Estos perfiles no rompen la ortogonalidad de la tabla `3.1` (no son categorías 
 
 ### 3.3 Estrategia de Validación Semestral y Escalonamiento B2B
 - **Por qué el MVP prioriza uso intensivo (`50–100+ km/día`) sobre uso bajo (`25 km/día`):** A `25 km/día` (5 días/semana), alcanzar un servicio de `2,500 km` toma ~5 meses, superando un ciclo académico semestral. Con usuarios que recorren `50–100 km/día` (siendo dueños de su propia moto, evitando el desacople patrón-empleado), un ciclo completo se valida en **3 a 6 semanas**, permitiendo medir retención real y calibración algorítmica.
-- **Desacoplamiento del repartidor contratado vs. independiente:**
-  - Repartidor dueño de su moto $\to$ encaja en **B2C Cohorte MVP**.
-  - Repartidor empleado con unidad de empresa $\to$ se deriva a **Fase 2 B2B**.
-- **Frontera B2B sin hardware:** En Fase 2, los planes por tamaño de flota (Micro `1–3`, PyME `4–10`, Mediana `10+` unidades ligeras) resuelven únicamente **centralización de alertas, bitácora de comprobantes y control de gastos**. No prometen detectar fraude o maltrato del operador sin integración telemática externa. Tráilers y autobuses quedan excluidos permanentemente.
+- **Unidades de empresa / trabajo frente a micro-flotillas:** En la etapa de investigación y validación de campo **no se descarta** a conductores ni dueños de motos comerciales/de reparto (tortillerías, mensajería, ferreterías, etc.) para dimensionar su interés real. La regla de clasificación canónica está en `DOMAIN.md §3.2`:
+  - **Fase 0:** `1` unidad principal gratuita por usuario. El conductor de una moto ajena (de su empleador) puede usarla para la unidad que maneja, pero se analiza como segmento aparte por el desacople patrón–empleado.
+  - **`PlusSubscription` (Fase 1):** `2+` unidades **personales o familiares** (cubre el hueco de hogares con 2 motos).
+  - **`MicroFleetAccount` (Fase 2):** `2–15` unidades **comerciales**, cuando el negocio tiene un dueño o encargado que gestiona el mantenimiento; ese dueño/encargado es el cliente comprador.
+- **Frontera B2B sin hardware:** En Fase 2, los planes por tamaño de flota (Micro `2–5`, Pequeña `6–15` unidades ligeras) resuelven únicamente **centralización de alertas, bitácora de comprobantes y control de gastos**. No prometen detectar fraude o maltrato del operador sin integración telemática externa. Tráilers y autobuses quedan excluidos permanentemente.
 
 ---
 
@@ -122,14 +123,14 @@ Estos perfiles no rompen la ortogonalidad de la tabla `3.1` (no son categorías 
 5. **Mitigación de fatiga mediante Proyección Algorítmica y Check-in Semanal (`Low-Touch Logging`):**
    El sistema asume que el usuario **no abrirá la app en cada carga de gasolina** y que muchas motos económicas tienen el chicote de odómetro dañado. Por ello combina:
    - *Odómetro Base ($Km_{base}$):* Kilometraje de referencia (real o `0` relativo si el tablero no funciona) en la última calibración o servicio.
-   - *Tasa de Uso Diario Declarada ($Tasa_{dia}$):* Estimación inicial según perfil de uso (ej. `25 km/día` urbano moderado; `75 km/día` uso intensivo) y días activos semanales.
+   - *Tasa de Uso Diario Estimada ($Tasa_{dia}$):* Asignada con la tabla canónica `rutina cotidiana × días/semana` de `DOMAIN.md §5.1` (las mismas opciones del onboarding y del reactivo `A11`–`A12` del Instrumento A), sin obligar al usuario a adivinar km/día exactos.
    - *Delta Temporal ($\Delta t$):* Días naturales transcurridos desde la última calibración:
      $$Km_{proyectado}(t) = Km_{base} + (Tasa_{dia} \times \Delta t)$$
-   - *Confirmación Semanal en 1 Toque (Lockscreen Check-in):* Notificación semanal no invasiva con dos acciones directas (*"¿Esta semana rodaste ~X km? [Sí, igual] [Ajustar]"*), eliminando la necesidad de abrir la app frecuentemente.
+   - *Confirmación Semanal en 1 Toque (Lockscreen Check-in):* Notificación semanal no invasiva y sin kilómetros (*"¿Usaste tu moto como siempre esta semana? [Sí] [Menos] [Más]"*), que aplica un factor de intensidad semanal (`DOMAIN.md §5.1`) sin necesidad de abrir la app.
    - *Ajuste Adaptativo de Pendiente (Rolling Average):* Si el usuario ajusta su odómetro real, el sistema recalcula suavemente $Tasa_{dia}$ para alinear proyecciones futuras.
 6. **Política de notificaciones quirúrgicas (Anti-spam):** Solo se emiten alertas en dos umbrales:
    - *Ventana de previsibilidad económica:* Anticipación (ej. faltan ~300 km o 2 semanas) para presupuestar el gasto.
-   - *Umbral crítico de seguridad/motor:* Vencimiento inminente de aceite, frenos o transmisión.
+   - *Umbral crítico de seguridad/motor:* Vencimiento inminente de aceite, frenos o transmisión (cadena o banda CVT según `Vehicle.transmision`).
 7. **Métricas duales obligatorias (Kilometraje y Tiempo Calendario):** Todo consumible evalúa tanto recorrido como degradación temporal (oxidación de aceite, humedad en líquido de frenos, resequedad de llantas), disparando por *lo que ocurra primero* (y sirviendo de respaldo automático cuando el odómetro físico de la moto esté averiado):
    $$\text{Fecha de Alerta} = \min\left(t_{alcanza\_km},\; t_{alcanza\_meses}\right)$$
 8. **Cobertura para unidades post-garantía y de trabajo diario:** Se desdoblan ambos casos antes agrupados como "vehículos de uso":
@@ -141,7 +142,7 @@ Estos perfiles no rompen la ortogonalidad de la tabla `3.1` (no son categorías 
 ## 5. Objetivos del Proyecto
 
 ### 5.1 Objetivo General
-Desarrollar una aplicación móvil Android (*Local-First*) de bitácora y monitoreo preventivo enfocada en motocicletas de 125–250cc, que reduzca la fricción de captura mediante proyección algorítmica de uso, visibilice el desgaste de consumibles clave y emita alertas oportunas para extender la vida útil de la unidad y mejorar la seguridad del conductor.
+Desarrollar una aplicación móvil Android (*Local-First*) de bitácora y monitoreo preventivo enfocada en motocicletas ligeras urbanas, de trabajo y motonetas (`110–250cc`), que reduzca la fricción de captura mediante proyección algorítmica de uso, visibilice el desgaste de consumibles clave y emita alertas oportunas para extender la vida útil de la unidad y mejorar la seguridad del conductor.
 
 ### 5.2 Objetivos Específicos
 1. **Gestión simple de unidad:** Registrar la motocicleta usando una de las 3 plantillas base editables de intervalos y consumibles.
@@ -158,15 +159,15 @@ Desarrollar una aplicación móvil Android (*Local-First*) de bitácora y monito
 flowchart TD
     subgraph Negocio["Modelo de Negocio Canvas — Plataforma Itinera (Reconciliado)"]
         direction LR
-        Socios["<b>Socios Clave</b><br/>• <i>Fase 1:</i> Refaccionarias y talleres locales (cupones trazables)<br/>• <i>Fase 2:</i> Distribuidores regionales de insumos"]
-        Actividades["<b>Actividades Clave</b><br/>• Desarrollo móvil Android-First / Local-First<br/>• Refinamiento de estimación de desgaste y UX Low-Touch<br/>• Validación de retención en cohorte 125-250cc"]
-        Recursos["<b>Recursos Clave</b><br/>• 3 plantillas curadas de intervalos 125-250cc<br/>• Motor local SQLite y lógica de proyección<br/>• Equipo de ingeniería"]
+        Socios["<b>Socios Clave</b><br/>• <i>Fase 1:</i> Refaccionarias y talleres locales (promociones pagadas con cupón comprobable)<br/>• <i>Fase 2:</i> Distribuidores regionales de insumos"]
+        Actividades["<b>Actividades Clave</b><br/>• Desarrollo móvil Android-First / Local-First<br/>• Refinamiento de estimación de desgaste y UX Low-Touch<br/>• Validación de retención en cohorte 110-250cc"]
+        Recursos["<b>Recursos Clave</b><br/>• 3 plantillas curadas de intervalos 110-250cc<br/>• Motor local SQLite y lógica de proyección<br/>• Equipo de ingeniería"]
         Propuesta["<b>Propuesta de Valor</b><br/>• <i>Conductores:</i> Semáforo de 5 consumibles, alertas sin fricción y bitácora DIY gratuita<br/>• <i>Comercios locales (F1):</i> Tráfico medible en mostrador vía cupones contextuales"]
         Relacion["<b>Relación con Clientes</b><br/>• Autoservicio estricto in-app<br/>• Check-in semanal y alertas quirúrgicas<br/>• Reporte automatizado de fallos (Crashlytics)"]
         Canales["<b>Canales</b><br/>• Google Play Store (ASO orgánico)<br/>• Recomendación boca a boca y clubes locales<br/>• Material QR en refaccionarias (Fase 1)"]
-        Segmentos["<b>Segmentos de Clientes</b><br/>• <i>MVP:</i> Motos 125-250cc uso intensivo y urbano (B2C)<br/>• <i>Fase 1 (Pagan):</i> Refaccionarias y talleres locales<br/>• <i>Fase 2:</i> Autos, power-users Plus y micro-flotillas"]
+        Segmentos["<b>Segmentos de Clientes</b><br/>• <i>MVP:</i> Motos ligeras 110-250cc (cadena o CVT) uso intensivo y urbano (B2C)<br/>• <i>Fase 1 (Pagan):</i> Refaccionarias y talleres locales + Plus 2+ motos personales<br/>• <i>Fase 2:</i> Autos y micro-flotillas comerciales 2-15 uds"]
         Costos["<b>Estructura de Costes</b><br/>• <i>MVP:</i> Google Play $25 USD único + $0 servidor/variable<br/>• <i>Fase 1-2:</i> Backend sync, storage opcional, iOS ($99/año solo si hay demanda)"]
-        Ingresos["<b>Fuentes de Ingresos</b><br/>• <i>Fase 0 (MVP):</i> $0 (validación de retención y densidad)<br/>• <i>Fase 1 (Local):</i> Cupones trazables / pauta local B2B + Plan Plus multi-vehículo<br/>• <i>Fase 2 (Escala):</i> Patrocinio distribuidores + Flotas B2B"]
+        Ingresos["<b>Fuentes de Ingresos</b><br/>• <i>Fase 0 (MVP):</i> $0 (validación de retención y densidad)<br/>• <i>Fase 1 (Local):</i> Promociones de comercios locales (cuota mensual o pago por venta comprobada) + Plan Plus 2+ motos<br/>• <i>Fase 2 (Escala):</i> Patrocinio distribuidores + Flotas B2B"]
     end
 ```
 
@@ -176,9 +177,9 @@ En lugar de fragmentar funcionalidades artificialmente por tipo de carrocería, 
 | Actor / Rol | Producto Entregable | Propuesta de Valor Específica |
 | :--- | :--- | :--- |
 | **Conductor Particular / Uso Intensivo (Motos MVP y Autos Fase 2)** *(Lado A — Gratuito)* | App móvil Android con semáforo de 5 consumibles críticos, check-in semanal en 1 toque, bitácora DIY/taller y exportación gratuita de historial | Visibilidad clara de qué servicio sigue y cuánto falta para presupuestarlo; prevención de averías previsibles y respaldo histórico sin pagar suscripción por su vehículo personal. |
-| **Power Users Multi-Vehículo** *(Fase 1 — Opcional)* | Sincronización en la nube y gestión ilimitada de unidades (`3+` vehículos) | Respaldo multi-dispositivo para entusiastas o familias con varias unidades. |
-| **Refaccionarias y Talleres Locales** *(Lado B — Monetizable en Fase 1)* | Promociones contextuales con código/cupón trazable cuando el usuario cercano entra en ventana de servicio | Clientes locales con necesidad mecánica inmediata y atribución directa en caja (sin cuotas ciegas ni certificaciones presenciales). |
-| **Micro-flotillas Comerciales** *(Fase 2 — B2B)* | Panel web/móvil centralizado para 3–15 unidades ligeras | Centralización de vencimientos y comprobantes de gastos por unidad para dueños de pequeños negocios. |
+| **Hogares y Power Users Multi-Vehículo** *(Fase 1 — Opcional)* | Sincronización en la nube y gestión de `2+` vehículos personales o familiares | Respaldo multi-dispositivo para entusiastas o familias con varias unidades. |
+| **Refaccionarias y Talleres Locales** *(Lado B — Monetizable en Fase 1)* | Promociones pagadas y etiquetadas con código comprobable cuando el usuario cercano entra en ventana de servicio, más vista simple de comprobación y reporte mensual desde el celular del encargado | Clientes locales con necesidad mecánica inmediata y ventas comprobadas en mostrador (sin instalar software en caja, sin calificaciones ni certificaciones presenciales). |
+| **Micro-flotillas Comerciales** *(Fase 2 — B2B)* | Panel web/móvil centralizado para 2–15 unidades ligeras comerciales | Centralización de vencimientos y comprobantes de gastos por unidad para dueños o encargados de pequeños negocios. |
 
 ### 6.2 Canales de Distribución y Relación con Clientes (Cero Deuda Operativa)
 Mantener múltiples redes sociales con atención humana representa una deuda operativa inasumible para un equipo de ingeniería. La estrategia es estrictamente automatizada:
@@ -190,6 +191,7 @@ Mantener múltiples redes sociales con atención humana representa una deuda ope
    - **Autoservicio estricto in-app:** Flujos guiados sin soporte humano en tiempo real.
    - **Notificaciones quirúrgicas y check-in semanal:** Cero spam; sin canales externos costosos (sin SMS ni WhatsApp transaccional).
    - **Telemetría técnica pasiva:** Reporte automatizado de errores (*Crashlytics*) y buzón asíncrono de sugerencias.
+   - **Política condicionada al reactivo `A34` (canal de soporte preferido):** Si en el Instrumento A resulta mayoritario WhatsApp, se habilitará **un número de WhatsApp para soporte básico asíncrono** (sin API de pago, respuestas con plantillas y ventana de atención de `24–48 h`, con un tope de horas semanales asignado a Operaciones). Las notificaciones y avisos transaccionales por WhatsApp o SMS siguen excluidos. Si gana la ayuda dentro de la app o los videos, se mantiene el autoservicio estricto. El costo en horas se trasladará al Estudio Económico-Financiero.
 
 ### 6.3 Estructura de Costes (MVP Austin vs. Escalamiento)
 1. **Costes Reales de Validación MVP (Fase 0):**
@@ -207,12 +209,12 @@ Mantener múltiples redes sociales con atención humana representa una deuda ope
 1. **Fase 0 — Validación MVP (Meses 1–6 | Ingreso directo: `` `$0 MXN` ``):**
    - Todo el núcleo funcional (1 vehículo, semáforo, alertas duales, bitácora fotográfica local y exportación gratuita de historial) es **100% gratuito**.
    - *Por qué se elimina la venta de PDF a `$49 MXN` como tesis del Año 1:* Un historial autodeclarado (especialmente en modo DIY) no certifica veracidad mecánica ante un comprador escéptico aunque tenga hash criptográfico, y los ciclos de reventa (2–4 años) no generan flujo de caja en el primer año. El resumen exportable se entrega **gratis** para maximizar retención y boca a boca.
-2. **Fase 1 — Monetización Local por Atribución (Al superar `>1,000–2,000` MAU en una ciudad):**
-   - **Promociones Contextuales con Atribución en Caja (Motor B2B Local):** Cuando un usuario entra en ventana preventiva (~300 km), la app muestra un beneficio de una refaccionaria o taller cercano (*ej. descuento en aceite o revisión mostrando código en mostrador*). El comercio paga una pauta mensual accesible (ej. `` `$299–$499 MXN/mes` ``) o tarifa por cupón redimido, con métricas claras de retorno en caja y **sin que Itinera certifique la calidad del taller**.
-   - **Plan Plus Multi-Vehículo (Complemento Freemium):** `` `$49 MXN/mes` `` o `` `$399 MXN/año` `` para gestionar **3+ vehículos** y respaldar en la nube. Se proyecta de forma conservadora (conversión `<2%–5%`) para ayudar a costear infraestructura cloud, nunca como ingreso principal.
+2. **Fase 1 — Monetización Local por Atribución y Plan Comercial para Talleres:**
+   - **Promociones Contextuales y Vinculación Ligera Taller–Cliente (Motor B2B Local):** Al cruzar la compuerta de `>1,000–2,000` MAU locales, cuando un usuario entra en ventana preventiva la app muestra una **"Promoción pagada"** de un comercio aliado cercano (*ej. descuento en aceite mostrando un código en mostrador*). El taller puede además difundir la app con su cartel QR, y el usuario puede, por iniciativa propia, ligar su taller de confianza (`HomeWorkshopTag` en Fase 0 sin transferencia de datos; `WorkshopLink` con consentimiento en Fase 1). El comercio entra con una **prueba por volumen** (primeros `N` clientes comprobados sin costo) y luego elige entre **cuota mensual accesible** (hipótesis `` `$299–$499 MXN/mes` ``, a validar con `B22`) o **pago por cada venta comprobada con cupón** (hipótesis `` `$20–$40 MXN` ``, a validar con `B23`). El canje se valida desde el celular del encargado o por WhatsApp, sin software en caja, **y sin que Itinera califique ni certifique la calidad mecánica del taller**.
+   - **Plan Plus Multi-Vehículo (Complemento Freemium):** `` `$49 MXN/mes` `` o `` `$399 MXN/año` `` (hipótesis a validar con `A30`) para gestionar **2+ vehículos personales o familiares** y respaldar en la nube. Se proyecta de forma conservadora (conversión `<2%–5%`) para ayudar a costear infraestructura cloud, nunca como ingreso principal.
 3. **Fase 2 — Escala Regional / Multi-ciudad (`>10,000+` MAU):**
    - **Patrocinio nativo de distribuidores/marcas de insumos:** Recomendaciones técnicas contextuales dentro del catálogo de mantenimiento financiadas por distribuidores regionales o fabricantes.
-   - **Suscripción B2B para Micro-flotillas Locales:** Panel web centralizado de recordatorios y control de comprobantes (`` `$39–$79 MXN/vehículo/mes` ``) para negocios con 3–15 unidades ligeras.
+   - **Suscripción B2B para Micro-flotillas Locales:** Panel web centralizado de recordatorios y control de comprobantes (`` `$39–$79 MXN/vehículo/mes` ``) para negocios con 2–15 unidades ligeras comerciales.
 
 ---
 
@@ -223,14 +225,18 @@ Esta sección documenta qué se ajustó respecto a propuestas preliminares para 
 | Propuesta / Supuesto previo | Decisión | Justificación (Incentivos / Fricción / Deuda Operativa) |
 | :--- | :--- | :--- |
 | **Venta de Certificado PDF criptográfico (`$49 MXN`) como ingreso Fase 1** | **Reubicado a exportación gratuita** | Un sello criptográfico sobre datos autodeclarados no prueba veracidad mecánica ante un comprador; además el ciclo de reventa (2–4 años) no sostiene el Año 1. |
-| **Directorio de talleres "certificados" y pines verificados** | **Eliminado** | Certificar talleres locales exige auditoría presencial continua (deuda operativa) y genera responsabilidad reputacional si el taller estafa al usuario. Se sustituye por pauta local transparente con cupones trazables en Fase 1. |
+| **Directorio de talleres "certificados" y pines verificados** | **Eliminado** | Certificar talleres locales exige auditoría presencial continua (deuda operativa) y genera responsabilidad reputacional si el taller estafa al usuario. Se sustituye por promociones pagadas, etiquetadas y sin calificaciones, con cupones comprobables en Fase 1 (`DOMAIN.md §3.1`). |
 | **Catálogo exacto de refacciones por modelo/año** | **Reducido a 3 plantillas editables** | Las motos económicas cambian compatibilidad entre lotes sin documentación fiable; 3 plantillas configurables cubren el MVP sin mantenimiento editorial permanente. |
 | **Cohorte MVP centrada en uso particular bajo (`25 km/día`)** | **Reenfocada a uso intensivo (`50–100+ km/día`)** | A `25 km/día` un ciclo de `2,500 km` tarda ~5 meses y no se valida en un semestre. Dueños de moto con uso intensivo (incluidos repartidores propios) completan un ciclo en 3–6 semanas. |
 | **Check-in de odómetro al cargar gasolina** | **Sustituido por check-in semanal en notificación + respaldo temporal** | Exigir abrir la app en cada carga es fricción frecuente; la confirmación semanal de 1 toque y el umbral por tiempo cubren incluso tableros con chicote roto. |
-| **Lanzamiento simultáneo iOS (`$99/año`), S3 cloud y SMS/WhatsApp** | **Pospuesto / Eliminado en MVP** | El mercado 125–250cc en México es mayoritariamente Android; arrancar con Android (`$25 USD`) + SQLite Local-First elimina costes variables y acelera validación. |
+| **Lanzamiento simultáneo iOS (`$99/año`), S3 cloud y SMS/WhatsApp** | **Pospuesto / Eliminado en MVP** | El mercado móvil en México es mayoritariamente Android (`74.11%–89.13%`, StatCounter; la proporción en el segmento motociclista se medirá en campo); arrancar con Android (`$25 USD`) + SQLite Local-First elimina costes variables y acelera validación. |
 | **Supervisión de choferes B2B sin hardware** | **Acotado en Fase 2** | Sin telemetría GPS/OBD-II, el chofer no tiene incentivo para reportar su propio descuido. El B2B futuro se limita a recordatorios y comprobantes para el dueño. |
 | **Convenios directos con multinacionales (Motul/Castrol) con 500 usuarios** | **Pospuesto a Fase 2 (`>10,000+` MAU)** | Las marcas globales no firman convenios directos por cientos de registros en una sola ciudad. |
 | **Promesas absolutas (*"riesgo cero"*, *"cero desvieladas"*)** | **Suavizado a lenguaje realista** | Ningún software evita fallas súbitas (ponchaduras, fallas eléctricas); el sistema reduce fallas previsibles por desgaste. |
+| **Frontera rígida `125–250cc` propias y estimación directa en km/día (`AUD-2` a `AUD-13`)** | **Ampliado a `110–250cc` (incl. motonetas y unidades de trabajo) + estimación por rutina diaria** | Cortar en `125cc` dejaba fuera la franja `110–125cc`, donde se concentran motonetas y motos de trabajo de entrada, y descartar motos de negocio reducía el techo financiero. **Precisión:** el `~70%` citado por la docente corresponde a `51–125cc`; el piso de `110cc` **no** captura esa franja completa, por lo que la proporción real `<110cc` frente a `110–125cc` se medirá con el reactivo `A7` (con opción *No sé* y deducción por tipo/marca) antes de fijar la frontera definitiva. Además, los conductores cotidianos no calculan km/día exactos, por lo que `Tasa_dia` se infiere con la tabla canónica de rutina (`DOMAIN.md §5.1`) y se valida primero con un prototipo visible antes de la encuesta formal. |
+| **Intervalos de cadena aplicados también a motonetas CVT** | **Separado por `Vehicle.transmision` (`cadena` \| `CVT`)** | Una banda CVT no se lubrica; aplicarle intervalos de cadena generaba alertas falsas. Se conservan 3 plantillas con dos variantes del consumible de transmisión. |
+| **Hueco entre 1 unidad gratuita y Plus `3+`; flotillas `3–15` vs. planes `1–3`** | **Plus = `2+` personales/familiares; `MicroFleetAccount` = `2–15` comerciales** | Hogares con 2 motos y negocios pequeños quedaban sin producto; la regla de clasificación por propiedad vive en `DOMAIN.md §3.2`. |
+| **Prueba gratuita B2B por tiempo antes de tener densidad** | **Prueba por volumen tras la compuerta `>1,000–2,000` MAU** | Una prueba sin canjes durante baja densidad produce la conclusión falsa de que el canal no funciona y quema al comercio como cliente. |
 
 ---
 

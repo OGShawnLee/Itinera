@@ -81,12 +81,12 @@ flowchart TD
     subgraph CanvasItinera["Business Model Canvas Reconciliado — Itinera (Fases 0, 1 y 2)"]
         direction LR
         S8["8. Socios Clave\n- F0: Sin dependencia externa\n- F1: Refaccionarias y talleres (cupones)\n- F2: Distribuidores regionales\n- Excluido: Auditoria de talleres"]
-        S7["7. Actividades Clave\n- Desarrollo Android-First / Local-First\n- UX Low-Touch y proyeccion de desgaste\n- Validacion de retencion cohorte 125-250cc"]
-        S6["6. Recursos Clave\n- 3 plantillas editables 125-250cc\n- Motor SQLite local + matematica dual\n- Equipo de ingenieria (3 integrantes)"]
-        S1["1. Propuesta de Valor\n- B2C: Semaforo 5 consumibles, check-in 1 toque,\nalertas duales y resumen exportable gratis\n- F1 B2B: Trafico medible en mostrador\n- F2 B2B: Panel micro-flotillas 3-15 uds"]
+        S7["7. Actividades Clave\n- Desarrollo Android-First / Local-First\n- UX Low-Touch y proyeccion de desgaste\n- Validacion de retencion cohorte 110-250cc"]
+        S6["6. Recursos Clave\n- 3 plantillas editables 110-250cc\n- Motor SQLite local + matematica dual\n- Equipo de ingenieria (3 integrantes)"]
+        S1["1. Propuesta de Valor\n- B2C: Semaforo 5 consumibles, check-in 1 toque,\nalertas duales y resumen exportable gratis\n- F1 B2B: Trafico medible en mostrador\n- F2 B2B: Panel micro-flotillas 2-15 uds"]
         S4["4. Relacion con Clientes\n- Autoservicio estricto in-app\n- Check-in semanal y alertas quirurgicas\n- Telemetria pasiva (Crashlytics)"]
         S3["3. Canales\n- Google Play Store (ASO organico)\n- Boca a boca / clubes locales\n- Material QR en mostrador (Fase 1)\n- Cero deuda en redes sociales"]
-        S2["2. Segmentos de Clientes\n- MVP: Motos 125-250cc 50-100+ km/dia\ny uso moderado 15-30 km/dia\n- F1: Refaccionarias y talleres (pagan)\n- F2: Autos, Plus 3+ y micro-flotillas"]
+        S2["2. Segmentos de Clientes\n- MVP: Motos 110-250cc 50-100+ km/dia\ny uso moderado 15-30 km/dia\n- F1: Refaccionarias y talleres (pagan)\n- F2: Autos, Plus 2+ y micro-flotillas"]
         S9["9. Estructura de Costes\n- F0: $25 USD unico Play Store + $0 nube/SMS\n- F1-2: Cloud sync/storage selectivo,\npasarelas, iOS ($99/ano) bajo demanda"]
         S5["5. Fuentes de Ingresos\n- F0: $0 MXN (retencion y densidad)\n- F1: Cupones trazables + Plan Plus opcional\n- F2: Patrocinio distribuidores + Micro-flotillas"]
     end
@@ -110,18 +110,18 @@ Para evitar la fragmentación prematura del producto, Itinera mantiene una **pro
    - **Previsibilidad económica y seguridad vial (`SurgicalAlert`):** Emite alertas únicamente al cruzar el umbral **Amarillo** (ventana de planeación para ahorrar y cotizar) o **Rojo** (umbral crítico de motor o seguridad), reduciendo averías previsibles en ruta.
    - **Bitácora rápida, soporte DIY y empoderamiento (`MaintenanceLog` + `ExportableSummary`):** Permite registrar servicios de taller o auto-mantenimiento (*DIY*) en `< 15 segundos` con costo y foto local opcional, además de generar un **resumen exportable gratuito** para consulta personal, respaldo al cotizar (neutralizando asimetría técnica y sobrecostos, especialmente relevante para conductoras y novatos) o entrega al vender la unidad.
 2. **Para *Power Users* Multi-Vehículo (Fase 1 — Complemento Opcional):**
-   - **Continuidad multi-unidad (`PlusSubscription`):** Gestión de `3+` vehículos y sincronización/respaldo en la nube entre dispositivos para entusiastas o familias que sí requieren persistencia remota.
+   - **Continuidad multi-unidad (`PlusSubscription`):** Gestión de `2+` vehículos personales o familiares y sincronización/respaldo en la nube entre dispositivos para entusiastas o familias que sí requieren persistencia remota.
 3. **Para Refaccionarias y Talleres Locales (Lado B — Monetizable en Fase 1):**
    - **Atribución medible en mostrador (`ContextualPromotion`):** Canaliza demanda preventiva con intención de compra inmediata cuando un usuario cercano entra en estado `Amarillo` o `Rojo`, mediante códigos o cupones canjeables en caja que prueban retorno directo **sin que Itinera certifique presencialmente la calidad del taller**.
 4. **Para Dueños de Micro-Flotillas Comerciales (Fase 2 — B2B):**
-   - **Centralización operativa (`MicroFleetAccount`):** Tablero unificado de vencimientos y comprobantes de gasto para `3–15` unidades ligeras, evitando paros operativos por olvido sin prometer auditoría de conducta de choferes sin telemetría física.
+   - **Centralización operativa (`MicroFleetAccount`):** Tablero unificado de vencimientos y comprobantes de gasto para `2–15` unidades ligeras comerciales, evitando paros operativos por olvido sin prometer auditoría de conducta de choferes sin telemetría física.
 
 | Actor / Horizonte | Mecanismo Central de Valor | Dolor Específico que Resuelve | Qué NO Promete (Frontera de Alcance) |
 | :--- | :--- | :--- | :--- |
-| **Conductor Moto 125–250cc (MVP Fase 0)** | `WearTrafficLight`, `WeeklyCheckIn`, `SurgicalAlert`, `ExportableSummary` gratis | Olvido de intervalos cortos, gastos sorpresa, chicote roto, asimetría en talleres | Cero fallas súbitas (ponchaduras/eléctricas) o contabilidad exhaustiva de gasolina |
-| **Power User Multi-Vehículo (Fase 1)** | `PlusSubscription` (`3+` unidades + cloud sync) | Pérdida de historial al cambiar de teléfono con múltiples unidades | Funcionalidades gratuitas bloqueadas para el conductor de 1 unidad |
-| **Refaccionaria / Taller Local (Fase 1)** | `ContextualPromotion` con cupón trazable | Pauta publicitaria ciega sin saber si el cliente llegó por la app | Certificación de calidad mecánica ni gestión de agenda del taller |
-| **Micro-Flotilla 3–15 Unidades (Fase 2)** | `MicroFleetAccount` | Desorganización de servicios y tickets dispersos entre choferes | Detección de robo de combustible o maltrato del chofer sin hardware GPS/OBD-II |
+| **Conductor Moto 110–250cc (MVP Fase 0)** | `WearTrafficLight`, `WeeklyCheckIn`, `SurgicalAlert`, `ExportableSummary` gratis | Olvido de intervalos cortos, gastos sorpresa, chicote roto, asimetría en talleres | Cero fallas súbitas (ponchaduras/eléctricas) o contabilidad exhaustiva de gasolina |
+| **Power User Multi-Vehículo (Fase 1)** | `PlusSubscription` (`2+` unidades personales + cloud sync) | Pérdida de historial al cambiar de teléfono con múltiples unidades | Funcionalidades gratuitas bloqueadas para el conductor de 1 unidad |
+| **Refaccionaria / Taller Local (Fase 1)** | `ContextualPromotion` con cupón trazable | Publicidad ciega sin saber si el cliente llegó por la app | Certificación de calidad mecánica ni gestión de agenda del taller |
+| **Micro-Flotilla 2–15 Unidades (Fase 2)** | `MicroFleetAccount` | Desorganización de servicios y tickets dispersos entre choferes | Detección de robo de combustible o maltrato del chofer sin hardware GPS/OBD-II |
 
 ---
 
@@ -134,11 +134,11 @@ Ninguna organización sobrevive sin definir con precisión a quién sirve y **qu
 Itinera separa rigurosamente la **cohorte de validación semestral del MVP**, el **lado pagador de Fase 1** y el **universo de expansión de Fase 2** ([SPECIFICATION.md](file:///C:/Users/OGSha/OneDrive/Escritorio/Developer/App%20Development/Itinera/.routing/academic/SPECIFICATION.md#L86-L113)):
 
 1. **Cohorte Prioritaria de Validación MVP (B2C — Uso Intensivo, `50–100+ km/día`):**
-   - **Perfil:** Propietarios-operadores de motocicletas `125–250cc` (18 a 45 años; concentración clave 20–35 años), incluyendo estudiantes, trabajadores de trayectos largos y **repartidores independientes dueños de su propia motocicleta**.
+   - **Perfil:** Propietarios-operadores de motocicletas `110–250cc` (18 a 45 años; concentración clave 20–35 años), incluyendo estudiantes, trabajadores de trayectos largos y **repartidores independientes dueños de su propia motocicleta**.
    - **Justificación matemática de validación semestral:** Un usuario moderado que rueda `25 km/día` (5 días/semana) tarda aproximadamente **5 meses** en alcanzar un intervalo base de `2,500 km`, lo que imposibilita observar un ciclo completo de servicio y retención dentro de un semestre académico. En cambio, un propietario-operador a `50–100+ km/día` completa el ciclo completo en **3 a 6 semanas**, permitiendo calibrar `OdometerProjection`, validar la tasa real de respuesta al `WeeklyCheckIn` y medir la retención posterior al primer mantenimiento.
    - **Regla de desacoplamiento del repartidor:** Si el repartidor es *dueño* de su motocicleta, pertenece a esta cohorte B2C MVP (alineación total entre usuario, pagador de refacciones y beneficiario). Si la motocicleta pertenece a una empresa o patrón, se deriva a **Fase 2 B2B** (`MicroFleetAccount`), evitando el desacople de incentivos en el MVP.
 2. **Cohorte B2C Secundaria (MVP — Traslado Urbano Moderado, `15–30 km/día`):**
-   - **Perfil:** Conductores particulares de moto `125–250cc` (18 a 60 años; concentración 22–40 años).
+   - **Perfil:** Conductores particulares de moto `110–250cc` (18 a 60 años; concentración 22–40 años).
    - **Mecanismo de retención:** Aunque acumulan menor kilometraje, quedan cubiertos por el componente calendario de la regla dual (degradación temporal de aceite, líquido de frenos y hules) y por las plantillas estándar frente al desconocimiento mecánico.
 3. **Nichos Transversales B2C (sin romper la ortogonalidad vehicular):**
    - *Conductores novatos / primera moto:* Requieren lenguaje cotidiano y plantillas precargadas.
@@ -149,8 +149,8 @@ Itinera separa rigurosamente la **cohorte de validación semestral del MVP**, el
    - **Refaccionarias y talleres mecánicos locales:** Negocios con margen comercial directo en aceites, kits de arrastre, balatas, bujías, llantas y mano de obra, que adquieren visibilidad contextual ante usuarios con necesidad inminente.
 5. **Segmentos de Expansión en Fase 2:**
    - **Propietarios de automóviles particulares** (18 a 75 años; concentración 28–50 años, vehículos usados/seminuevos fuera de garantía).
-   - **Power Users Multi-Vehículo** (`3+` unidades en `PlusSubscription`).
-   - **Micro-flotillas comerciales locales (B2B)** con `3–15` unidades ligeras (taxis bajo contrato, ferreterías, panaderías, reparto propio; escalonado en Micro `1–3`, PyME `4–10`, Mediana `10+`), donde el **dueño del negocio** es el cliente comprador y los choferes son usuarios operativos.
+   - **Power Users Multi-Vehículo** (`2+` unidades personales o familiares en `PlusSubscription`).
+   - **Micro-flotillas comerciales locales (B2B)** con `2–15` unidades ligeras comerciales (reparto propio, mensajería, ferreterías, panaderías, taxis bajo contrato; escalonado en Micro `2–5` y Pequeña `6–15`), donde el **dueño del negocio** es el cliente comprador y los choferes son usuarios operativos.
    - **Distribuidores regionales y fabricantes de insumos** (`>10,000+` MAU).
 
 #### Exclusiones Permanentes de Segmentación
@@ -168,7 +168,7 @@ Los Canales definen los puntos de contacto a través de los cuales una propuesta
 Itinera prohíbe explícitamente estrategias intensivas en mano de obra editorial o atención diaria en redes sociales (como mantener perfiles activos en múltiples plataformas con respuesta humana en tiempo real), priorizando canales de **alta intención, distribución automatizada y tracción física escalonada** ([SPECIFICATION.md](file:///C:/Users/OGSha/OneDrive/Escritorio/Developer/App%20Development/Itinera/.routing/academic/SPECIFICATION.md#L183-L189)):
 
 1. **Fase 0 (MVP Android-First):**
-   - **Google Play Store con ASO orgánico (*App Store Optimization*):** Canal principal de descubrimiento y entrega. Optimización de ficha, capturas y palabras clave de alta intención en México (*"mantenimiento moto"*, *"control cambio de aceite"*, *"bitácora moto 125 250"*), aprovechando que `>85%` del mercado objetivo opera en Android.
+   - **Google Play Store con ASO orgánico (*App Store Optimization*):** Canal principal de descubrimiento y entrega. Optimización de ficha, capturas y palabras clave de alta intención en México (*"mantenimiento moto"*, *"control cambio de aceite"*, *"bitácora moto"*), aprovechando que Android concentra `74.11%–89.13%` del mercado móvil nacional (StatCounter); la proporción en el segmento motociclista (`>85%` estimado) se medirá en campo.
    - **Recomendación orgánica boca a boca y clubes locales:** Difusión en grupos de motociclistas urbanos y repartidores, potenciada de manera natural cuando el usuario comparte su `ExportableSummary` gratuito en PDF/texto al vender su unidad o al recomendar la herramienta a compañeros de ruta.
 2. **Fase 1 (Activación Local con Densidad Comprobada):**
    - **Tracción física en punto de venta (QR en mostrador):** Colocación de señalética con código QR en refaccionarias y talleres participantes de la ciudad piloto, conectando la adquisición de nuevos usuarios directamente con el momento de compra de aceite o refacciones y cerrando el bucle de los cupones trazables.
@@ -195,14 +195,14 @@ Para preservar la viabilidad económica de un producto B2C gratuito y no colapsa
 3. **Telemetría técnica pasiva y retroalimentación asíncrona:**
    - Captura automatizada de fallos de estabilidad mediante **Crashlytics** y un buzón asíncrono ligero para reportes o sugerencias, reduciendo el costo operativo de mantenimiento a horas controladas de ingeniería.
 4. **Relación B2B por reporte de retorno (Fase 1 y 2):**
-   - Para comercios locales (`ContextualPromotion`) y micro-flotillas (`MicroFleetAccount`), la relación se apoya en métricas objetivas de cupones redimidos en mostrador y en la continuidad operativa del panel administrativo.
+   - Para comercios locales (`ContextualPromotion`) y micro-flotillas (`MicroFleetAccount`), la relación se apoya en métricas objetivas de ventas comprobadas con cupón en mostrador y un reporte mensual simple y en la continuidad operativa del panel administrativo.
 
 ---
 
 ### Bloque 5: Fuentes de Ingresos (*Revenue Streams*)
 
 #### Fundamento Teórico
-Osterwalder distingue entre ingresos transaccionales (pagos únicos) y recurrentes (suscripciones, pauta continua, licenciamiento), subrayando que el precio debe reflejar el mecanismo real de captura de valor y la disposición a pagar (*willingness to pay*) de cada segmento.
+Osterwalder distingue entre ingresos transaccionales (pagos únicos) y recurrentes (suscripciones, publicidad continua, licenciamiento), subrayando que el precio debe reflejar el mecanismo real de captura de valor y la disposición a pagar (*willingness to pay*) de cada segmento.
 
 #### Diagnóstico Económico Central y Modelo Honesto en 3 Fases
 El análisis económico del proyecto estableció una restricción estructural innegociable: **el conductor particular de clase media/baja en México presenta una alta resistencia psicológica y económica a pagar por una aplicación de bitácora** (*"persona no paga, taller/agencia sí"*). Quienes poseen margen comercial real para pagar son los **actores del ecosistema que monetizan la demanda preventiva**.
@@ -212,10 +212,10 @@ En consecuencia, la captura de valor se estructura en **3 fases secuenciales** (
 | Fase / Compuerta | Flujo de Ingresos | Mecanismo y Tarifa Referencial | Rol Estratégico |
 | :--- | :--- | :--- | :--- |
 | **Fase 0 — Validación MVP** *(Meses 1–6)* | `$0 MXN` *(100% gratuito)* | Núcleo completo para 1 vehículo + `ExportableSummary` gratuito | Maximizar adopción, validar retención semanal en cohorte intensiva y construir densidad urbana |
-| **Fase 1 — Monetización Local** *(Al superar `>1,000–2,000` MAU en una ciudad)* | **`ContextualPromotion`** *(Motor principal B2B local)* | Pauta local accesible (`$299–$499 MXN/mes`) o tarifa por cupón redimido en caja | Capturar margen comercial de refaccionarias/talleres con atribución verificable en mostrador |
-| **Fase 1 — Complemento Freemium** *(Opcional)* | **`PlusSubscription`** *(Power Users)* | `$49 MXN/mes` o `$399 MXN/año` para `3+` vehículos y cloud sync (conversión conservadora `<2%–5%`) | Financiar de manera proporcional el costo de almacenamiento y sincronización en la nube |
-| **Fase 2 — Escala Regional** *(Al superar `>10,000+` MAU)* | **`SupplierSponsorship`** *(Pauta técnica nativa)* | Patrocinio contextual de especificaciones compatibles por distribuidores o fabricantes | Escalar monetización B2B sin anuncios genéricos intrusivos |
-| **Fase 2 — Expansión B2B** *(Empresas locales)* | **`MicroFleetAccount`** *(Suscripción por unidad)* | `$39–$79 MXN/vehículo/mes` para negocios con `3–15` unidades ligeras | Ingreso recurrente predecible por centralización de vencimientos y comprobantes |
+| **Fase 1 — Monetización Local** *(Al superar `>1,000–2,000` MAU en una ciudad)* | **`ContextualPromotion`** *(Motor principal B2B local)* | Tras prueba por volumen (primeros `N` clientes comprobados gratis): cuota mensual accesible (hipótesis `$299–$499 MXN/mes`) o pago por cada venta comprobada con cupón (hipótesis `$20–$40 MXN`) | Capturar margen comercial de refaccionarias/talleres con atribución verificable en mostrador |
+| **Fase 1 — Complemento Freemium** *(Opcional)* | **`PlusSubscription`** *(Power Users)* | `$49 MXN/mes` o `$399 MXN/año` para `2+` vehículos personales y cloud sync (conversión conservadora `<2%–5%`) | Financiar de manera proporcional el costo de almacenamiento y sincronización en la nube |
+| **Fase 2 — Escala Regional** *(Al superar `>10,000+` MAU)* | **`SupplierSponsorship`** *(Patrocinio técnico nativo)* | Patrocinio contextual de especificaciones compatibles por distribuidores o fabricantes | Escalar monetización B2B sin anuncios genéricos intrusivos |
+| **Fase 2 — Expansión B2B** *(Empresas locales)* | **`MicroFleetAccount`** *(Suscripción por unidad)* | `$39–$79 MXN/vehículo/mes` para negocios con `2–15` unidades ligeras comerciales | Ingreso recurrente predecible por centralización de vencimientos y comprobantes |
 
 #### Por qué se Eliminó la Tesis del Certificado PDF Pagado (`$49 MXN`) en el Año 1
 En versiones preliminares del proyecto se propuso cobrar `$49 MXN` por emitir un resumen histórico en PDF con sello criptográfico para la reventa de vehículos. Esta hipótesis fue **eliminada como fuente de ingresos del Año 1** por dos fallas económicas y de incentivos verificadas:
@@ -233,7 +233,7 @@ Los Recursos Clave comprenden los activos físicos, intelectuales, humanos y fin
 Itinera evita acumular activos costosos o editoriales difíciles de mantener, concentrándose en cuatro recursos de alto apalancamiento:
 
 1. **Recursos Intelectuales — Las 3 Plantillas Curadas Editables (`ServiceTemplate`):**
-   - Conjunto de 3 perfiles configurables para motocicletas `125–250cc` (*Moto Urbana 125–250cc*, *Moto Trabajo / Uso Rudo* y *Personalizada*) que definen intervalos iniciales ($I_{km}$ e $I_{tiempo}$) para los 5 `ConsumableItem`.
+   - Conjunto de 3 perfiles configurables para motocicletas `110–250cc` (*Moto Urbana 110–250cc*, *Moto Trabajo / Uso Rudo* y *Personalizada*) que definen intervalos iniciales ($I_{km}$ e $I_{tiempo}$) para los 5 `ConsumableItem`, con variante de transmisión por cadena o banda CVT según `Vehicle.transmision`.
    - Cubren aproximadamente el **80% del parque económico circulante** (Italika, Bajaj, Honda, Vento) y sustituyen por completo la deuda inviable de mantener un catálogo exacto de compatibilidades por año/lote (`ExactModelPartsCatalog`).
 2. **Recursos Tecnológicos — Motor *Local-First* SQLite y Lógica Matemática de Proyección:**
    - Base de datos embebida en dispositivo (**SQLite**) con almacenamiento local de fotografías de servicio, asegurando operación offline total en talleres o carretera con costo de servidor igual a cero.
@@ -257,7 +257,7 @@ Las Actividades Clave son las acciones estratégicas más importantes que la org
 2. **Refinamiento de Estimación de Desgaste y UX *Low-Touch*:**
    - Iteración continua sobre la fricción de entrada para cumplir estrictamente las cotas temporales del diseño: onboarding inicial `< 30 segundos`, registro de `MaintenanceLog` en `< 15 segundos` y respuesta a `WeeklyCheckIn` en `< 5 segundos`.
    - Calibración del algoritmo de desgaste dual y del ajuste por media móvil frente a hábitos reales de conducción y casos de odómetro físico averiado.
-3. **Validación de Retención en Cohorte `125–250cc`:**
+3. **Validación de Retención en Cohorte `110–250cc`:**
    - Seguimiento empírico de la cohorte semestral (`50–100+ km/día`) para comprobar tasa de activación, respuesta semanal al check-in, completitud de al menos un ciclo de cambio de aceite/cadena (3 a 6 semanas) y conversión de exportación gratuita.
 4. **Activación Ecosistémica y Operación Selectiva (Activadas solo en Fase 1 y Fase 2):**
    - En Fase 1: Afiliación local de refaccionarias/talleres con cupones trazables en mostrador y verificación de retorno en caja.
@@ -296,10 +296,10 @@ Itinera aplica una estructura **estrictamente austera (*Lean / Bootstrapped*)** 
 
 | Rubro de Coste | Fase 0 — MVP (*Local-First*) | Fase 1 y Fase 2 — Escalamiento Condicional | Justificación Técnica y Financiera |
 | :--- | :--- | :--- | :--- |
-| **Publicación en Tiendas** | `$25 USD` *(pago único Google Play Console)* | `$99 USD/año` *(Apple Developer Program)* | Android cubre `>85%` del segmento objetivo; iOS se pospone hasta validar retención y demanda pagada |
+| **Publicación en Tiendas** | `$25 USD` *(pago único Google Play Console)* | `$99 USD/año` *(Apple Developer Program)* | Android concentra `74.11%–89.13%` del mercado nacional (`>85%` en el segmento, supuesto a medir); iOS se pospone hasta validar retención y demanda pagada |
 | **Infraestructura Cloud y Storage** | `$0 MXN` *(SQLite y fotos locales)* | Instancia base PostgreSQL / Supabase + Object Storage | Solo se activa para usuarios de `PlusSubscription` (cloud sync) o panel web `MicroFleetAccount` |
 | **Comunicaciones (SMS / WhatsApp)** | `$0 MXN` *(notificaciones push locales)* | `$0 MXN` *(mantiene push nativas)* | Las alertas y check-ins se ejecutan localmente en el dispositivo sin pasarelas de mensajería |
-| **Pasarelas de Pago** | `$0 MXN` *(sin cobros in-app)* | Comisión estándar (`~3.5% + $3 MXN` por transacción) | Aplicada únicamente sobre suscripciones o pautas B2B activas en Fase 1–2 |
+| **Pasarelas de Pago** | `$0 MXN` *(sin cobros in-app)* | Comisión estándar (`~3.5% + $3 MXN` por transacción) | Aplicada únicamente sobre suscripciones o cobros B2B a comercios aliados en Fase 1–2 |
 | **Soporte y Redes Sociales** | `$0 MXN` *(autoservicio + Crashlytics)* | Mínimo automatizado / prospección B2B selectiva | Elimina la deuda operativa de *community management* y mesa de ayuda en tiempo real |
 | **Inversión Principal Real** | Horas de ingeniería del equipo + curación de 3 plantillas | Evolución de producto, operación B2B local y QA multiplataforma | El riesgo de capital monetario inicial se acota prácticamente a la licencia Play Store |
 
@@ -314,7 +314,7 @@ Cada hipótesis estratégica del Business Model Canvas de Itinera tiene un corre
 | Bloque del Business Model Canvas | Entidades / Reglas Vinculadas en `DOMAIN.md` | Exclusiones de Dominio que Protegen el Bloque |
 | :--- | :--- | :--- |
 | **1. Propuesta de Valor** | `WearTrafficLight`, `ConsumableItem` (5 críticos), `OdometerProjection`, `WeeklyCheckIn`, `SurgicalAlert` ($\min(t_{km}, t_{meses})$), `MaintenanceLog`, `ExportableSummary`, `ContextualPromotion` (F1), `PlusSubscription` (F1), `MicroFleetAccount` (F2) | `FuelAccountingLedger` (evita clon complejo tipo Drivvo); `ExactModelPartsCatalog` (evita catálogo inexacto de miles de motos) |
-| **2. Segmentos de Clientes** | `Vehicle` (MVP `125–250cc`; polimórfica para autos F2), `PlusSubscription` (`3+` unidades), `MicroFleetAccount` (`3–15` unidades ligeras F2) | `HeavyDutyFleet` (tráilers, autobuses, SCT, J1939/OBD-II) y auditoría de choferes sin hardware |
+| **2. Segmentos de Clientes** | `Vehicle` (MVP `110–250cc`; polimórfica para autos F2), `PlusSubscription` (`2+` unidades personales), `MicroFleetAccount` (`2–15` unidades ligeras comerciales F2) | `HeavyDutyFleet` (tráilers, autobuses, SCT, J1939/OBD-II) y auditoría de choferes sin hardware |
 | **3. Canales** | `ExportableSummary` (vector orgánico boca a boca gratuito) y `ContextualPromotion` (puente con QR en mostrador F1) | Venta pagada de PDF criptográfico (`$49 MXN`) como canal transaccional en Año 1 |
 | **4. Relación con Clientes** | `WeeklyCheckIn` (`< 5 s`), `SurgicalAlert` (solo en `Amarillo` / `Rojo`), `MaintenanceLog` (`< 15 s`, modo `DIY` o `Taller` libre) | Canales de soporte humano en tiempo real, SMS/WhatsApp transaccional y notificaciones diarias invasivas |
 | **5. Fuentes de Ingresos** | `ExportableSummary` (`$0` en F0), `ContextualPromotion` (F1 `>1,000–2,000` MAU), `PlusSubscription` (F1 opcional), `SupplierSponsorship` (F2 `>10,000+` MAU), `MicroFleetAccount` (F2 B2B) | Monetización prematura al usuario particular de 1 unidad o cobro por certificado PDF en Año 1 |
@@ -346,7 +346,7 @@ flowchart LR
 ```
 
 1. **Aislamiento de Deuda Cloud y de Pasarelas en Fase 0:** Al fijar el ingreso directo de Fase 0 en `$0 MXN` y el núcleo B2C en SQLite *Local-First*, el equipo de ingeniería elimina de raíz la necesidad de implementar autenticación distribuida, sincronización conflict-free, buckets de almacenamiento de imágenes (S3), pasarelas de cobro y manejo de facturación fiscal durante el MVP.
-2. **Aislamiento de Deuda Multiplataforma (Android-First):** Posponer la compilación y el QA en iOS (`$99 USD/año`) hasta la Fase 2 concentra el 100% de las horas de ingeniería en optimizar la experiencia Android para el mercado mayoritario (`>85%`) de motocicletas `125–250cc` en México.
+2. **Aislamiento de Deuda Multiplataforma (Android-First):** Posponer la compilación y el QA en iOS (`$99 USD/año`) hasta la Fase 2 concentra el 100% de las horas de ingeniería en optimizar la experiencia Android para el mercado mayoritario (`74.11%–89.13%` nacional; `>85%` estimado en el segmento motociclista, sujeto a medición).
 3. **Aislamiento de Deuda de Operaciones en Campo:** Sustituir el directorio de talleres certificados (`CertifiedWorkshopDirectory`) por `ContextualPromotion` con cupones trazables y mantener la relación B2C en autoservicio estricto garantiza que Itinera escale como **empresa de software de alta eficiencia**, y nunca como una operación intensiva en personal de campo, auditoría mecánica o atención telefónica.
 
 ---
@@ -356,5 +356,5 @@ flowchart LR
 La aplicación del **Business Model Canvas** en **Itinera** demuestra cómo un marco conceptual de estrategia empresarial se convierte en una **herramienta de defensa de ingeniería**. Al cruzar las nueve dimensiones de Osterwalder y Pigneur con los hallazgos conductuales del Design Thinking y las invariantes de [DOMAIN.md](file:///C:/Users/OGSha/OneDrive/Escritorio/Developer/App%20Development/Itinera/.routing/DOMAIN.md), el proyecto evita tres trampas fatales frecuentes en emprendimientos tecnológicos tempranos:
 
 1. **Asumir pago B2C donde no existe disposición económica:** Resuelto mediante gratuidad total del núcleo personal y monetización por atribución comercial en mostrador (`ContextualPromotion`) una vez alcanzada densidad urbana.
-2. **Elegir una cohorte imposible de validar en un semestre:** Resuelto priorizando propietarios-operadores de motocicletas `125–250cc` de uso intensivo (`50–100+ km/día`) cuyos ciclos de servicio ocurren en 3 a 6 semanas.
+2. **Elegir una cohorte imposible de validar en un semestre:** Resuelto priorizando propietarios-operadores de motocicletas `110–250cc` de uso intensivo (`50–100+ km/día`) cuyos ciclos de servicio ocurren en 3 a 6 semanas.
 3. **Comprometer al equipo con deuda operativa o infraestructura innecesaria:** Resuelto mediante arquitectura Android *Local-First* en SQLite, 3 plantillas curadas editables, autoservicio estricto y compuertas explícitas de escalamiento para Fase 1 y Fase 2.

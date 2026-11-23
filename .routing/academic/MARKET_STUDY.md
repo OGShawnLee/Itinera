@@ -1,12 +1,13 @@
 # Estudio de Mercado — Proyecto Itinera
 
 > **Documento Operativo del Entregable Académico (`STUDY.md` — `TASK 1–5`)**  
-> **Estado:** `[DISEÑO METODOLÓGICO E INSTRUMENTOS COMPLETOS — FASE DE CAMPO PENDIENTE]`  
+> **Estado:** `[INSTRUMENTOS REESTRUCTURADOS TRAS RETROALIMENTACIÓN DOCENTE (AUD-1 a AUD-13, 36 puntos) — CAPTURAS DEL PROTOTIPO Y FASE DE CAMPO PENDIENTES]`  
 > **Asignatura:** Economía para Toma de Decisiones — Licenciatura en Ingeniería de Software  
-> **Proyecto:** [Itinera](file:///C:/Users/OGSha/OneDrive/Escritorio/Developer/App%20Development/Itinera/README.md) (*"Donde cada kilómetro cuenta"*)  
+> **Proyecto:** Itinera (*"Donde cada kilómetro cuenta"*)  
 > **Ciudad Piloto:** Xalapa, Veracruz, México  
 > **Fecha:** Noviembre 2026  
 > **Equipo de trabajo:** Gerardo Abraham Barrón Gómez, Edgar Vázquez García, Alberto Villalba Figueroa  
+> **Fuentes canónicas:** [`DOMAIN.md`](../DOMAIN.md) (tabla de rutina `§5.1`, transmisión `cadena`/`CVT`, comercios `§3.1`, clasificación por propiedad `§3.2`), [`ROUTES.md`](../ROUTES.md) (pantallas para capturas, `§4.D` diferido), [`SPECIFICATION.md`](SPECIFICATION.md), [`deliverables/LOG_RETROALIMENTACION.md`](../../deliverables/LOG_RETROALIMENTACION.md).
 
 ---
 
@@ -14,25 +15,15 @@
 
 ### 1.1 Objetivo General
 
-Validar la viabilidad de mercado, conductual y comercial de **Itinera** en **Xalapa, Veracruz** —una aplicación móvil Android *Local-First* enfocada en el seguimiento preventivo *Low-Touch* de los cinco consumibles críticos de motocicletas `125–250cc` en su MVP gratuito (Fase 0), articulada con un modelo de atribución local B2B en mostrador (`ContextualPromotion`) para refaccionarias y talleres independientes (Fase 1)—, cuantificando la demanda real de la cohorte objetivo, las brechas de la oferta existente, los canales orgánicos de menor fricción y la disposición a participar en ambos lados de la plataforma.
+Validar la viabilidad de mercado, conductual y comercial de **Itinera** en **Xalapa, Veracruz** —aplicación Android *Local-First* gratuita para el seguimiento preventivo de cinco consumibles críticos en motocicletas ligeras urbanas, de trabajo y motonetas (`110–250cc`, transmisión por cadena o CVT) en Fase 0, con un lado B2B de comercios locales que pagan por promociones etiquetadas y ventas comprobadas en Fase 1—, **presentando el prototipo a los encuestados antes de validar** y midiendo sin descartes prematuros a todos los motociclistas, para dimensionar la demanda real, la oferta sustituta, los canales de menor costo y la disposición a pagar en ambos lados de la plataforma.
 
 ### 1.2 Objetivos Específicos
 
-De acuerdo con los cuatro estudios de detalle establecidos en la consigna de la asignatura (incorporada en [spec.md](file:///C:/Users/OGSha/OneDrive/Escritorio/Developer/App%20Development/Itinera/.tickets/003-design-itinera-market-study/spec.md)), los objetivos específicos se estructuran por eje analítico:
-
-1. **Análisis de la Demanda (Segmento B2C — Conductores `125–250cc`):**
-   - Medir la proporción de propietarios-operadores de motocicletas `125–250cc` con teléfono **Android** en Xalapa, diferenciando la cohorte de uso intensivo (`50–100+ km/día`, incluyendo repartidores independientes dueños de su unidad) frente a usuarios de traslado urbano moderado (`15–30` a `49 km/día`).
-   - Cuantificar la prevalencia de **odómetro físico dañado o chicote roto**, el abandono de libretas físicas (*Síndrome de la Guantera*), la práctica de auto-mantenimiento (*DIY*) y la frecuencia de fallas o gastos imprevistos en los cinco `ConsumableItem` (aceite de motor, kit de arrastre/cadena, frenos/balatas, bujía y llantas).
-   - Evaluar la aceptación de la experiencia *Low-Touch* de Itinera: `WeeklyCheckIn` en 1 toque (`< 5 s/semana`), alertas quirúrgicas (`SurgicalAlert`) únicamente en umbrales `Amarillo` y `Rojo`, semáforo `WearTrafficLight` y resumen exportable gratuito (`ExportableSummary`).
-2. **Análisis de la Oferta y Competencia (Sustitutos Digitales y Analógicos):**
-   - Contrastar la propuesta de valor de Itinera frente a competidores digitales disponibles en Google Play México (**Drivvo**, **Fuelio**, **MotoLog / MotoriLog**) y sustitutos analógicos (libretas en guantera, stickers de taller, memoria o notas en el teléfono).
-   - Verificar si las tres plantillas editables (`ServiceTemplate`) y la bitácora rápida (`MaintenanceLog < 15 s`) resuelven las fricciones que provocan abandono en apps de contabilidad exhaustiva de combustible.
-3. **Análisis de Canales de Comercialización:**
-   - Identificar los canales de descubrimiento y descarga con menor costo y cero deuda operativa para el equipo: búsqueda orgánica en **Google Play Store (ASO)**, recomendación boca a boca en grupos/clubes locales (potenciada por `ExportableSummary` gratuito) y receptividad ante señalética con código **QR** en mostrador de refaccionarias (Fase 1).
-   - Validar en el lado B2B qué canales emplean actualmente las refaccionarias y talleres de Xalapa para atraer clientes `125–250cc` y cubrir sus valles estacionales de demanda.
-4. **Análisis de Precios y Disposición a Pagar / Redimir:**
-   - Confirmar la sensibilidad al precio en el Lado A (B2C), contrastando el modelo MVP de **`$0 MXN`** (núcleo completo y `ExportableSummary` gratuitos) frente a la resistencia a pagar suscripciones o documentos pagos en el segmento particular `125–250cc`.
-   - Medir en el Lado B (B2B Fase 1) la disposición de refaccionarias y talleres locales a ofrecer descuentos trazables en mostrador (`ContextualPromotion`) y su tarifa o costo por adquisición (CPA) aceptable (referencia `$299–$499 MXN/mes` o pago por cupón redimido en caja) **sin exigir certificación mecánica presencial en campo**, así como la disposición de los motociclistas a canjear dichos cupones cuando reciben una alerta `Amarillo`/`Rojo`.
+1. **Demanda (B2C, todos los motociclistas de Xalapa):** Perfilar sociodemográficamente al motociclista (edad, género, ingreso); medir la proporción por cilindrada (`<110`, `110–125`, `126–250`, `>250`, *No sé*), tipo de moto y transmisión, uso principal, propiedad de la unidad, rutina diaria y días de uso (misma escala que `Tasa_dia`), frecuencia y responsable de cada mantenimiento, motivo de hacerlo en casa o en taller, gasto mensual y forma actual de control.
+2. **Validación del producto:** Tras mostrar el prototipo, medir intención de uso (escala de 5 puntos calibrable), adecuación del check-in semanal sin kilómetros, utilidad del semáforo y anticipación preferida del aviso, utilidad del resumen exportable, interés en ligar la app con el taller de confianza y aceptación de promociones locales.
+3. **Oferta y competencia:** Contrastar Itinera frente a Drivvo, Fuelio, MotoLog/MotoriLog y sustitutos analógicos (libreta, sticker, memoria, WhatsApp), y medir en talleres/refaccionarias si ya existe algún sistema de recordatorio y cuánto se retrasan sus clientes.
+4. **Canales y soporte:** Medir cómo descubre apps el motociclista, su canal preferido de ayuda, y en comercios la aceptación del QR/enlace y otros medios de difusión.
+5. **Precios:** Medir con flujos condicionales la disposición a pagar B2C (monto y periodicidad) y, en B2B, la preferencia entre cuota mensual y pago por venta comprobada, el monto máximo de cada uno, el descuento tolerable y el número de clientes gratuitos necesarios para decidir (prueba por volumen).
 
 ---
 
@@ -40,346 +31,479 @@ De acuerdo con los cuatro estudios de detalle establecidos en la consigna de la 
 
 ### 2.1 Estilo y Diseño Metodológico del Estudio
 
-Conforme al marco teórico establecido en [MARKET_STUDY.md](file:///C:/Users/OGSha/OneDrive/Escritorio/Developer/App%20Development/Itinera/.routing/reference/MARKET_STUDY.md#L203-L213) y al requerimiento de doble segmento de la consigna académica ([spec.md](file:///C:/Users/OGSha/OneDrive/Escritorio/Developer/App%20Development/Itinera/.tickets/003-design-itinera-market-study/spec.md)), el estudio adopta un **diseño metodológico mixto** que combina dos enfoques diferenciados según la naturaleza de cada lado de la plataforma:
-
-| Dimensión Metodológica | Segmento A — Lado A (B2C: Motociclistas `125–250cc`) | Segmento B — Lado B (B2B Fase 1: Refaccionarias y Talleres) |
+| Dimensión Metodológica | Segmento A — Lado A (B2C: Motociclistas de Xalapa) | Segmento B — Lado B (B2B Fase 1: Talleres y Refaccionarias) |
 | :--- | :--- | :--- |
-| **Estilo de estudio** | **Estadístico / Cuantitativo** (encuesta estructurada con muestreo finito probabilístico / estratificado por cuotas operativas). | **No Estadístico / Cualitativo-Exploratorio** (entrevista estructurada en punto físico con muestreo por juicio y zonas comerciales). |
-| **Justificación metodológica** | Existe un universo amplio y acotado (`~40,000` motocicletas en circulación en Xalapa) donde se requiere estimar con rigor estadístico ($95\%$ de confianza, $\pm 5\%$ de error) la proporción de conductores con Android, uso intensivo (`50–100+ km/día`), odómetro averiado y aceptación de `WeeklyCheckIn` para proyectar la adopción del MVP. | El número de talleres especializados en motos en Xalapa es reducido (`~35` unidades registradas en SCIAN `811492` más refaccionarias `468311`). El objetivo en Fase 1 no es extrapolar medias poblacionales masivas, sino comprender márgenes, ticket promedio, estacionalidad y viabilidad comercial de `ContextualPromotion` con informantes clave. |
-| **Técnica e instrumento** | Cuestionario cerrado de **14 reactivos** (**Instrumento A**), digitalizado en Google Forms para captura rápida en campo (código QR) y grupos locales. | Guion de entrevista presencial de **9 reactivos** (**Instrumento B**), aplicado mediante visita directa a mostradores en las principales zonas viales de Xalapa. |
+| **Estilo de estudio** | **Cuantitativo** (encuesta estructurada en Google Forms, muestreo no probabilístico por cuotas en puntos de afluencia, con declaración explícita de sus límites inferenciales). | **Cuantitativo-descriptivo con componente cualitativo** (formulario aplicado en mostrador por el encuestador; intento de censo del marco DENUE). |
+| **Justificación** | Universo amplio (`~40,000` motos circulantes estimadas) donde se requiere estimar proporciones con intervalo de confianza para alimentar el embudo de demanda y el Estudio Económico-Financiero. | Marco reducido (`~35` talleres `SCIAN 811492` más refaccionarias `[PENDIENTE DE CONTEO EXACTO EN DENUE SCIAN 468311]`); con pocas decenas de comercios no se infiere estadísticamente: se describe con rangos y frecuencias. |
+| **Instrumento** | **Instrumento A**: 45 reactivos totales en 11 secciones (`A0`–`A37` más 7 preguntas derivadas condicionales); cada persona responde entre 24 y 34. Tiempo: 7–8 min. Incluye capturas 1–5 del prototipo. | **Instrumento B**: 31 reactivos (`B1`–`B31`) en 8 secciones; por las ramas cada comercio responde entre 25 y 29. Tiempo: 8–10 min. Incluye capturas 2, 5 y 6 del prototipo. |
 
-> [!NOTE]
-> **Cumplimiento de la regla de segmentación de `STUDY.md` (línea 43):** Dado que Itinera opera como una plataforma de dos lados asimétrica donde el usuario que adopta gratis (motociclista `125–250cc`) posee atributos y motivaciones radicalmente distintos al actor comercial con margen para pagar en Fase 1 (dueño de refaccionaria o taller), se diseñan **dos instrumentos de recolección independientes y no intercambiables**.
-
----
+> **Regla de dos instrumentos:** Itinera es una plataforma de dos lados asimétrica; quien adopta gratis (motociclista) y quien paga en Fase 1 (comercio) tienen atributos y motivaciones distintos, por lo que se diseñan dos instrumentos independientes y no intercambiables.
 
 ### 2.2 Fuentes Secundarias Verificadas
-
-Las fuentes secundarias oficiales y comerciales se recopilaron para dimensionar el parque vehicular real en México, Veracruz y Xalapa, estimar el universo de talleres locales, verificar la cuota de sistema operativo Android y analizar el posicionamiento de competidores existentes en Google Play México.
 
 #### A. Estadísticas Oficiales del Parque Vehicular, Talleres y Tecnología Móvil
 
 | Indicador / Dato Verificado | Cifra Exacta | Ámbito Geográfico | Año / Corte | Fuente Oficial / Verificable |
 | :--- | :--- | :--- | :--- | :--- |
-| **Motocicletas registradas en circulación (Nacional)** | **`10,547,500`** unidades (`16.1%` del parque nacional; `+17.8%` vs. `8,953,446` en 2024) | México (Nacional) | 2025 (anual definitivo) | INEGI — *Vehículos de Motor Registrados en Circulación (VMRC)* ([inegi.org.mx](https://www.inegi.org.mx/programas/vehiculosmotor/)) |
-| **Motocicletas registradas en circulación (Estatal)** | **`664,867`** unidades (5.º lugar nacional; `+29.0%` vs. `515,288` en 2024 y `383,839` en 2023) | Veracruz de Ignacio de la Llave | 2025 (anual definitivo) | INEGI — *VMRC* ([inegi.org.mx](https://www.inegi.org.mx/programas/vehiculosmotor/)) |
-| **Parque vehicular total en el municipio de Xalapa** | **`232,680`** vehículos de motor totales registrados (2.º municipio del estado) | Xalapa, Veracruz | Cierre 2024 | INEGI — *VMRC* ([inegi.org.mx](https://www.inegi.org.mx/programas/vehiculosmotor/)) |
-| **Motocicletas registradas en Xalapa (cota censal oficial desglosada)** | **`23,159`** unidades (`22,720` particulares y `439` oficiales) | Xalapa, Veracruz | 2021 (último desglose abierto indexado) | INEGI / CEIEG Veracruz — *Cuadernillos Municipales / IEGEMC* ([ceieg.veracruz.gob.mx](https://www.ceieg.veracruz.gob.mx/cuadernillos-municipales/)) |
-| **Motocicletas en circulación estimadas en Xalapa** | **`~40,000`** unidades en circulación (el parque se duplicó en 5 años; ~50% sin placas locales o en proceso de regularización) | Xalapa, Veracruz | Oct–Nov 2026 | Departamento de Movilidad Urbana, Ayuntamiento de Xalapa (citado en prensa estatal 2026) |
-| **Siniestralidad vial con motocicletas en Xalapa** | **`273`** colisiones con moto de **`804`** siniestros viales totales (ene–oct 2026); `10–15` percances diarios reportados | Xalapa, Veracruz | Ene–Nov 2026 | Movilidad Urbana Xalapa / conteo ciudadano *Physis Ciclovida* (2026) |
-| **Talleres de reparación y mantenimiento de motocicletas (SCIAN `811492`)** | **`~35`** establecimientos especializados registrados en el municipio (adicionales a comercios/refaccionarias en SCIAN `468311`) | Xalapa, Veracruz (`CLEE 30087`) | Edición `05/2026` | INEGI — *DENUE* ([inegi.org.mx/app/mapa/denue/](https://www.inegi.org.mx/app/mapa/denue/default.aspx)) y directorios DENUE ([talleresdemotos.com](https://www.talleresdemotos.com/)) |
-| **Participación de mercado de Android en México** | **`74.11%`** Android vs. `25.89%` iOS (oct 2025–oct 2026); **`89.13%`** Android en año completo 2024 | México (Nacional) | 2024 y Oct 2025–Oct 2026 | StatCounter Global Stats — *Mobile OS Market Share Mexico* ([gs.statcounter.com](https://gs.statcounter.com/os-market-share/mobile/mexico)) |
+| **Motocicletas registradas en circulación (Nacional)** | **`10,547,500`** unidades (`16.1%` del parque nacional; `+17.8%` vs. `8,953,446` en 2024) | México | 2025 | INEGI — *VMRC* ([inegi.org.mx](https://www.inegi.org.mx/programas/vehiculosmotor/)) |
+| **Motocicletas registradas en circulación (Estatal)** | **`664,867`** unidades (5.º lugar nacional; `+29.0%` vs. `515,288` en 2024 y `383,839` en 2023) | Veracruz | 2025 | INEGI — *VMRC* |
+| **Parque vehicular total en Xalapa** | **`232,680`** vehículos de motor registrados | Xalapa | Cierre 2024 | INEGI — *VMRC* |
+| **Motocicletas registradas en Xalapa (cota censal)** | **`23,159`** unidades (`22,720` particulares y `439` oficiales) | Xalapa | 2021 | INEGI / CEIEG Veracruz — *Cuadernillos Municipales* ([ceieg.veracruz.gob.mx](https://www.ceieg.veracruz.gob.mx/cuadernillos-municipales/)) |
+| **Motocicletas en circulación estimadas en Xalapa** | **`~40,000`** unidades (~50% sin placas locales o en regularización) | Xalapa | Oct–Nov 2026 | Departamento de Movilidad Urbana, Ayuntamiento de Xalapa (prensa estatal 2026) |
+| **Siniestralidad vial con motocicletas** | **`273`** colisiones con moto de **`804`** siniestros (ene–oct 2026) | Xalapa | 2026 | Movilidad Urbana Xalapa / *Physis Ciclovida* |
+| **Talleres de reparación de motocicletas (`SCIAN 811492`)** | **`~35`** establecimientos | Xalapa (`30087`) | DENUE `05/2026` | INEGI — *DENUE* ([inegi.org.mx/app/mapa/denue/](https://www.inegi.org.mx/app/mapa/denue/default.aspx)) |
+| **Refaccionarias / comercio de motocicletas (`SCIAN 468311`)** | `[PENDIENTE DE CONTEO EXACTO EN DENUE SCIAN 468311]` *(oficialmente "Comercio al por menor de motocicletas"; incluye venta al por menor de partes y refacciones nuevas de moto, a diferencia de `468211` para autos y `811493` para bicicletas)* | Xalapa (`30087`) | DENUE `05/2026` | INEGI — *DENUE / SCIAN* |
+| **Participación de Android en México** | **`74.11%`** Android vs. `25.89%` iOS (oct 2025–oct 2026); **`89.13%`** en 2024 | México | 2024–2026 | StatCounter Global Stats ([gs.statcounter.com](https://gs.statcounter.com/os-market-share/mobile/mexico)) |
+| **Salario mínimo general 2026 (referencia `A4`)** | **`$315.04` MXN/día** (`~$9,582.47` MXN/mes a 30.4 días) | Resto del país (incluye Xalapa) | 2026 | CONASAMI |
 
-> [!IMPORTANT]
-> **Transparencia metodológica sobre el dato municipal de Xalapa:** El boletín abierto anual del INEGI publica cifras actualizadas hasta nivel estatal (`664,867` motos en Veracruz en 2025) y el parque total municipal (`232,680` vehículos en Xalapa en 2024), mientras que la serie municipal específica de motocicletas requiere extracción en tabulados OLAP o Cuadernillos CEIEG (último dato municipal abierto indexado: `23,159` en 2021). Para reflejar la realidad operativa de 2026 (incluyendo el crecimiento reciente y unidades sin emplacamiento local), la Sección 3 utiliza la cifra oficial municipal más reciente de **`40,000`** motocicletas en circulación y demuestra la convergencia estadística frente a la cota censal de **`23,159`** unidades.
+> **Datos que NO se citan como hechos:** el `~70%` del parque en `51–125cc`, el `25%` en `126–250cc` y el `~80%` de motos de baja cilindrada adquiridas como herramienta de trabajo (*El Heraldo de México*, sin fuente exacta) provienen de material enviado por la docente y no están verificados. Por eso el Instrumento A mide directamente la cilindrada (`A7`), el uso (`A9`) y el tipo de celular (`A35`–`A36`), en lugar de suponerlos. Tampoco se cita el `>85%` de Android en el segmento motociclista: es un supuesto a medir.
 
-#### B. Benchmark de Competidores Digitales (Google Play México) y Sustitutos Analógicos
+#### B. Benchmark de Competidores Digitales y Sustitutos Analógicos
 
-| Competidor / Sustituto | Tipo | Modelo de Precios y Monetización | Enfoque Principal y Capacidades | Fricción Crítica / Brecha frente a Itinera |
+| Competidor / Sustituto | Tipo | Modelo de Precios | Enfoque Principal | Brecha frente a Itinera |
 | :--- | :--- | :--- | :--- | :--- |
-| **Drivvo – Control de gastos** *(CTN Cardoso)* | Digital (App Android / iOS / Web) | *Freemium* con anuncios en plan gratis (hasta 2 vehículos). Suscripción recurrente sin pago único: tarifas MX referenciales `~$174.90–$499.90 MXN/año` (Individual/PRO) o `$24.90–$49.90 USD/año` global; Flota `$210 MXN/veh/año`. | Contabilidad exhaustiva de gastos, cargas de gasolina, ingresos para choferes de apps (Uber/DiDi) y gestión básica de mantenimiento con sincronización en nube. | **Alta fricción de captura (`FuelAccountingLedger`):** exige cuenta obligatoria, muestra anuncios a pantalla completa en la versión gratis y ha generado quejas en reseñas por alzas de suscripción y fallos de restauración PRO. No resuelve chicote roto ni opera con check-in de 1 toque. |
-| **Fuelio** *(Sygic)* | Digital (App Android / iOS) | En Android es gratuita, sin anuncios y sin cuenta obligatoria; respaldo en Drive/Dropbox. Suscripción *Fuelio Premium* opcional (`$4.99–$15.99 USD` / `~9 €/año`) para planificador de rutas y escaneo de tickets. | Rendimiento de combustible (L/100 km, km/L), historial de gastos y recordatorios secundarios de servicio. | **Centrada en combustible, no en salud mecánica:** las reseñas reportan interfaz densa, dificultad para editar registros históricos y **no permite registrar lecturas aisladas de odómetro sin capturar una carga de gasolina o gasto**. Mapa de precios poco fiable en México. |
-| **MotoLog / MotoriLog** *(Apps especializadas en Google Play)* | Digital (App móvil) | *Freemium* / compras in-app; enfocadas en garaje digital, VIN, grabación GPS de rutas o diagnóstico con IA. | Bitácoras orientadas a entusiastas de gama media-alta, rutas GPX, inclinación, respaldo en nube o trámites de auto. | **Sobrecarga técnica y baja pertinencia para `125–250cc` utilitaria:** asumen tableros funcionales, exigen captura detallada por VIN o carga manual frecuente y carecen de proyección adaptativa para odómetro averiado o redención de cupones en refaccionarias locales. |
-| **Libretas, stickers de taller y notas en WhatsApp/memoria** | Analógico / Informal | `$0 MXN` directo (costo oculto en reparaciones correctivas por olvido). | Anotación manual en libreta de guantera, etiqueta adhesiva en tanque/chasis o mensajes sueltos al mecánico. | ***Síndrome de la Guantera*:** el papel se extravía, se moja o queda ilegible; es pasivo (no suma kilómetros ni avisa con ventana anticipada para ahorrar) y no respalda cotizaciones frente a asimetría en talleres. |
+| **Drivvo** *(CTN Cardoso)* | App Android / iOS / Web | *Freemium* con anuncios (hasta 2 vehículos); suscripción `~$174.90–$499.90 MXN/año` | Contabilidad de gastos y cargas de gasolina | Cuenta obligatoria, anuncios a pantalla completa y captura por cada carga; no resuelve odómetro roto. |
+| **Fuelio** *(Sygic)* | App Android / iOS | Gratuita sin anuncios en Android; Premium `$4.99–$15.99 USD/año` | Rendimiento de combustible | No permite registrar lecturas aisladas de odómetro sin asociarlas a una carga o gasto. |
+| **MotoLog / MotoriLog** | App móvil | *Freemium* / compras in-app | Garaje digital por VIN, rutas GPS | Pensadas para gama media-alta; asumen tableros funcionales y captura detallada. |
+| **Libreta, sticker de taller, WhatsApp o memoria** | Analógico | `$0` directo | Anotación manual | Se pierde o moja; no suma kilómetros ni avisa con anticipación (*Síndrome de la Guantera*). |
 
----
+### 2.3 Prototipo de Validación y Capturas para Google Forms
 
-### 2.3 Fuentes Primarias — Dos Instrumentos Diferenciados (`STUDY.md` Línea 43)
+Por indicación docente (`AUD-7` a `AUD-13`), ambos instrumentos **presentan el prototipo antes de cualquier pregunta de validación**. Las capturas se obtienen de una mini app en Vue 3 + Vue Router con datos simulados, en viewport `390×844`, una pantalla por imagen, recortada a la zona relevante, con un pie de una línea en lenguaje cotidiano. Ninguna captura muestra kilómetros estimados, identificadores técnicos ni nombres de negocios reales (se usa *"Refaccionaria Ejemplo"*).
 
-#### Instrumento A: Encuesta Estructurada para Motociclistas `125–250cc` (Segmento B2C)
+| # | Momento | Ruta base (`ROUTES.md`) | Instrumento | Pie de imagen sugerido |
+| :--- | :--- | :--- | :--- | :--- |
+| **Captura 1** | Configuración inicial: tipo de moto y *"¿Cómo usas tu moto en un día normal?"* | `/onboarding` pasos 1–2 | A | *"La configuras en menos de 30 segundos, sin saber de mecánica ni contar kilómetros."* |
+| **Captura 2** | Inicio *"Mi Moto"* con semáforo: aceite en amarillo, cadena en rojo, resto en verde | `/home` | A y B | *"El semáforo te dice qué está bien, para qué ir juntando y qué ya toca."* |
+| **Captura 3** | Pantalla de bloqueo: check-in *"¿Usaste tu moto como siempre esta semana? [Sí] [Menos] [Más]"* y alerta amarilla de aceite | `§5` notificaciones | A | *"Un toque por semana y un solo aviso cuando se acerca un servicio."* |
+| **Captura 4** | Bitácora (servicios hechos por mí o en taller) y vista previa del resumen gratuito | `/history` + `/export` | A | *"Tu historial queda guardado y puedes compartirlo gratis."* |
+| **Captura 5** | Detalle de aceite en amarillo con tarjeta *"Promoción pagada — Refaccionaria Ejemplo — 10% en cambio de aceite"* y código | `§4.D.11` (Fase 1, marcado *Próximamente*) | A y B | *"Más adelante: promociones de negocios cercanos cuando te toca servicio."* |
+| **Captura 6** | Vista del comercio: campo para comprobar código, contador *"Clientes comprobados gratis: 4 de N"*, reporte del mes y cartel QR | `§4.D.12` (Fase 1) | B | *"Desde su celular comprueba cada cliente y ve cuántos llegaron por la app."* |
 
-*Formato listo para copiar a Google Forms. Tiempo estimado de respuesta: 2 a 3 minutos. Incluye preguntas filtro al inicio para garantizar la validez muestral en Xalapa, Veracruz.*
+### 2.4 Instrumento A: Encuesta para Motociclistas de Xalapa (Segmento B2C)
 
-**Título del formulario:** *Estudio sobre hábitos de uso y mantenimiento de motocicletas 125–250cc en Xalapa, Veracruz*  
-**Aviso de confidencialidad:** *Esta encuesta es estrictamente académica y anónima; tus respuestas ayudarán a diseñar herramientas prácticas para el cuidado preventivo de motocicletas en Xalapa.*
+**Título del formulario:** *Cuidado y mantenimiento de motocicletas en Xalapa*  
+**Texto de presentación (`AUD-5`):** *Somos estudiantes de Ingeniería de Software de la Universidad Veracruzana. Estamos diseñando Itinera, una aplicación gratuita para celular que te avisa cuándo le toca servicio a tu moto (aceite, cadena o banda, frenos, bujía y llantas) sin que tengas que anotar nada todos los días. Con esta encuesta queremos saber cómo cuidas tu moto hoy y qué opinas de nuestro prototipo. Es anónima, con fines académicos, y toma de 7 a 8 minutos.*
 
-1. **[Filtro 1 — Cilindrada y Propiedad]** ¿Conduces actualmente una motocicleta de entre `125cc` y `250cc` en Xalapa o zona conurbada, y de quién es la unidad?
-   - [ ] Sí, `125–250cc` **de mi propiedad** *(Continúa a P2)*
-   - [ ] Sí, `125–250cc` **propiedad de mi empresa / patrón** *(Agradecer y derivar a nota de segmento laboral; fin de encuesta MVP B2C)*
-   - [ ] Conduzco otra cilindrada (`< 125cc` o `> 250cc`) *(Fin de encuesta)*
-   - [ ] No conduzco motocicleta *(Fin de encuesta)*
-2. **[Filtro 2 — Sistema Operativo]** ¿Qué sistema operativo utiliza tu teléfono celular principal con el que descargas aplicaciones?
-   - [ ] Android (Google Play Store)
-   - [ ] iOS (iPhone / App Store)
-   - [ ] Otro / No utilizo smartphone para apps
-3. **[Uso e Intensidad Diaria]** ¿Cuál es tu actividad principal con la moto y cuántos kilómetros recorres aproximadamente al día?
-   - [ ] Uso intensivo / trabajo propio (reparto en plataformas, mensajería independiente o trayectos largos): **`50 a 100+ km/día`**
-   - [ ] Traslado cotidiano moderado (trabajo/universidad): **`20 a 49 km/día`**
-   - [ ] Uso ligero u ocasional: **`Menos de 20 km/día`**
-4. **[Estado del Odómetro Físico]** ¿Cómo funciona actualmente el odómetro / velocímetro (chicote) de tu motocicleta?
-   - [ ] Funciona correctamente y marca el kilometraje real.
-   - [ ] Está descompuesto (chicote roto, tablero apagado o marca de forma intermitente).
-   - [ ] No me fijo en el odómetro; calculo el servicio "al tanteo" o por semanas.
-5. **[Dolor en los 5 Consumibles Críticos]** En los últimos 12 meses, ¿con cuál de estos cinco consumibles has sufrido una falla imprevista, desgaste acelerado o gasto sorpresa por no haberlo revisado a tiempo? *(Selección múltiple)*
-   - [ ] Aceite de motor (bajo nivel, degradación o daño al motor)
-   - [ ] Kit de arrastre / cadena (destensada, seca, rotura o desgaste de sprockets)
-   - [ ] Frenos / balatas (ruido, pérdida de frenado o daño al disco/tambor)
-   - [ ] Bujía (fallas de encendido o pérdida de potencia)
-   - [ ] Llantas (desgaste liso, grietas o derrapes por baja adherencia)
-   - [ ] Ninguno; siempre cambio todo a tiempo.
-6. **[Método Actual de Seguimiento]** ¿Cómo controlas actualmente cuándo te toca realizar el siguiente servicio o cambio de refacciones?
-   - [ ] De memoria ("cuando siento que suena raro o falla").
-   - [ ] Anotado en una libreta, ticket de papel o sticker del taller.
-   - [ ] En notas del celular o chat propio de WhatsApp.
-   - [ ] Con una aplicación móvil (ej. Drivvo, Fuelio, MotoLog u otra).
-   - [ ] El taller o la agencia me avisa.
-7. **[Auto-mantenimiento DIY vs. Taller y Asimetría]** Cuando realizas mantenimiento preventivo a tu moto, ¿dónde lo atiendes con mayor frecuencia y qué tanto confías en las cotizaciones de talleres?
-   - [ ] Yo mismo realizo los cambios básicos (*DIY* en casa: aceite, cadena, bujía, etc.).
-   - [ ] Acudo siempre a un taller mecánico independiente o refaccionaria con servicio.
-   - [ ] Combinado (hago lo básico en casa y lo complejo en taller).
-   - *(Sub-reactivo de percepción, escala 1 a 5)* ¿Qué tan frecuente sientes desconfianza ante posibles sobreprecios o diagnósticos poco claros al pedir presupuesto en un taller? (`1 = Nunca` a `5 = Muy frecuente`)
-8. **[Fricción de Registro — `WeeklyCheckIn`]** Si una app te enviara una sola notificación ligera a la semana en tu pantalla de bloqueo (*"¿Esta semana rodaste ~X km? [Sí, igual] [Ajustar]"*) que toma menos de `5 segundos`, ¿qué tan probable sería que la uses de forma constante frente a una app que te pida registrar datos cada vez que cargas gasolina?
-   - [ ] Muy probable; prefiero 1 toque por semana (`< 5 s`) que anotar cada carga de gasolina.
-   - [ ] Algo probable; la probaría si no requiere abrir formularios largos.
-   - [ ] Poco probable; prefiero registrar cada carga de gasolina / gasto manualmente.
-   - [ ] Nada probable; no usaría ninguna app.
-9. **[Política de Alertas — `SurgicalAlert`]** ¿Con qué frecuencia aceptarías recibir avisos de mantenimiento de la aplicación sin llegar a silenciarla o desinstalarla?
-   - [ ] Únicamente alertas clave cuando falte poco para un servicio (`Amarillo`) o cuando ya sea urgente (`Rojo`).
-   - [ ] Recordatorios diarios o varios avisos por semana.
-   - [ ] Prefiero no recibir notificaciones y entrar solo cuando me acuerde.
-10. **[Utilidad del Semáforo `WearTrafficLight`]** ¿Qué tan útil consideras ver un semáforo simple (Verde / Amarillo / Rojo) que te avise en **Amarillo** (~2 semanas o ~300 km antes) para poder juntar el dinero del aceite o las balatas sin gastos sorpresa? (`Escala Likert 1 a 5`: `1 = Nada útil` a `5 = Muy útil`)
-11. **[Utilidad del `ExportableSummary` Gratuito]** ¿Para qué utilizarías principalmente un resumen exportable gratuito del historial de servicios de tu moto (con fechas, piezas cambiadas y costos)? *(Selección única o principal)*
-    - [ ] Para consultar rápidamente qué se le cambió la última vez y evitar que me vendan piezas repetidas en el taller.
-    - [ ] Para respaldar el historial de cuidados al momento de vender o transferir la motocicleta.
-    - [ ] Para llevar mi control personal de cuánto gasto al año en mi moto.
-    - [ ] No le veo utilidad práctica.
-12. **[Disposición a Pagar B2C]** Para usar una aplicación móvil en tu motocicleta personal (`1 unidad`) con bitácora, semáforo de desgaste, alertas y resumen exportable, ¿cuál esquema estarías dispuesto a utilizar?
-    - [ ] Únicamente si el núcleo básico es **100% gratuito (`$0 MXN`)**.
-    - [ ] Pagaría una suscripción mensual baja (`$30–$49 MXN/mes`) incluso teniendo 1 sola moto.
-    - [ ] Pagaría solo si tuviera `3 o más` vehículos y necesitara respaldo en la nube.
-13. **[Receptividad a Cupones Locales — `ContextualPromotion`]** Cuando el semáforo te avise que tu moto está próxima a requerir cambio de aceite, balatas o kit de arrastre (`Amarillo`/`Rojo`), ¿canjearías un cupón de descuento (ej. 10–15% o revisión gratuita) de una refaccionaria o taller cercano en Xalapa mostrando un código en mostrador?
-    - [ ] Sí, definitivamente lo usaría si el comercio queda cerca de mi ruta y el descuento es real.
-    - [ ] Tal vez, dependiendo del precio final y la reputación del lugar.
-    - [ ] No, prefiero ir siempre con mi mecánico habitual aunque no haya descuento.
-14. **[Canal de Descubrimiento]** ¿Por cuál medio sueles descubrir y descargar aplicaciones o herramientas nuevas para tu motocicleta?
-    - [ ] Buscando directamente en Google Play Store (ej. "mantenimiento moto", "cambio de aceite").
-    - [ ] Recomendación boca a boca de otros motociclistas, compañeros de reparto o grupos/clubes locales.
-    - [ ] Código QR o anuncio físico en el mostrador de la refaccionaria o taller donde compro mis piezas.
-    - [ ] Redes sociales / videos cortos.
+**Sección 1 — Para empezar** *(filtro único: solo termina quien no maneja moto, `AUD-4`/`AUD-8`)*
 
----
+- **A0.** ¿Manejas motocicleta actualmente?  
+  ☐ Sí ☐ No *(→ agradecer y enviar formulario)*
+- **A1.** ¿En qué zona usas tu moto la mayor parte del tiempo?  
+  ☐ Xalapa ☐ Zona conurbada (Banderilla, Coatepec, Emiliano Zapata, Tlalnelhuayocan u otra cercana) ☐ Otra ciudad *(continúa; se separa en el análisis)*
 
-#### Instrumento B: Guion de Entrevista Estructurada para Dueños de Refaccionarias y Talleres Locales (Segmento B2B — Fase 1)
+**Sección 2 — Sobre ti** *(`AUD-6`)*
 
-*Guion listo para levantamiento presencial en campo en zonas comerciales y corredores viales de Xalapa (Av. Lázaro Cárdenas, Blvd. Adolfo Ruiz Cortines, Av. 20 de Noviembre, Col. Revolución / Rafael Lucio). Duración estimada: 10–12 minutos.*
+- **A2.** ¿Cuál es tu edad?  
+  ☐ Menor de 18 años *(→ agradecer y enviar)* ☐ 18 a 24 ☐ 25 a 34 ☐ 35 a 44 ☐ 45 a 59 ☐ 60 o más
+- **A3.** ¿Con qué género te identificas?  
+  ☐ Mujer ☐ Hombre ☐ Otro ☐ Prefiero no decirlo
+- **A4.** ¿Cuál es tu ingreso mensual personal aproximado? *(anclado al salario mínimo general 2026 de CONASAMI: `$9,582.47 MXN/mes`)*  
+  ☐ Menos de $4,800 (menos de medio salario mínimo) ☐ $4,800 a $9,599 (hasta 1 salario mínimo) ☐ $9,600 a $19,199 (1 a 2 salarios mínimos) ☐ $19,200 a $28,799 (2 a 3 salarios mínimos) ☐ $28,800 o más (más de 3 salarios mínimos) ☐ Prefiero no decirlo
+- **A5.** ¿Cuál es tu ocupación principal?  
+  ☐ Estudiante ☐ Empleado(a) ☐ Repartidor(a) por aplicación ☐ Negocio propio o trabajo independiente ☐ Otro
 
-**Datos de control (llena el investigador):** Fecha | Nombre comercial del establecimiento | Giro (`Refaccionaria` / `Taller independiente` / `Mixto`) | Colonia / Zona en Xalapa | Cargo del entrevistado (`Dueño` / `Encargado`).
+**Sección 3 — Tu moto y cómo la usas** *(una variable por pregunta: `AUD-2`, `AUD-5`)*
 
-1. **[Volumen de Clientes `125–250cc`]** Aproximadamente, ¿cuántos clientes propietarios de motocicletas de trabajo o urbanas (`125–250cc`, ej. Italika, Bajaj, Honda, Vento) atienden al mes en su mostrador o bahía de servicio?
-   - *(Registrar cifra estimada mensual y proporción aproximada entre repartidores/uso intensivo y particulares)*
-2. **[Ticket Promedio en los 5 Consumibles Críticos]** ¿Cuál es el ticket promedio (refacción y/o mano de obra en `$ MXN`) que suele dejar un cliente `125–250cc` en sus servicios más frecuentes?
-   - Cambio de aceite: `$_____ MXN` | Frenos/balatas: `$_____ MXN` | Kit de arrastre/cadena: `$_____ MXN` | Bujía/afinación menor: `$_____ MXN` | Llantas: `$_____ MXN`.
-3. **[Estacionalidad y Valles Operativos]** ¿En qué días de la semana o épocas del mes/año nota una baja en la afluencia de clientes (valles operativos) donde más le convendría atraer motociclistas adicionales?
-4. **[Canales Actuales de Captación y Gasto Publicitario]** Actualmente, ¿cómo atrae nuevos clientes motociclistas a su negocio (ubicación a pie de calle, recomendación boca a boca, Google Maps, volantes, Facebook) y cuánto invierte aproximadamente al mes en promoción?
-5. **[Pérdida de Recurrencia por Olvido del Cliente]** Desde su experiencia en taller o mostrador, ¿qué porcentaje aproximado de sus clientes ocasionales deja pasar demasiado tiempo antes de regresar por cambio de aceite o cadena, llegando finalmente cuando la pieza ya falló o comprando de emergencia en otro sitio?
-6. **[Aceptación del Cupón Contextual Trazable — `ContextualPromotion`]** Imagine una aplicación gratuita usada por motociclistas de Xalapa que les avisa unos `300 km` antes de que les toque cambio de aceite, frenos o cadena. Si la app mostrara un cupón promocional de su negocio únicamente a usuarios cercanos en ese momento para que lo canjeen con código en su caja (sin que la plataforma audite ni "certifique" su taller en campo), ¿qué tan útil le parecería este mecanismo para medir si la publicidad realmente le llevó ventas? (`Escala 1 a 5` + comentarios cualitativos).
-7. **[Esquema de Cobro y CPA / Margen Aceptable]** Si participara en una etapa posterior cuando la app supere los `1,000–2,000` usuarios activos en Xalapa, ¿qué esquema comercial le daría mayor confianza y qué rango estaría dispuesto a pagar?
-   - [ ] Pauta mensual local accesible (ej. `$299–$499 MXN/mes` por aparecer ante usuarios en ventana preventiva dentro de su zona).
-   - [ ] Pago exclusivo por resultado / cupón efectivamente redimido en caja (ej. `$20–$40 MXN` de comisión/CPA por venta comprobada).
-   - [ ] No pagaría pauta digital en apps.
-   - *(Sub-pregunta)* ¿Qué incentivo o descuento máximo en mostrador (ej. `10%` en aceite, mano de obra promocional en balatas o revisión de cadena sin costo) le resultaría rentable ofrecer al usuario del cupón sin sacrificar su margen?
-8. **[Adopción de QR en Mostrador]** Para que sus clientes actuales recuerden regresar a tiempo a su negocio, ¿estaría dispuesto a colocar un pequeño letrero con código **QR** en su mostrador para que descarguen gratis la app de recordatorios? (`Sí / No / Condiciones`).
-9. **[Barreras u Objeciones B2B]** ¿Qué requisito indispensable (comprobante de canje, simplicidad sin instalar software complejo en caja, exclusividad de zona o reportes mensuales de redención) necesitaría ver para probar un piloto durante un mes?
+- **A6.** ¿Qué tipo de moto usas principalmente?  
+  ☐ Motoneta automática (scooter, sin cambios) ☐ De calle o de trabajo (con cambios) ☐ Doble propósito (calle y terracería) ☐ Deportiva o de alta cilindrada ☐ Otro
+- **A7.** ¿De cuántos cc es tu moto?  
+  ☐ Menos de 110 cc ☐ De 110 a 125 cc ☐ De 126 a 250 cc ☐ Más de 250 cc ☐ No sé
+- **A8.** ¿De qué marca es? *(lista desplegable, opcional)*  
+  ☐ Italika ☐ Honda ☐ Yamaha ☐ Bajaj ☐ Vento ☐ Suzuki ☐ Otra
+- **A9.** ¿Para qué usas principalmente tu moto?  
+  ☐ Moverme en mi vida diaria (mandados, visitas) ☐ Ir a la escuela o al trabajo ☐ Reparto o mensajería por aplicación ☐ Trabajo para un negocio (entregas, cobranza, visitas) ☐ Paseo o recreación ☐ Otro
+- **A10.** ¿De quién es la moto que manejas? *(después del uso, `AUD-3`)*  
+  ☐ Mía ☐ De mi propio negocio ☐ De la persona o empresa para la que trabajo ☐ De un familiar ☐ Otro
+- **A11.** ¿Cómo usas tu moto en un día normal? *(idéntico a la tabla canónica de `DOMAIN.md §5.1`, `AUD-5` punto 12)*  
+  ☐ Traslados cortos dentro de mi zona (1 o 2 viajes al día) ☐ Cruzo la ciudad de ida y vuelta (escuela o trabajo) ☐ Varios viajes en el día (trabajo, mandados o clientes) ☐ Reparto o uso continuo casi todo el día
+- **A12.** ¿Cuántos días a la semana la usas?  
+  ☐ 1 o 2 días ☐ 3 o 4 días ☐ 5 o 6 días ☐ Todos los días
+- **A13.** ¿Cuántas motos manejas o te toca cuidar, contando la tuya?  
+  ☐ 1 ☐ 2 ☐ 3 a 5 ☐ 6 o más
+
+**Sección 4 — Cómo cuidas tu moto hoy** *(`AUD-6` puntos 13–14, `AUD-7` punto 16, `AUD-8`)*
+
+- **A14.** ¿Cada cuánto le haces cada uno de estos servicios a tu moto? *(cuadrícula de opción múltiple, una respuesta por fila)*  
+  Filas: Cambio de aceite · Cadena (ajuste o lubricación) o banda (revisión), según tu moto · Frenos o balatas · Bujía · Llantas (revisión o cambio)  
+  Columnas: Cada mes o antes · Cada 2 o 3 meses · Cada 4 a 6 meses · Más de 6 meses · Solo cuando falla · No sé
+- **A15.** ¿Hay algún otro servicio que le hagas seguido? *(respuesta corta, opcional; sustituye la fila "Otros" que las cuadrículas de Forms no permiten)*
+- **A16.** ¿Quién suele hacer cada servicio? *(cuadrícula, mismas filas; sustituye al antiguo 7a)*  
+  Columnas: Yo mismo(a) · Un taller · La agencia · Un familiar o conocido · No se le hace
+- **A17.** Si tú haces algún servicio, ¿por qué lo haces tú? *(casillas; motivo derivado del hábito, sustituye al antiguo 7b)*  
+  ☐ Me sale más barato ☐ Me gusta y sé hacerlo ☐ No confío en los talleres ☐ No tengo tiempo de llevarla ☐ No hago ningún servicio yo
+- **A18.** Si llevas tu moto a taller o agencia, ¿por qué la llevas? *(casillas)*  
+  ☐ No sé hacerlo ☐ No tengo herramienta o espacio ☐ Por la garantía ☐ Confío en mi mecánico ☐ No la llevo a taller
+- **A19.** En promedio, ¿cuánto gastas al mes en el mantenimiento de tu moto?  
+  ☐ Menos de $200 ☐ $200 a $499 ☐ $500 a $999 ☐ $1,000 a $1,999 ☐ $2,000 o más ☐ No sé
+- **A20.** Hoy, ¿cómo sabes cuándo le toca servicio a tu moto?  
+  ☐ No llevo control; la atiendo cuando falla o suena raro ☐ Me acuerdo de memoria (calculo por semanas o meses) ☐ Lo anoto en una libreta, ticket o etiqueta del taller ☐ Lo anoto en el celular o en un chat de WhatsApp ☐ Uso una aplicación ☐ El taller o la agencia me avisa ☐ Hay un encargado en la empresa o negocio que lo controla ☐ Otro: ____
+
+**Sección 5 — Conoce Itinera** *(presentación del prototipo justo después de A20, `AUD-7` punto 17, `AUD-11` punto 27)*
+
+> Texto: *Itinera es una aplicación gratuita para Android. La configuras en menos de 30 segundos eligiendo tu tipo de moto y cómo la usas en un día normal, sin saber de mecánica ni contar kilómetros. Con eso calcula cuándo le toca servicio a cada pieza y te lo muestra con un semáforo: verde si va bien, amarillo cuando conviene ir juntando para el servicio y rojo cuando ya toca.*  
+> `[Insertar Captura 1 del prototipo Vue aquí]`  
+> `[Insertar Captura 2 del prototipo Vue aquí]`
+
+- **A21.** Con lo que viste, ¿usarías Itinera para tu moto?  
+  ☐ Definitivamente sí ☐ Probablemente sí ☐ No estoy seguro(a) ☐ Probablemente no *(→ Sección 5b)* ☐ Definitivamente no *(→ Sección 5b)*
+
+**Sección 5b — Solo si no la usarías**
+
+- **A21b.** ¿Por qué no la usarías?  
+  ☐ No me interesa llevar control ☐ Mi taller ya me avisa ☐ No me gusta instalar aplicaciones ☐ Me preocupa el espacio o los datos del celular ☐ Otro: ____ *(→ Sección 11)*
+
+**Sección 6 — Avisos y semáforo** *(`AUD-9` puntos 20–22)*
+
+> Texto: *Una vez por semana te llega un aviso en la pantalla de bloqueo: "¿Usaste tu moto como siempre esta semana?". Respondes Sí, Menos o Más con un toque, sin abrir la app. Cuando una pieza entra en amarillo te llega un solo aviso para que tengas tiempo de juntar el dinero, y otro si llega a rojo. No hay recordatorios diarios.*  
+> `[Insertar Captura 3 del prototipo Vue aquí]`
+
+- **A22.** ¿Te parece adecuado actualizar la app con ese toque semanal?  
+  ☐ Sí ☐ No
+- **A22b.** Si respondiste que no, ¿cómo lo preferirías? *(opcional)*  
+  ☐ Abrir la app solo cuando yo quiera ☐ Que solo me avise cuando toque un servicio ☐ Anotar de vez en cuando los kilómetros del tablero ☐ Otro: ____
+- **A23.** ¿Te parece útil el semáforo con estos avisos?  
+  ☐ Sí *(→ Sección 6b)* ☐ No *(→ Sección 6c)*
+
+**Sección 6b — Solo si el semáforo te parece útil**
+
+- **A24.** ¿Con cuánta anticipación te gustaría recibir el aviso amarillo?  
+  ☐ Una semana antes ☐ Dos semanas antes ☐ Un mes antes ☐ Solo cuando ya toque *(→ Sección 7)*
+
+**Sección 6c — Solo si el semáforo no te parece útil**
+
+- **A23b.** ¿De qué otra forma te gustaría que te avisara? *(respuesta corta)* *(→ Sección 7)*
+
+**Sección 7 — Bitácora y resumen** *(`AUD-10` punto 23)*
+
+> Texto: *Cada servicio queda guardado en tu bitácora: si lo hiciste tú o en taller, cuánto costó y una foto si quieres. Puedes compartir gratis un resumen con tu mecánico o con quien te compre la moto.*  
+> `[Insertar Captura 4 del prototipo Vue aquí]`
+
+- **A25.** ¿Te parece útil poder guardar y compartir este resumen?  
+  ☐ Sí ☐ No
+- **A25b.** ¿Qué más te gustaría que incluyera? *(respuesta corta, opcional)*
+- **A26.** ¿Qué le cambiarías o agregarías a Itinera? *(párrafo, opcional; `AUD-9` punto 20)*
+
+**Sección 8 — Tu taller y promociones** *(`AUD-3` punto 7, `AUD-11` punto 26)*
+
+- **A27.** ¿Te gustaría que tu taller de confianza pudiera recordarte por medio de la app cuando te toque servicio?  
+  ☐ Sí ☐ No ☐ No tengo un taller fijo
+
+> Texto: *Más adelante, cuando te toque un servicio, la app podría mostrarte una promoción pagada de una refaccionaria o taller cerca de ti. Muestras un código en el mostrador y obtienes el descuento. Itinera no califica ni certifica a los negocios.*  
+> `[Insertar Captura 5 del prototipo Vue aquí]`
+
+- **A28.** ¿Usarías una promoción así cuando te toque servicio?  
+  ☐ Sí ☐ Depende del descuento o del lugar ☐ No
+
+**Sección 9 — Pago** *(flujo condicional, `AUD-11` punto 25; sin la palabra "núcleo básico")*
+
+- **A29.** ¿Estarías dispuesto(a) a pagar por usar una app como Itinera?  
+  ☐ Sí *(→ Sección 9b)* ☐ Depende del precio *(→ Sección 9b)* ☐ No *(→ Sección 9c)*
+
+**Sección 9b — Solo si pagarías**
+
+- **A30.** ¿Cuánto pagarías al mes como máximo?  
+  ☐ Menos de $20 ☐ $20 a $34 ☐ $35 a $49 ☐ $50 a $74 ☐ $75 o más
+- **A30b.** ¿Cómo preferirías pagar?  
+  ☐ Cada mes ☐ Una vez al año ☐ Un solo pago *(→ Sección 9d)*
+
+**Sección 9c — Solo si no pagarías**
+
+- **A31a.** ¿La usarías si fuera gratis?  
+  ☐ Sí ☐ No
+- **A31b.** ¿Pagarías solo por funciones extra, como llevar varias motos o guardar tu información en la nube?  
+  ☐ Sí ☐ No *(→ Sección 9d)*
+
+**Sección 9d — Para todos** *(las ramas se reúnen: valida el modelo real gratuito con promociones)*
+
+- **A32.** ¿Aceptarías ver promociones de negocios de tu zona a cambio de usar la app gratis?  
+  ☐ Sí ☐ No
+
+**Sección 10 — Cómo conocer la app y recibir ayuda** *(`AUD-11` puntos 24a y 26)*
+
+- **A33.** ¿Cómo te enteras normalmente de aplicaciones nuevas? *(casillas)*  
+  ☐ Me la recomiendan conocidos o compañeros ☐ Grupos de motociclistas en Facebook o WhatsApp ☐ Redes sociales o videos cortos ☐ Buscando en la tienda de aplicaciones ☐ Un cartel o código QR en el taller o refaccionaria ☐ Otro
+- **A34.** Si tuvieras una duda o problema con la app, ¿por dónde te gustaría recibir ayuda?  
+  ☐ Ayuda y preguntas frecuentes dentro de la app ☐ WhatsApp ☐ Videos cortos de cómo usarla ☐ Correo electrónico ☐ Redes sociales
+
+**Sección 11 — Tu celular** *(al final y en lenguaje cotidiano, `AUD-1`, `AUD-4`, `AUD-11` punto 24b)*
+
+- **A35.** ¿Qué celular usas?  
+  ☐ Android (Samsung, Motorola, Xiaomi, Oppo u otro) ☐ Huawei ☐ iPhone ☐ No tengo celular inteligente
+- **A36.** ¿Desde dónde descargas tus aplicaciones?  
+  ☐ Google Play ☐ App Store (iPhone) ☐ Tienda de la marca del celular (AppGallery, Galaxy Store u otra) ☐ No descargo aplicaciones
+- **A37.** Si quieres probar Itinera gratis antes que nadie, déjanos tu WhatsApp o correo. *(opcional; solo se usará para invitar al piloto, con aviso de privacidad)*
+
+#### Mapa de ramas en Google Forms (Instrumento A)
+
+Google Forms solo ramifica desde preguntas de **opción múltiple o lista desplegable** ("Ir a la sección según la respuesta"); nunca desde cuadrículas ni casillas. Por eso cada pregunta derivada vive en su propia sección:
+
+| Pregunta | Respuesta | Destino |
+| :--- | :--- | :--- |
+| `A0` | No | Enviar formulario |
+| `A2` | Menor de 18 años | Enviar formulario |
+| `A21` | Probablemente no / Definitivamente no | Sección 5b (`A21b`) $\to$ Sección 11 |
+| `A21` | Resto | Sección 6 |
+| `A23` | Sí / No | Sección 6b (`A24`) / Sección 6c (`A23b`) $\to$ Sección 7 |
+| `A29` | Sí o Depende / No | Sección 9b (`A30`, `A30b`) / Sección 9c (`A31a`, `A31b`) $\to$ Sección 9d |
+
+### 2.5 Instrumento B: Formulario para Talleres y Refaccionarias (Segmento B2B — Fase 1)
+
+**Aplicación:** El encuestador lo llena en el mostrador con el dueño o encargado (Google Forms en celular), en corredores de Xalapa (Av. Lázaro Cárdenas, Blvd. Adolfo Ruiz Cortines, Av. 20 de Noviembre, zona Revolución/Rafael Lucio y Centro). Duración: 8–10 minutos.  
+**Texto de presentación:** *Somos estudiantes de Ingeniería de Software de la Universidad Veracruzana. Diseñamos Itinera, una aplicación gratuita que avisa a los motociclistas cuándo le toca servicio a su moto. Queremos conocer cómo trabaja su negocio y qué opina de una forma de atraer clientes con la app. Sus respuestas son confidenciales y con fines académicos.*
+
+**Sección 1 — Su negocio**
+
+- **B1.** ¿Qué tipo de negocio es?  
+  ☐ Taller de motos ☐ Refaccionaria ☐ Taller y refaccionaria
+- **B2.** ¿Qué puesto tiene usted?  
+  ☐ Dueño(a) ☐ Encargado(a) ☐ Empleado(a)
+- **B3.** ¿Cuántas personas trabajan en el negocio?  
+  ☐ 1 ☐ 2 o 3 ☐ 4 a 6 ☐ 7 o más
+- **B4.** ¿En qué colonia o zona está el negocio? *(respuesta corta)*
+- **B5.** En el mostrador, ¿usan celular o computadora para el negocio? *(define cómo se comprueban los canjes, `DOMAIN.md` `CouponRedemption`)*  
+  ☐ Celular ☐ Computadora ☐ Ambos ☐ Ninguno
+
+**Sección 2 — Clientes y servicios** *(`AUD-12/13` puntos 28–30)*
+
+- **B6.** Aproximadamente, ¿cuántos clientes con moto atienden al mes?  
+  ☐ Menos de 50 ☐ 50 a 100 ☐ 101 a 200 ☐ 201 a 400 ☐ Más de 400
+- **B7.** ¿Sabe más o menos cuántos de sus clientes son repartidores y cuántos particulares?  
+  ☐ Sí *(→ Sección 2b)* ☐ No *(→ Sección 2c)*
+- **B8.** *(Sección 2b)* ¿Cómo se reparten?  
+  ☐ La mayoría son repartidores ☐ Mitad y mitad ☐ La mayoría son particulares
+- **B9.** *(Sección 2c, para todos)* ¿Cuáles son los tres servicios que más le piden en motos? *(casillas, máximo 3)*  
+  ☐ Cambio de aceite ☐ Cadena o kit de arrastre ☐ Banda de motoneta ☐ Frenos o balatas ☐ Afinación o bujía ☐ Llantas ☐ Parte eléctrica ☐ Reparación de motor ☐ Otro
+- **B10.** ¿Cuánto cobra normalmente por un cambio de aceite con mano de obra en una moto de trabajo? *(opcional)*  
+  ☐ Menos de $150 ☐ $150 a $249 ☐ $250 a $349 ☐ $350 a $499 ☐ $500 o más
+- **B11.** ¿En qué parte del mes llegan **más** clientes?  
+  ☐ Primera semana ☐ Alrededor de la quincena ☐ Fin de mes ☐ Es igual todo el mes
+- **B12.** ¿En qué parte del mes llegan **menos** clientes?  
+  ☐ Primera semana ☐ Alrededor de la quincena ☐ Fin de mes ☐ Es igual todo el mes
+- **B13.** ¿Qué meses del año son más flojos? *(casillas)*  
+  ☐ Enero ☐ Febrero ☐ Marzo ☐ Abril ☐ Mayo ☐ Junio ☐ Julio ☐ Agosto ☐ Septiembre ☐ Octubre ☐ Noviembre ☐ Diciembre ☐ Es igual todo el año
+
+**Sección 3 — Recordatorios a sus clientes** *(`AUD-12/13` punto 32)*
+
+- **B14.** ¿Tiene alguna forma de recordar a sus clientes cuándo les toca servicio?  
+  ☐ Sí *(→ Sección 3b)* ☐ No *(→ Sección 3c)*
+- **B15.** *(Sección 3b)* ¿Cuál?  
+  ☐ Etiqueta o sticker en la moto ☐ Mensaje de WhatsApp o llamada ☐ Libreta o registro ☐ Un programa o sistema ☐ Otro
+- **B16.** *(Sección 3b)* Con ese recordatorio, ¿sus clientes regresan a tiempo?  
+  ☐ Casi siempre ☐ A veces ☐ Casi nunca
+- **B17.** *(Sección 3c, para todos)* Normalmente, ¿cuánto tiempo de más dejan pasar sus clientes antes de regresar por su servicio?  
+  ☐ Llegan a tiempo ☐ Una o dos semanas de más ☐ Un mes o más ☐ Hasta que algo falla
+
+**Sección 4 — Conozca Itinera** *(`AUD-12/13` punto 33)*
+
+> Texto: *Itinera es gratis para el motociclista. Cuando a su moto le toca aceite, frenos o cadena, la app le avisa. Cuando la app tenga suficientes usuarios en Xalapa, en ese momento podrá mostrarle una promoción pagada de su negocio. El cliente enseña un código en su mostrador, usted lo comprueba desde su celular y a fin de mes ve cuántos clientes llegaron por la app. Itinera no califica ni certifica talleres.*  
+> `[Insertar Captura 2 del prototipo Vue aquí]`  
+> `[Insertar Captura 5 del prototipo Vue aquí]`  
+> `[Insertar Captura 6 del prototipo Vue aquí]`
+
+- **B18.** ¿Le parece adecuada esta forma de atraer clientes?  
+  ☐ Sí ☐ No — *Comentarios (respuesta corta, opcional)*
+
+**Sección 5 — Forma de pago** *(`AUD-12/13` puntos 31 y 34; sin "pauta", "redimido", "ticket promedio" ni "MAU")*
+
+- **B19.** ¿Estaría dispuesto(a) a invertir en promocionar su negocio dentro de Itinera para atraer clientes nuevos?  
+  ☐ Sí *(→ Sección 5c)* ☐ Tal vez *(→ Sección 5c)* ☐ No *(→ Sección 5b)*
+- **B20.** *(Sección 5b)* ¿Por qué no? *(respuesta corta)* *(→ Sección 6)*
+
+> *(Sección 5c)* Texto: *Los primeros clientes que lleguen a su negocio con código serían gratis, como prueba. Después usted elegiría una de dos formas de pago: una cuota fija al mes, o pagar solo por cada cliente que llegue con su código y compre.*
+
+- **B21.** ¿Cuál le conviene más?  
+  ☐ Cuota fija al mes *(→ Sección 5d)* ☐ Pagar por cada cliente que llegue y compre *(→ Sección 5e)* ☐ Ninguna *(→ Sección 5f)* ☐ No sé *(→ Sección 5f)*
+- **B22.** *(Sección 5d)* ¿Cuánto pagaría al mes como máximo?  
+  ☐ Menos de $150 ☐ $150 a $299 ☐ $300 a $499 ☐ $500 a $799 ☐ $800 o más *(→ Sección 5f)*
+- **B23.** *(Sección 5e)* ¿Cuánto pagaría por cada cliente que llegue con su código y compre?  
+  ☐ Menos de $10 ☐ $10 a $19 ☐ $20 a $39 ☐ $40 a $59 ☐ $60 o más *(→ Sección 5f)*
+- **B24.** *(Sección 5f)* ¿Qué descuento o beneficio podría ofrecer a esos clientes sin perder?  
+  ☐ 5% ☐ 10% ☐ 15% o más ☐ Revisión gratis ☐ Otro
+- **B25.** ¿Cuántos clientes gratis necesitaría ver llegar para decidir si continúa? *(calibra la prueba por volumen `N`)*  
+  ☐ 5 ☐ 10 ☐ 20 ☐ Más de 20
+
+**Sección 6 — Dar a conocer la app** *(`AUD-12/13` punto 35)*
+
+- **B26.** ¿Le parece adecuado poner un cartel con código QR o compartir un enlace para que sus clientes descarguen la app gratis?  
+  ☐ Sí ☐ No
+- **B27.** ¿Por qué otros medios la daría a conocer? *(casillas)*  
+  ☐ WhatsApp de sus clientes ☐ Redes sociales del negocio ☐ En la nota o ticket ☐ Sticker en la moto del cliente ☐ De palabra ☐ Otro
+
+**Sección 7 — Prueba de un mes** *(`AUD-12/13` punto 36)*
+
+- **B28.** De estos beneficios, elija los tres más importantes para probar Itinera un mes. *(casillas con validación "Seleccionar exactamente 3")*  
+  ☐ No instalar nada en caja ☐ Comprobante de cada cliente que llegó por la app ☐ Reporte mensual de clientes ☐ Promoción solo para motociclistas de su zona ☐ Poder cancelar cuando quiera ☐ Recordatorio a sus propios clientes de su próximo servicio
+- **B29.** ¿Qué otra función le gustaría? *(respuesta corta)*
+- **B30.** ¿Pagaría un poco más por esa función?  
+  ☐ Sí ☐ No ☐ Depende
+
+**Sección 8 — Cierre**
+
+- **B31.** Si le interesa participar en la prueba piloto, ¿por qué medio prefiere que lo contactemos?  
+  ☐ WhatsApp ☐ Llamada ☐ Visita ☐ Correo ☐ No me interesa participar
 
 ---
 
 ## 3. Universo de Estudio y Cálculo de Muestreo (`TASK 3`)
 
-### 3.1 Embudo de Demanda de 5 Niveles (Xalapa, Veracruz)
+### 3.1 Embudo de Demanda (Xalapa, Veracruz)
 
-Siguiendo la taxonomía del mercado según tipo de demanda definida en [MARKET_STUDY.md](file:///C:/Users/OGSha/OneDrive/Escritorio/Developer/App%20Development/Itinera/.routing/reference/MARKET_STUDY.md#L353-L361), el universo del proyecto en Xalapa se depura progresivamente desde el parque circulante estimado hacia el piloto semestral:
+El embudo ya **no supone proporciones**: cada filtro se multiplica por una proporción medida con su intervalo de confianza (Wilson, 95%) y se presenta en tres escenarios de universo.
 
-```mermaid
-flowchart TD
-    N1["1. Mercado Potencial\n~40,000 motocicletas en circulacion en Xalapa (2026)\n[Cota censal oficial INEGI 2021: 23,159 uds.]\nContexto: 664,867 en Veracruz (INEGI 2025)"] --> N2["2. Mercado Disponible\n~29,644 conductores con smartphone Android\n(40,000 x 74.11% cuota StatCounter MX 2025-2026;\nhasta ~34,000 si se confirma >85% en segmento economico)"]
-    N2 --> N3["3. Mercado Cualificado Disponible\nDuenos de su propia moto 125-250cc con Android\n(excluye flotillas patronales y >250cc)\n[Proporcion exacta a medir via P1-P2 del Instrumento A]"]
-    N3 --> N4["4. Mercado Meta u Objetivo (Target)\nB2C MVP: Cohorte intensiva 50-100+ km/dia + moderada 15-49 km/dia\nB2B Fase 1 (>1,000-2,000 MAU): ~35 talleres SCIAN 811492 + refaccionarias 468311"]
-    N4 --> N5["5. Mercado Actual / Piloto Semestral\nCohorte piloto controlada 50-100+ km/dia en Xalapa\npara validar WeeklyCheckIn y ciclo completo de 2,500 km en 3-6 semanas"]
-```
-
-| Nivel del Embudo | Definición Operativa en Xalapa, Veracruz | Magnitud Cuantitativa Anclada | Fuente / Criterio de Depuración |
+| Nivel del Embudo | Definición Operativa | Cálculo | Fuente del Factor |
 | :--- | :--- | :--- | :--- |
-| **1. Mercado Potencial** | Total de motocicletas que circulan en el municipio de Xalapa (universo base local del estudio). | **`40,000`** unidades circulantes estimadas en 2026 *(cota mínima censal oficial: `23,159` en 2021, `22,720` particulares)*. | Movilidad Urbana Xalapa (2026) / INEGI-CEIEG (`2021`, `2025`). |
-| **2. Mercado Disponible** | Motociclistas en Xalapa con acceso tecnológico compatible con el MVP (*Android + Google Play*). | **`29,644`** unidades *(aplicando la cota conservadora de `74.11%` Android de StatCounter Oct 2025–Oct 2026; rango superior hasta `35,652` con `89.13%` de 2024)*. | StatCounter Global Stats México (`74.11%`–`89.13%` Android). |
-| **3. Mercado Cualificado Disponible** | Propietarios-operadores (dueños de su unidad) de cilindrada **`125–250cc`** con Android que requieren seguimiento preventivo o padecen *Síndrome de la Guantera* / chicote roto. | `[ESTIMACIÓN DE PROPORCIÓN MEDIANTE P1–P4 EN CAMPO]` *(referencia histórica de mercado mexicano dominado por baja cilindrada `125–250cc`)*. | Filtros P1 y P2 del **Instrumento A**; reglas CCU de `SPECIFICATION.md`. |
-| **4. Mercado Meta u Objetivo (*Target*)** | *Lado A (MVP):* Conductores `125–250cc` propios con prioridad en uso intensivo (`50–100+ km/día`) y secundario moderado (`15–49 km/día`).<br>*Lado B (Fase 1):* Comercios locales tras superar `>1,000–2,000` MAU. | *B2C:* Subconjunto intensivo y urbano de Nivel 3.<br>*B2B:* **`~35`** talleres especializados (`811492`) + refaccionarias (`468311`) en Xalapa. | `SPECIFICATION.md` + INEGI DENUE `05/2026` (`CLEE 30087`). |
-| **5. Mercado Actual / Piloto Semestral** | Usuarios activos iniciales captados para validar retención semanal (`WeeklyCheckIn`) y cierre de al menos un `MaintenanceLog` en `3–6` semanas. | **`[PENDIENTE DE EJECUCIÓN PILOTO]`** *(meta operativa inicial previa a la Compuerta 1 de `>1,000–2,000` MAU)*. | `BUSINESS_MODEL_CANVAS.md` (Compuerta Fase 0 $\to$ Fase 1). |
+| **1. Mercado Potencial** | Motos circulantes en Xalapa | Pesimista `23,159` (censal 2021) · Base `40,000` (Movilidad Urbana 2026) | INEGI/CEIEG; Ayuntamiento |
+| **2. Mercado en Rango** | Motos `110–250cc` (con *No sé* asignado por tipo `A6` y marca `A8`) | Nivel 1 × `p(A7 ∈ 110–250)` | Instrumento A |
+| **3. Mercado Disponible** | En rango con Android y Google Play | Nivel 2 × `p(A35 = Android ∧ A36 = Google Play)` | Instrumento A (sustituye el `>85%` supuesto) |
+| **4. Mercado Cualificado** | Disponibles con intención calibrada de uso | Nivel 3 × intención ajustada de `A21` (factores de Jamieson y Bass, 1989; Morwitz, Steckel y Gupta, 2007) | Instrumento A |
+| **5. Mercado Meta B2C** | Cualificados en cohorte prioritaria (rutinas R3–R4 de `A11` y propietarios `A10 = Mía` o `Mi propio negocio`) más secundaria (R1–R2) | Nivel 4 desagregado por `A10`, `A11` | Instrumento A |
+| **Segmentos aparte** | Operadores de unidad ajena (`A10 = De la persona o empresa para la que trabajo`); prospectos de flotilla (`A13 ≥ 2` y `A10` comercial o `A20 = encargado`); `<110cc` y `>250cc` | Se reportan por separado para dimensionar `PlusSubscription` y `MicroFleetAccount` | `DOMAIN.md §3.2` |
+| **Mercado Meta B2B (Fase 1)** | Comercios dispuestos (`B19 = Sí/Tal vez`) | `p(B19)` × (`~35` talleres `811492` + `[PENDIENTE DE CONTEO EXACTO EN DENUE SCIAN 468311]`) | Instrumento B + DENUE |
+| **Mercado Piloto** | Cohorte controlada de rutina intensiva que deja contacto en `A37` | Conteo directo | Instrumento A |
 
----
-
-### 3.2 Cálculo Estadístico de Muestra para Segmento A (B2C — Universo Finito)
-
-Para garantizar representatividad estadística sobre el universo local de motocicletas en Xalapa ($N = 40{,}000$ unidades en circulación), se formula el contraste de hipótesis base y se aplica la **fórmula de universo finito corregida** documentada en [MARKET_STUDY.md](file:///C:/Users/OGSha/OneDrive/Escritorio/Developer/App%20Development/Itinera/.routing/reference/MARKET_STUDY.md#L308-L314):
-
-- **Hipótesis de trabajo:**
-  - $H_0$: La proporción de propietarios-operadores de motocicletas `125–250cc` en Xalapa con necesidad latente de seguimiento preventivo *Low-Touch* y disposición a adoptar una herramienta gratuita de check-in semanal no alcanza un nivel relevante de aceptación ($p \le 0.50$).
-  - $H_1$: La proporción de propietarios-operadores con dicha necesidad y disposición a adoptar la herramienta *Low-Touch* es mayoritaria ($p > 0.50$).
-- **Parámetros estadísticos seleccionados:**
-  - **Universo conocido ($N$):** `40,000` motocicletas en circulación en Xalapa (Movilidad Urbana, 2026).
-  - **Nivel de confianza ($Z$):** `95%` $\implies$ **$z = 1.96$** (estándar mínimo aceptado por la industria).
-  - **Margen de error ($e$):** `±5%` $\implies$ **$e = 0.05$** (máximo estándar recomendado).
-  - **Variabilidad ($p, q$):** Al no existir un estudio previo idéntico en Xalapa sobre seguimiento *Low-Touch*, se adopta el criterio conservador de varianza máxima: **$p = 0.50$**, **$q = 1 - p = 0.50$** ($p \cdot q = 0.25$).
-
-#### Desarrollo Matemático Paso a Paso
+### 3.2 Cálculo Estadístico de Muestra para Segmento A (Universo Finito)
 
 $$n = \frac{z^2 \cdot N \cdot p \cdot q}{e^2(N - 1) + z^2 \cdot p \cdot q}$$
 
-1. **Cálculo de componentes constantes:**
-   - $z^2 = (1.96)^2 = 3.8416$
-   - $e^2 = (0.05)^2 = 0.0025$
-   - $p \cdot q = 0.50 \times 0.50 = 0.25$
-   - $z^2 \cdot p \cdot q = 3.8416 \times 0.25 = 0.9604$
-2. **Cálculo del numerador:**
-   $$\text{Numerador} = 3.8416 \times 40{,}000 \times 0.25 = 38{,}416.0000$$
-3. **Cálculo del denominador:**
-   $$\text{Denominador} = 0.0025 \times (40{,}000 - 1) + 0.9604 = (0.0025 \times 39{,}999) + 0.9604 = 99.9975 + 0.9604 = 100.9579$$
-4. **Cociente y redondeo conservador hacia arriba:**
-   $$n = \frac{38{,}416.0000}{100.9579} = 380.5150 \approx \mathbf{381\;\text{encuestas válidas}}$$
+Con $N = 40{,}000$, $z = 1.96$ (95%), $e = 0.05$ y $p = q = 0.50$: numerador $= 3.8416 \times 40{,}000 \times 0.25 = 38{,}416$; denominador $= 0.0025 \times 39{,}999 + 0.9604 = 100.9579$; $n = 380.52 \approx$ **381 encuestas válidas**.
 
-#### Análisis de Sensibilidad por Base Poblacional y Margen de Error (Restricción Semestral)
+| Escenario | $N$ | $e$ | $n$ exacto | Muestra |
+| :--- | :---: | :---: | :---: | :---: |
+| Base: parque circulante 2026 | `40,000` | `±5%` | `380.52` | **`381`** |
+| Cota censal 2021 | `23,159` | `±5%` | `377.91` | `378` |
+| Intermedio por restricción semestral | `40,000` | `±7%` | `195.05` | `196` |
+| Exploratorio | `40,000` | `±10%` | `95.81` | `96` |
 
-Para demostrar la robustez del cálculo frente a distintas definiciones de $N$ y documentar alternativas prácticas si el calendario académico restringe las horas de campo, se presenta la matriz de sensibilidad verificada con $Z = 1.96$ (`95%` de confianza) y $p = q = 0.50$:
+**Estrategia de campo:** muestreo no probabilístico por cuotas en puntos de afluencia (Av. Lázaro Cárdenas, Circuito Presidentes, Zona Universitaria, Av. 20 de Noviembre y bases de repartidores) más difusión del enlace con QR. Cuotas: al menos `50%` de rutinas R3–R4 (`A11`) y presencia suficiente de mujeres para el cruce de género (se procura que cada celda del cruce tenga frecuencia esperada `≥ 5`). Al no ser una muestra probabilística, los intervalos se reportan como indicativos y se declara el sesgo de autoselección de la difusión en línea.
 
-| Escenario / Referencia de $N$ | Universo ($N$) | Error ($e$) | Resultado Exacto ($n$) | Muestra Requerida ($\lceil n \rceil$) | Uso Recomendado |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| **Base principal: Parque circulante Xalapa (2026)** | `40,000` | **`±5%`** (`0.05`) | `380.52` | **`381` encuestas** | **Estándar formal completo** del estudio estadístico. |
-| **Base Mercado Disponible Android (`74.11%`)** | `29,644` | `±5%` (`0.05`) | `379.26` | `380` encuestas | Confirma que acotar al subconjunto Android solo cambia la muestra en `1` encuesta. |
-| **Cota mínima censal oficial INEGI/CEIEG (2021)** | `23,159` | `±5%` (`0.05`) | `377.91` | `378` encuestas | Referencia histórica oficial mínima (`22,720` particulares también arroja `378`). |
-| **Sensibilidad académica intermedia (Xalapa 2026)** | `40,000` | `±7%` (`0.07`) | `195.05` | **`196` encuestas** | Alternativa de viabilidad si el equipo dispone de recursos semestrales limitados. |
-| **Sensibilidad exploratoria rápida (Xalapa 2026)** | `40,000` | `±10%` (`0.10`) | `95.81` | **`96` encuestas** | Mínimo exploratorio cuantitativo con tolerancia ampliada de error ($\pm 10\%$). |
+### 3.3 Muestreo para Segmento B (B2B)
 
-- **Estrategia de levantamiento para Segmento A:** Dado que no existe un padrón público nominal con teléfono de cada motociclista en Xalapa para sorteo aleatorio simple, se empleará un **muestreo estratificado por cuotas operativas y puntos de afluencia** distribuidos en corredores clave de la ciudad (Av. Lázaro Cárdenas, Circuito Presidentes, Av. Xalapa / Zona Universitaria, Av. 20 de Noviembre y puntos de espera de repartidores independientes), procurando equilibrar al menos **50% de encuestas en la cohorte intensiva (`50–100+ km/día`)** y hasta **50% en traslado moderado/ligero (`< 50 km/día`)** para contrastar ambos perfiles sin sesgar la muestra únicamente a repartidores.
-
----
-
-### 3.3 Muestreo No Probabilístico para Segmento B (B2B) y Piloto Semestral
-
-Para el **Segmento B (Refaccionarias y Talleres Mecánicos Locales — Fase 1)** se aplica **muestreo no probabilístico por juicio (intencional) y cuotas geográficas**, con base en las siguientes razones metodológicas:
-
-1. **Tamaño reducido del marco censal:** El DENUE `05/2026` contabiliza alrededor de `35` establecimientos en reparación de motocicletas (`SCIAN 811492`) en Xalapa, complementados por refaccionarias y comercios mixtos (`SCIAN 468311`). Aplicar una fórmula probabilística de $e = \pm 5\%$ a $N = 35$ exigiría entrevistar prácticamente un censo ($33$ de $35$ negocios), lo cual no aporta mayor claridad decisoria en una etapa donde `ContextualPromotion` ni siquiera se monetiza hasta superar `1,000–2,000` MAU en Fase 1.
-2. **Calidad sobre cantidad en información B2B:** La técnica de entrevista presencial estructurada (**Instrumento B**) exige dialogar directamente con el **dueño o encargado con poder de decisión comercial** (quien fija precios y descuentos en mostrador), siendo más valiosas **10 a 15 entrevistas profundas** distribuidas por zonas comerciales de Xalapa (Zona Centro/20 de Noviembre, Corredor Ruiz Cortines/Obrero Campesina, Zona Norte Revolución/Rafael Lucio y Corredor Lázaro Cárdenas) que formularios anónimos respondidos por ayudantes sin capacidad de decisión.
-3. **Relación con la Cohorte Piloto Semestral del MVP:** De forma paralela al estudio de mercado, el piloto funcional de la app en Fase 0 priorizará una cohorte controlada de propietarios-operadores a `50–100+ km/día` para cerrar al menos un ciclo completo de cambio de aceite (`2,500 km` en `3–6 semanas`) dentro del semestre académico.
+Se intenta **censar** los `~35` talleres `SCIAN 811492` y las refaccionarias de moto `[PENDIENTE DE CONTEO EXACTO EN DENUE SCIAN 468311]`, priorizando dueños o encargados con poder de decisión. Con pocas decenas de respuestas, los resultados se presentan como frecuencias y rangos (medianas de rango para precios), sin inferencia estadística, y se complementan con los comentarios abiertos (`B18`, `B20`, `B29`).
 
 ---
 
 ## 4. Análisis de Resultados (`TASK 4 — Plantilla de Vaciado`)
 
-> [!IMPORTANT]
-> **Estado de recolección en campo:** Al momento de emitir este diseño metodológico, el levantamiento primario de los Instrumentos A y B **no ha sido ejecutado**. Todas las métricas, proporciones y hallazgos empíricos permanecen marcados explícitamente como `[PENDIENTE DE RECOLECCIÓN EN CAMPO]` para garantizar cero fabricación o simulación de datos.
+> **Estado de recolección en campo:** los Instrumentos A y B **no han sido aplicados**. Las capturas 1–6 del prototipo están pendientes de producción. No se reportan resultados ni estimaciones simuladas.
 
-### 4.1 Análisis de la Demanda (Segmento B2C)
+### 4.1 Variables por Eje de Análisis
 
-| Variable Medida (Instrumento A) | Métrica / Indicador a Tabular | Resultado Observado | Gráfica / Soporte Visual |
-| :--- | :--- | :--- | :--- |
-| **Tasa de elegibilidad MVP (`P1` + `P2`)** | `%` de motos `125–250cc` propias + `%` con smartphone Android en Xalapa | `[PENDIENTE DE RECOLECCIÓN EN CAMPO]` | Gráfica de embudo / pastel |
-| **Distribución de intensidad de uso (`P3`)** | `%` cohorte intensiva (`50–100+ km/día`) vs. moderada (`20–49 km/día`) vs. ligera (`<20 km/día`) | `[PENDIENTE DE RECOLECCIÓN EN CAMPO]` | Gráfica de barras por segmento |
-| **Incidencia de odómetro averiado (`P4`)** | `%` de unidades con chicote roto / tablero inoperante o cálculo "al tanteo" | `[PENDIENTE DE RECOLECCIÓN EN CAMPO]` | Gráfica de barras / proporción |
-| **Ranking de fallas en 5 `ConsumableItem` (`P5`)** | Frecuencia de gastos sorpresa en aceite, cadena, frenos, bujía y llantas | `[PENDIENTE DE RECOLECCIÓN EN CAMPO]` | Diagrama de Pareto |
-| **Práctica *DIY* y desconfianza en talleres (`P7`)** | `%` que realiza mantenimiento propio + mediana/promedio de desconfianza (1–5) | `[PENDIENTE DE RECOLECCIÓN EN CAMPO]` | Histograma escala Likert |
-| **Aceptación de UX *Low-Touch* (`P8`, `P9`, `P10`, `P11`)** | `%` que prefiere `WeeklyCheckIn` `<5 s`, `SurgicalAlert`, utilidad `WearTrafficLight` y uso de `ExportableSummary` | `[PENDIENTE DE RECOLECCIÓN EN CAMPO]` | Barras apiladas de aceptación |
-
-**Comentario analítico de la demanda:** `[PENDIENTE DE RECOLECCIÓN EN CAMPO — Contrastar si el porcentaje real de odómetros dañados y la preferencia por WeeklyCheckIn frente a registro por gasolina confirman las hipótesis conductuales de SPECIFICATION.md]`.
-
----
-
-### 4.2 Análisis de la Oferta (Competencia Digital, Sustitutos y Red B2B)
-
-| Dimensión Analizada | Hallazgo Secundario Verificado (Base) | Validación Primaria en Campo (`P6` e Instrumento B) |
+| Eje | Reactivos | Indicador a tabular |
 | :--- | :--- | :--- |
-| **Penetración real de apps competidoras (Drivvo / Fuelio / MotoLog)** | Disponibles en Google Play; altas fricciones por registro de gasolina, anuncios o interfaces densas. | `[PENDIENTE DE RECOLECCIÓN EN CAMPO — % de motociclistas en Xalapa que usa alguna app vs. papel/memoria]` |
-| **Persistencia del *Síndrome de la Guantera*** | Libretas y stickers no proyectan kilometraje ni previenen olvidos en intervalos cortos de `2,500 km`. | `[PENDIENTE DE RECOLECCIÓN EN CAMPO — % que controla por memoria, libreta o sticker]` |
-| **Capacidad y valles de talleres/refaccionarias (`E1`–`E5`)** | `~35` talleres `SCIAN 811492` + refaccionarias `468311` mapeados en Xalapa (DENUE `05/2026`). | `[PENDIENTE DE RECOLECCIÓN EN CAMPO — Volumen mensual 125–250cc y días/semanas valle reportados]` |
+| Perfil | `A2`–`A5` | Distribución por edad, género, ingreso, ocupación |
+| Elegibilidad y rango | `A6`–`A8`, `A35`–`A36` | `%` por cilindrada (incl. `<110` vs `110–125`), `%` CVT vs cadena, `%` Android con Google Play |
+| Uso y propiedad | `A9`–`A13` | `%` por uso, propiedad, rutina × días (distribución empírica de `Tasa_dia`), número de motos |
+| Mantenimiento actual | `A14`–`A20` | Frecuencia y responsable por servicio, motivos DIY/taller, gasto mensual, forma de control |
+| Validación del prototipo | `A21`–`A28` | Intención (5 puntos), adecuación de check-in, semáforo y anticipación, resumen, vínculo con taller, aceptación de promociones |
+| Precio B2C | `A29`–`A32` | `%` que pagaría, monto y periodicidad; `%` gratis, extras, promociones |
+| Canales y soporte | `A33`–`A34` | Mezcla de canales de descubrimiento; canal de ayuda preferido |
+| Oferta B2B | `B1`–`B17` | Volumen, servicios top, cobro de aceite, estacionalidad, recordatorios y retraso de clientes |
+| Monetización B2B | `B18`–`B31` | Adecuación, disposición, esquema, montos, descuento, `N` de prueba, difusión, beneficios prioritarios |
 
-**Comentario analítico de la oferta:** `[PENDIENTE DE RECOLECCIÓN EN CAMPO]`.
+### 4.2 Matriz de Cruces e Inferencias Estadísticas (`AUD-3` punto 7, `AUD-6` punto 15)
 
----
+Métodos: tablas de contingencia con chi-cuadrada de independencia y V de Cramér (agrupando categorías cuando la frecuencia esperada sea menor que 5), regresión logística binaria sobre la intención de uso (`A21` en las dos categorías superiores) e intervalos de Wilson para proporciones. Cada cruce responde una pregunta de decisión, no una correlación decorativa.
 
-### 4.3 Análisis de los Canales de Comercialización
-
-| Canal Evaluado | Lado / Fase | Indicador Esperado a Medir (`P14`, `E4`, `E8`) | Resultado de Campo |
-| :--- | :--- | :--- | :--- |
-| **Google Play Store (ASO orgánico)** | B2C (Fase 0) | `%` de motociclistas que busca herramientas directamente en Play Store | `[PENDIENTE DE RECOLECCIÓN EN CAMPO]` |
-| **Recomendación boca a boca y clubes locales** | B2C (Fase 0) | `%` que descubre apps por recomendación de pares/repartidores + uso de `ExportableSummary` al compartir | `[PENDIENTE DE RECOLECCIÓN EN CAMPO]` |
-| **QR en mostrador de refaccionarias/talleres** | B2C + B2B (Fase 1) | `%` de usuarios receptivos a escanear QR en mostrador y `%` de comercios dispuestos a exhibirlo | `[PENDIENTE DE RECOLECCIÓN EN CAMPO]` |
-
-**Comentario analítico de canales:** `[PENDIENTE DE RECOLECCIÓN EN CAMPO]`.
-
----
-
-### 4.4 Análisis de Precios y Disposición a Pagar / Redimir
-
-| Variable Económica | Hipótesis Base Reconciliada | Resultado Observado (`P12`, `P13`, `E2`, `E6`, `E7`) |
+| Cruce | Pregunta que responde | Decisión que habilita |
 | :--- | :--- | :--- |
-| **Disposición a pagar B2C por 1 unidad (`P12`)** | Resistencia mayoritaria a pagar en Fase 0; adopción solo a `$0 MXN` en núcleo MVP. | `[PENDIENTE DE RECOLECCIÓN EN CAMPO]` |
-| **Disposición B2C a canjear `ContextualPromotion` (`P13`)** | Alta receptividad cuando el cupón aparece en ventana preventiva `Amarillo`/`Rojo`. | `[PENDIENTE DE RECOLECCIÓN EN CAMPO]` |
-| **Ticket promedio local en 5 consumibles (`E2`)** | Referencia necesaria para validar si el descuento/comisión cabe en el margen del taller. | `[PENDIENTE DE RECOLECCIÓN EN CAMPO]` |
-| **Tarifa / CPA aceptable por comercios (`E6`, `E7`)** | Pauta local `$299–$499 MXN/mes` o pago por cupón redimido en caja sin auditoría de campo. | `[PENDIENTE DE RECOLECCIÓN EN CAMPO]` |
-
-**Comentario analítico de precios y elasticidad:** `[PENDIENTE DE RECOLECCIÓN EN CAMPO]`.
-
----
-
-### 4.5 Matriz FODA de Síntesis (Estructura Preparada para Vaciado)
-
-| Origen | Factores Positivos | Factores Negativos |
-| :--- | :--- | :--- |
-| **Interno** *(Producto y Equipo)* | **Fortalezas (F):**<br>• Arquitectura *Local-First* Android (`$0` servidores en Fase 0) y operación offline.<br>• Diseño *Low-Touch* (`WeeklyCheckIn < 5 s`, regla dual $\min(t_{km}, t_{meses})$ que funciona aun con chicote roto).<br>• `[PENDIENTE DE RECOLECCIÓN EN CAMPO — Diferenciadores mejor evaluados por usuarios]` | **Debilidades (D):**<br>• Ausencia inicial de versión iOS (`Fase 2`).<br>• Cobertura mediante 3 `ServiceTemplate` editables en lugar de catálogo exacto por lote.<br>• `[PENDIENTE DE RECOLECCIÓN EN CAMPO — Objeciones o brechas detectadas en encuesta]` |
-| **Externo** *(Mercado de Xalapa)* | **Oportunidades (O):**<br>• Parque creciente (`~40,000` motos en Xalapa; `+29.0%` anual en Veracruz en 2025).<br>• Brecha clara frente a apps centradas en gasolina (Fuelio/Drivvo).<br>• `[PENDIENTE DE RECOLECCIÓN EN CAMPO — % de talleres dispuestos a probar ContextualPromotion + QR]` | **Amenazas (A):**<br>• Hábito arraigado de no llevar ningún registro hasta la falla.<br>• Competencia consolidada en descargas globales (Drivvo/Fuelio) y resistencia a notificaciones.<br>• `[PENDIENTE DE RECOLECCIÓN EN CAMPO — Riesgos de abandono o rechazo de cupones]` |
+| `A4` ingreso × `A21` intención × `A29`/`A30` pago | ¿La disposición a pagar depende del nivel económico? | Precio de Plus o descarte del cobro B2C |
+| `A16` taller/DIY × `A4` × `A27` vínculo con taller | ¿Qué proporción de clientes de taller quiere el vínculo? | Argumento comercial frente a talleres |
+| `A3` género × `A16` × `A17`/`A18` motivos | ¿Las mujeres acuden más a taller y desconfían más? | Valida o descarta el factor 8 de `SPECIFICATION.md §2.3` |
+| `A9` uso × `A10` propiedad × `A11`/`A12` rutina × `A21` | ¿Los propietarios de rutina intensiva tienen más intención? | Cohorte piloto de `SPECIFICATION.md §3.3` |
+| `A20` control actual × `A21` | ¿Quien no lleva control quiere la app más que quien usa libreta? | Encaje problema–solución |
+| `A6`/`A7` tipo y cilindrada × `A21` | ¿Interés similar en `<110` y `>250`? | Frontera definitiva del rango MVP |
+| `A10` + `A13` + `A20` × `A21` | ¿Hay demanda de flotilla y de 2+ motos? | Dimensiona `PlusSubscription` y `MicroFleetAccount` |
+| `A14` frecuencia × `A11`/`A12` rutina | ¿Los intervalos reales coinciden con las plantillas? | Calibración de `DOMAIN.md §5.5` |
+| `A28`/`A32` (B2C) frente a `B19`/`B21` (B2B) | ¿Coinciden los dos lados del mercado? | Viabilidad de la plataforma de dos lados |
+| `A33` canal × `A2` edad | ¿Qué canal funciona para cada edad? | Costo de adquisición por canal |
+| `A35`/`A36` celular × `A4` ingreso | ¿Cuál es la proporción real de Android con Google Play? | Sustituye el supuesto `>85%` |
+| `A34` soporte × `A2` edad | ¿WhatsApp domina el soporte? | Activa o no la política de `SPECIFICATION.md §6.2` |
+| `B1` giro × `B21` esquema × `B22`/`B23` monto (descriptivo) | ¿Talleres y refaccionarias prefieren esquemas distintos? | Oferta comercial por tipo de comercio |
 
 ---
 
 ## 5. Conclusiones y Proyección hacia Estudios Posteriores (`TASK 5 — Plantilla de Cierre`)
 
-> [!NOTE]
-> **Estatus de cierre:** Esta sección documenta las **decisiones e hipótesis condicionales** que se dictaminarán una vez tabulados los datos primarios de la Sección 4 (`[PENDIENTE DE RESULTADOS]`), estableciendo exactamente qué parámetros debe entregar el Estudio de Mercado a los cuatro estudios subsecuentes exigidos por `STUDY.md`.
+### 5.1 Proyección hacia el Estudio Técnico (`C8`)
 
-### 5.1 Proyección hacia el Estudio Técnico
+El reactivo de odómetro roto se eliminó (`AUD-6` punto 13) y ninguna decisión técnica depende de él: el modo relativo con respaldo por tiempo calendario se construye de todas formas. Tampoco se pregunta la versión de Android (el usuario no la conoce); el nivel mínimo de API se fijará con las estadísticas de distribución de Google Play Console y los requisitos vigentes de la tienda. La encuesta sí entrega al Estudio Técnico tres insumos: la proporción de motonetas CVT frente a motos de cadena (`A6`), que prioriza las plantillas y guías de inspección; la distribución empírica de rutina × días (`A11`–`A12`), que fija los valores iniciales de `Tasa_dia` de `DOMAIN.md §5.1`; y la frecuencia real de servicios (`A14`), que contrasta los intervalos de `DOMAIN.md §5.5`. El reactivo `B5` define si la validación de canjes se hace por enlace web, WhatsApp u hoja conciliada.
 
-`[PENDIENTE DE RESULTADOS]` — Al concluir el vaciado de campo, se confirmarán o ajustarán los siguientes parámetros técnicos para el MVP Android:
-- **Capacidad y segmentación inicial:** Validar si el `>80%` del parque `125–250cc` entrevistado en Xalapa coincide con las especificaciones estándar de las 3 `ServiceTemplate` (*Moto Urbana*, *Moto Trabajo / Uso Rudo* y *Personalizada*) o si se requiere ajustar los intervalos base de aceite (`2,000–2,500 km`) y lubricación de cadena (`400–500 km`).
-- **Prioridad de modo sin odómetro:** Si la proporción de motos con chicote roto (`P4`) supera el `25%–30%`, priorizar desde el onboarding el flujo de odómetro relativo (`Km_base = 0`) respaldado por la regla temporal de `OdometerProjection`.
-- **Restricciones de dispositivo:** Confirmar versiones predominantes de Android en el segmento `125–250cc` para fijar el `minSdk` de la app SQLite *Local-First*.
+### 5.2 Métricas Obligatorias para el Estudio Económico-Financiero
 
-### 5.2 Proyección hacia el Estudio Económico-Financiero
+| Métrica | Fuente | Uso financiero |
+| :--- | :--- | :--- |
+| Proporción en `110–250cc` y en `<110cc` | `A7` (+ `A6`, `A8` para *No sé*) | Mercado en rango por escenario de universo |
+| Proporción Android con Google Play | `A35`, `A36` | Mercado disponible |
+| Intención calibrada | `A21` con factores de la literatura | Conversión al mercado cualificado |
+| Distribución de rutina y días | `A11`, `A12` | Km/mes por usuario y ritmo de ventanas amarillas |
+| Eventos de servicio por usuario al mes, por responsable | `A14` × `A16` | Base de transacciones B2B (el que lo hace en casa también compra en refaccionaria) |
+| Gasto mensual y cobro de aceite | `A19`, `B10` | Valor del mercado y tamaño razonable del descuento |
+| Aceptación de promociones e intención de canje | `A28`, `A32` | Tasa de canje sobre usuarios en ventana amarilla |
+| Disposición a pagar B2C y número de motos | `A29`, `A30`, `A30b`, `A31b`, `A13` | Ingreso de `PlusSubscription` (`2+` motos) |
+| Comercios dispuestos × esquema × monto | `B19`, `B21`, `B22`, `B23` sobre el marco DENUE | Ingreso B2B por escenario |
+| Descuento tolerable y `N` de prueba | `B24`, `B25` | Margen del comercio y meses sin ingreso B2B |
+| Estacionalidad | `B11`–`B13` | Flujo de caja mensual B2B |
+| Mezcla de canales | `A33`, `B26`, `B27` | Costo de adquisición B2C por canal |
+| Tasa de cierre B2B | `B19` | Visitas por comercio cerrado × horas de prospección = costo de adquisición B2B |
+| Canal de soporte | `A34`, `B31` | Horas de soporte si gana WhatsApp |
 
-`[PENDIENTE DE RESULTADOS]` — Los resultados de los Instrumentos A y B alimentarán las proyecciones financieras sin supuestos arbitrarios:
-- **Confirmación de Fase 0 (`$0 MXN` ingreso B2C):** Verificar si la resistencia a pagar en `P12` confirma que el ingreso directo del Año 0 debe mantenerse en `$0 MXN` con costos limitados a la licencia única de Google Play (`$25 USD`).
-- **Calibración de precio B2B en Fase 1 (`ContextualPromotion`):** Utilizar el ticket promedio real (`E2`), el margen máximo de descuento (`E7`) y la tarifa/CPA aceptada por las refaccionarias de Xalapa (`E7`) para modelar el punto de equilibrio de Fase 1 una vez alcanzada la compuerta de `>1,000–2,000` MAU locales.
-- **Estimación de tasa de canje:** Cruzar la intención de redención (`P13`) con el ciclo promedio de servicio para proyectar ingresos conservadores por atribución en mostrador.
+### 5.3 Sensibilidad de Tiempo para Alcanzar la Compuerta de Fase 1
 
-### 5.3 Adecuaciones al Business Model Canvas
+El Estudio Económico-Financiero debe calcular, por escenario, cuántos meses tarda Xalapa en sostener `1,000–2,000` MAU:
 
-`[PENDIENTE DE RESULTADOS]` — Con base en la evidencia empírica de Xalapa, se revisará el [BUSINESS_MODEL_CANVAS.md](file:///C:/Users/OGSha/OneDrive/Escritorio/Developer/App%20Development/Itinera/.routing/reference/BUSINESS_MODEL_CANVAS.md) bajo los siguientes criterios de decisión:
-- **Propuesta de Valor y Relación con Clientes:** Confirmar si `WeeklyCheckIn` (`< 5 s`) y `ExportableSummary` gratuito son los impulsores reales de retención, o si el nicho *DIY* / mujeres conductoras requiere énfasis adicional en las guías de inspección rápida.
-- **Canales:** Ponderar el peso real entre **ASO en Google Play**, recomendación boca a boca en grupos de repartidores y **QR en mostrador** para asignar el esfuerzo de lanzamiento en Fase 0 y Fase 1.
-- **Socios Clave:** Confirmar la viabilidad de afiliar comercios únicamente mediante cupones trazables sin certificación presencial de talleres.
+$$MAU_{alcanzable} = N_{universo} \times p_{rango} \times p_{Android+Play} \times p_{intención\ calibrada} \times alcance \times retención$$
 
-### 5.4 Proyección hacia el Estudio Organizacional
+Los tres primeros factores salen del Instrumento A; el alcance (proporción del mercado expuesta a los canales de `A33`) y la retención a 30 y 90 días no se pueden medir con una encuesta y se tomarán del piloto (`A37`) y de referencias publicadas, declarándolos como supuestos. Si el escenario base no alcanza la compuerta en un horizonte razonable, el estudio debe mostrar qué palanca la mueve (adquisición en mostrador vía QR, ampliar a la zona conurbada o a una segunda ciudad) en lugar de dar la Fase 1 por hecha.
 
-`[PENDIENTE DE RESULTADOS]` — Determinar la carga operativa mínima que soportará el equipo de 3 ingenieros según la respuesta del mercado:
-- **Fase 0 (Autoservicio estricto):** Confirmar que la tasa de incidencias reportadas y la claridad de las plantillas permiten operar sin mesa de ayuda humana ni gestión diaria de redes sociales.
-- **Fase 1 (Operación B2B local):** Estimar cuántas horas semanales de prospección comercial y colocación de material QR en Xalapa exige atender la cuota objetivo de refaccionarias y talleres aliados sin desviar horas críticas de desarrollo de software.
+### 5.4 Adecuaciones al Business Model Canvas y al Estudio Organizacional
+
+La evidencia determinará qué componente impulsa la retención (check-in semanal, semáforo o resumen), el peso real entre Google Play, recomendación y QR en mostrador, si los comercios prefieren cuota fija o pago por venta comprobada, y si la preferencia por WhatsApp (`A34`) obliga a presupuestar horas de soporte asíncrono. En lo organizacional se estimarán las horas semanales de prospección B2B a partir de la tasa de cierre (`B19`) y del número de clientes de prueba que exigen los comercios (`B25`).
 
 ---
 
-## 6. Referencias y Fuentes Consultadas
+## 6. Trazabilidad de la Retroalimentación Docente
 
-### 6.1 Fuentes Secundarias Externas Verificadas
+| Punto(s) del log | Corrección aplicada en los instrumentos |
+| :--- | :--- |
+| 1, 9, 24 | Sistema operativo y tienda de descarga al final (`A35`–`A36`), en lenguaje cotidiano; descubrimiento separado (`A33`) |
+| 2 | Secuencia por bloques: filtro → perfil → moto y uso → mantenimiento → prototipo → validación → taller y promociones → pago → canales → celular |
+| 3, 11 | Una variable por pregunta: uso (`A9`), propiedad separada en 5 opciones (`A10`), rutina (`A11`), días (`A12`) |
+| 4, 8 | Solo termina quien no maneja moto (`A0`); cilindrada en 5 opciones sin descarte (`A7`) |
+| 5, 17, 20, 27, 33 | Presentación explícita en encabezados y prototipo con capturas antes de validar (Sección 5 de A, Sección 4 de B) |
+| 6 | Bloque sociodemográfico al inicio (`A2`–`A5`) |
+| 7, 15 | Matriz de cruces e inferencias (`§4.2`) |
+| 10, 14, 18, 19 | Tablas de frecuencia y responsable por servicio (`A14`, `A16`), motivos derivados (`A17`–`A18`); fallas pasadas y 7a/7b eliminados |
+| 12 | Rutina cotidiana en lugar de km/día (`A11`–`A12`), convertida por el equipo con `DOMAIN.md §5.1` |
+| 13 | Reactivo de odómetro eliminado |
+| 16 | Opciones "No llevo control", "Encargado en la empresa" y "Otro" en `A20` |
+| 21 | Check-in sin gasolina ni kilómetros (`A22`) |
+| 22 | Semáforo explicado primero (`A23`) y anticipación como derivada (`A24`) |
+| 23 | Resumen presentado con captura y validado Sí/No (`A25`) |
+| 25 | Pago condicional en lenguaje cotidiano (`A29`–`A32`) |
+| 26 | Vínculo con taller (`A27`) y canal de ayuda (`A34`) |
+| 28 | Volumen (`B6`) separado de proporción repartidores/particulares (`B7`–`B8`) |
+| 29 | Servicios más pedidos (`B9`) y cobro de aceite por rangos opcional (`B10`) |
+| 30 | Temporalidad mensual y anual en preguntas separadas (`B11`–`B13`) |
+| 31 | Gasto en promoción eliminado; disposición a invertir tras el prototipo (`B19`) |
+| 32 | Secuencia de recordatorios sin porcentajes (`B14`–`B17`) |
+| 34 | Esquemas explicados en lenguaje cotidiano con montos separados (`B21`–`B23`) |
+| 35 | QR/enlace y otros medios (`B26`–`B27`) |
+| 36 | Tres beneficios existentes, función extra y pago (`B28`–`B30`) |
 
-1. **Instituto Nacional de Estadística y Geografía (INEGI)** (2025). *Vehículos de motor registrados en circulación (VMRC) — Estadística Anual 2023, 2024 y 2025 (Nacional y Veracruz)*. https://www.inegi.org.mx/programas/vehiculosmotor/
-2. **Instituto Nacional de Estadística y Geografía (INEGI)** (2026). *Directorio Estadístico Nacional de Unidades Económicas (DENUE), Edición 05/2026 — Claves SCIAN 811492 (Reparación y mantenimiento de motocicletas) y 468311 (Comercio al por menor de motocicletas), Municipio 30087 Xalapa, Veracruz*. https://www.inegi.org.mx/app/mapa/denue/default.aspx
-3. **Comité Estatal de Información Estadística y Geográfica de Veracruz (CEIEG / SEFIPLAN)** (2022–2026). *Cuadernillos Municipales e Información Estadística — Municipio de Xalapa (desglose histórico municipal de motocicletas 2021)*. https://www.ceieg.veracruz.gob.mx/cuadernillos-municipales/
-4. **Departamento de Movilidad Urbana del Ayuntamiento de Xalapa / Organización Physis Ciclovida** (octubre–noviembre de 2026). *Estimación del parque circulante de motocicletas en Xalapa (~40,000 unidades) y conteo preliminar de siniestralidad vial enero–octubre 2026* (reportado en prensa estatal de Veracruz: *Diario de Xalapa / OEM*, *Libertad Bajo Palabra*, *e-veracruz*).
-5. **Directorio DENUE Sectorial — Talleres de Motos México** (2026). *Establecimientos de reparación y mantenimiento de motocicletas en Xalapa, Veracruz (SCIAN 811492)*. https://www.talleresdemotos.com/
-6. **StatCounter Global Stats** (2024–2026). *Mobile Operating System Market Share Mexico (Android vs. iOS: año completo 2024 y ventana octubre 2025 – octubre 2026)*. https://gs.statcounter.com/os-market-share/mobile/mexico
-7. **Drivvo — CTN Cardoso** (2026). *Drivvo – Control de gastos de vehículos: planes, tarifas México y reseñas en Google Play*. https://www.drivvo.com/es-MX/ y https://play.google.com/store/apps/details?id=br.com.ctncardoso.ctncar
-8. **Fuelio — Sygic** (2026). *Fuelio: Precios del combustible y control de gastos/mantenimiento en Google Play*. https://fuel.io/ y https://play.google.com/store/apps/details?id=com.kajda.fuelio
-9. **MotoLog / MotorApp** (2026). *Aplicaciones especializadas de bitácora y registro de kilometraje para motocicletas en Google Play*. https://www.motorapp.net/
+---
 
-### 6.2 Documentación Canónica Interna del Proyecto Itinera
+## 7. Referencias y Fuentes Consultadas
 
-10. Consigna académica de la asignatura (*Estudio de Mercado*, incorporada en [spec.md](file:///C:/Users/OGSha/OneDrive/Escritorio/Developer/App%20Development/Itinera/.tickets/003-design-itinera-market-study/spec.md)) — Pasos generales, 4 estudios de detalle y requerimientos `TASK 1–5`.
-11. [MARKET_STUDY.md](file:///C:/Users/OGSha/OneDrive/Escritorio/Developer/App%20Development/Itinera/.routing/reference/MARKET_STUDY.md) — *Monografía: Estudio de Mercado — Fundamentos Económicos, Muestreo Estadístico y Aplicación Reconciliada en Itinera* (marco teórico, tabla `Z`, fórmula de universo finito corregida y exclusiones).
-12. [SPECIFICATION.md](file:///C:/Users/OGSha/OneDrive/Escritorio/Developer/App%20Development/Itinera/.routing/academic/SPECIFICATION.md) — *Especificación Académica y de Dominio — Proyecto Itinera* (línea base MVP reconciliada, segmentación CCU `125–250cc`, cohorte `50–100+ km/día` y bitácora de recortes).
-13. [DOMAIN.md](file:///C:/Users/OGSha/OneDrive/Escritorio/Developer/App%20Development/Itinera/.routing/DOMAIN.md) — *Modelo Conceptual y Diccionario del Dominio (Itinera)* (entidades MVP, entidades Fase 1–2, exclusiones e invariantes matemáticas).
-14. [BUSINESS_MODEL_CANVAS.md](file:///C:/Users/OGSha/OneDrive/Escritorio/Developer/App%20Development/Itinera/.routing/reference/BUSINESS_MODEL_CANVAS.md) — *Monografía: Business Model Canvas y su Aplicación Reconciliada en el Proyecto Itinera* (plataforma de dos lados asimétrica y compuertas por fases).
+1. INEGI (2025). *Vehículos de motor registrados en circulación (VMRC) — 2023, 2024 y 2025*. https://www.inegi.org.mx/programas/vehiculosmotor/
+2. INEGI (2026). *DENUE, Edición 05/2026 — SCIAN 811492 y 468311, Municipio 30087 Xalapa*. https://www.inegi.org.mx/app/mapa/denue/default.aspx
+3. CEIEG / SEFIPLAN Veracruz (2022–2026). *Cuadernillos Municipales — Xalapa*. https://www.ceieg.veracruz.gob.mx/cuadernillos-municipales/
+4. Departamento de Movilidad Urbana del Ayuntamiento de Xalapa y Physis Ciclovida (2026). *Estimación del parque circulante de motocicletas y siniestralidad vial enero–octubre 2026* (prensa estatal).
+5. StatCounter Global Stats (2024–2026). *Mobile Operating System Market Share Mexico*. https://gs.statcounter.com/os-market-share/mobile/mexico
+6. Drivvo — CTN Cardoso (2026). https://www.drivvo.com/es-MX/
+7. Fuelio — Sygic (2026). https://fuel.io/
+8. MotoLog / MotorApp (2026). https://www.motorapp.net/
+9. Jamieson, L. F. y Bass, F. M. (1989). Adjusting stated intention measures to predict trial purchase of new products. *Journal of Marketing Research*, 26(3), 336–345.
+10. Morwitz, V. G., Steckel, J. H. y Gupta, A. (2007). When do purchase intentions predict sales? *International Journal of Forecasting*, 23(3), 347–364.
+11. Sánchez Morales, A. de J. (2022). *Estudio de Mercado* [Material de cátedra]. Universidad Veracruzana.
+12. García Morales, D. (2022). *Estudio de mercado* [Material de cátedra]. Universidad Veracruzana.
